@@ -1,0 +1,17 @@
+$background-color: #191919;
+$header-color: white;
+$text-color: #cecece;
+$shadow-color-opacity: rgba(126, 0, 184, 0.3);
+$shadow-color: #7f00b8;
+
+@mixin mediaDesktop {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}
+
+@mixin mediaSmartfon {
+  @media screen and (min-width: 300px) and (max-width: 1170px) {
+    @content;
+  }
+}

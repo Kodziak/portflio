@@ -5,6 +5,7 @@
       <div class="container_content">
         <div class="home_header">
           <h1>Hi, I'm Przemek.</h1>
+          <br>
           <h2>I'm a Test Automation Developer.</h2>
         </div>
         <div class="home_content">

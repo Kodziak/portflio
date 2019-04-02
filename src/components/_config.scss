@@ -5,13 +5,24 @@ $shadow-color-opacity: rgba(126, 0, 184, 0.3);
 $shadow-color: #7f00b8;
 
 @mixin mediaDesktop {
-  @media screen and (min-width: 1171px) {
+  @media screen and (min-width: 1001px) {
     @content;
   }
 }
 
 @mixin mediaSmartfon {
-  @media screen and (min-width: 100px) and (max-width: 1170px) {
+  @media screen and (min-width: 100px) and (max-width: 1000px) {
     @content;
   }
+}
+
+@mixin shadow {
+  position: absolute;
+  content: "";
+  width: calc(100% + 3px);
+  height: 50%;
+  bottom: -2px;
+  left: -2px;
+  background: $shadow-color-opacity;
+  z-index: -1;
 }

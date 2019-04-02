@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="projects">
     <div class="flex-1"></div>
     <div class="project_header">
       <h1>Project's</h1>
@@ -51,7 +51,7 @@ p {
   padding: 0;
 }
 
-.container {
+.projects {
   height: 85vh;
   margin: 0 7%;
   display: flex;
@@ -61,10 +61,6 @@ p {
     margin: 0 10% 0;
     height: 100%;
   }
-}
-
-h2 {
-  color: $header-color;
 }
 
 .project_flex {
@@ -87,6 +83,7 @@ h2 {
     }
 
     h2 {
+      color: $header-color;
       margin-top: 15px;
       font-size: 20px;
       font-weight: bold;
@@ -94,14 +91,7 @@ h2 {
     }
 
     h2:after {
-      position: absolute;
-      content: "";
-      width: 103%;
-      height: 50%;
-      top: 0;
-      left: 0;
-      box-shadow: -3px 13px 0px 0px $shadow-color-opacity;
-      z-index: -1;
+      @include shadow;
     }
 
     p {

@@ -170,14 +170,7 @@ img {
     }
 
     a:after {
-      position: absolute;
-      content: "";
-      width: 102%;
-      height: 50%;
-      top: 0;
-      left: 0;
-      box-shadow: -3px 13px 0px 0px $shadow-color-opacity;
-      z-index: -1;
+      @include shadow;
     }
   }
 }
@@ -187,7 +180,7 @@ img {
   padding: 6px 60px;
   background: $shadow-color-opacity;
   border: 2px $text-color solid;
-  border-radius: 20px;
+  border-radius: 10px;
   cursor: pointer;
   color: $header-color;
   font-size: 20px;

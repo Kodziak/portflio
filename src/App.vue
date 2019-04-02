@@ -96,18 +96,7 @@ h1 {
 }
 
 h1:after {
-  position: absolute;
-  content: "";
-  width: 101%;
-  height: 50%;
-  top: 0;
-  left: 0;
-  box-shadow: -3px 30px 0px 0px $shadow-color-opacity;
-  z-index: -1;
-
-  @include mediaSmartfon {
-    box-shadow: -3px 20px 0px 0px $shadow-color-opacity;
-  }
+  @include shadow;
 }
 
 .menu {
@@ -133,11 +122,9 @@ h1:after {
       margin: 25px 10px;
     }
   }
-}
 
-.shadow {
-  position: absolute;
-  background-color: $shadow-color-opacity;
-  z-index: 1;
+  .button::after {
+    @include shadow;
+  }
 }
 </style>

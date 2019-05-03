@@ -38,6 +38,8 @@
 export default {
   name: "Projects"
 };
+
+// TODO: v-for instead of hard coded project_card. Info in params.
 </script>
 
 <style lang="scss">

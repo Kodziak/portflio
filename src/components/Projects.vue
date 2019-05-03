@@ -5,29 +5,11 @@
       <h1>Project's</h1>
     </div>
     <div class="project_flex">
-      <div class="project_card">
+      <div v-for="(item, index) in items" :key="index" class="project_card">
         <img src="../assets/Logo_mini.svg">
-        <h2>Portfolio</h2>
-        <p>This portfolio. Simple, SPA, light and made for introduce myself.</p>
-        <p>Stack: JavaScript, Vue, Sass</p>
-      </div>
-      <div class="project_card">
-        <img src="../assets/Logo_mini.svg">
-        <h2>Blog</h2>
-        <p>This portfolio. Simple, SPA, light and made for introduce myself.</p>
-        <p>Stack: 11ty, JavaScript, Sass</p>
-      </div>
-      <div class="project_card">
-        <img src="../assets/Logo_mini.svg">
-        <h2>Daily News</h2>
-        <p>This portfolio. Simple, SPA, light and made for introduce myself.</p>
-        <p>Stack: JavaScript, Vue, Axios, Cheerio, MongoDB</p>
-      </div>
-      <div class="project_card">
-        <img src="../assets/Logo_mini.svg">
-        <h2>Portfolio</h2>
-        <p>This portfolio. Simple, SPA, light and made for introduce myself.</p>
-        <p>Stack: JavaScript, Vue, Sass</p>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
+        <p>Stack: {{ item.stack }}</p>
       </div>
     </div>
     <div class="flex-1"></div>
@@ -36,7 +18,37 @@
 
 <script>
 export default {
-  name: "Projects"
+  name: "Projects",
+  data() {
+    return {
+      items: [
+        {
+          title: "Daily News",
+          description:
+            "This portfolio. Simple, SPA, light and made for introduce myself.",
+          stack: "JavaScript, Vue, Sass"
+        },
+        {
+          title: "Blog",
+          description:
+            "This portfolio. Simple, SPA, light and made for introduce myself.",
+          stack: "JavaScript, Vue, Sass"
+        },
+        {
+          title: "Daily News",
+          description:
+            "This portfolio. Simple, SPA, light and made for introduce myself.",
+          stack: "JavaScript, Vue, Sass"
+        },
+        {
+          title: "Blog",
+          description:
+            "This portfolio. Simple, SPA, light and made for introduce myself.",
+          stack: "JavaScript, Vue, Sass"
+        }
+      ]
+    };
+  }
 };
 
 // TODO: v-for instead of hard coded project_card. Info in params.

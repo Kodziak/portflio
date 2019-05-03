@@ -1,5 +1,22 @@
-# portfolio
+## ppaczoski.pl - personal website
 
-## clue
+Personal website to introduce myself. My look over the design and developing.
+Made as a SPA with Mobile First design and page is fully responsive.
 
-I've made this portfolio to better introduce myself. It was also a little exercise for merging my design, develop and testing (responsivness) skills.
+## Stage
+
+At the moment in deploying. Soon will be available.
+
+## Preview
+
+[gif - soon]
+
+## Tech used
+
+<b>Designed in:</b>
+
+- [Adobe Xd](https://www.adobe.com/pl/products/xd.html)
+
+<b>Built with:</b>
+
+- [Vue.js](https://vuejs.org)

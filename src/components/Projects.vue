@@ -5,11 +5,11 @@
       <h1>Project's</h1>
     </div>
     <div class="project_flex">
-      <div v-for="(item, index) in items" :key="index" class="project_card">
+      <div v-for="(project, index) in projects" :key="index" class="project_card">
         <img src="../assets/Logo_mini.svg">
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.description }}</p>
-        <p>Stack: {{ item.stack }}</p>
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.description }}</p>
+        <p>Stack: {{ project.stack }}</p>
       </div>
     </div>
     <div class="flex-1"></div>
@@ -21,7 +21,7 @@ export default {
   name: "Projects",
   data() {
     return {
-      items: [
+      projects: [
         {
           title: "Daily News",
           description:

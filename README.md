@@ -12,7 +12,7 @@ https://www.ppaczoski.pl
 
 ## Preview
 
-[gif - soon]
+![Portfolio demo](./portfolio.gif)
 
 ## Tech used
 

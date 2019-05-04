@@ -9,39 +9,19 @@
           <h2>I'm a Test Automation Developer.</h2>
         </div>
         <div class="home_content">
-          <div class="row">
+          <div v-for="(content, index) in desc" :key="index" class="row">
             <img src="../assets/Lines.svg">
-            <h3>Based in Poland.</h3>
-          </div>
-          <div class="row">
-            <img src="../assets/Lines.svg">
-            <h3>I write tests with Jest.io and Puppeteer.</h3>
-          </div>
-          <div class="row">
-            <img src="../assets/Lines.svg">
-            <h3>I write HTML, CSS and JavaScript with Vue.</h3>
-          </div>
-          <div class="row">
-            <img src="../assets/Lines.svg">
-            <h3>Sometimes I design in Adobe Xd.</h3>
+            <h3>{{ content }}</h3>
           </div>
         </div>
         <div class="home_links">
-          <div class="link">
-            <img src="../assets/Lines_mini.svg">
-            <a href="mailto:paczoski.przemyslaw@gmail.com">Say hello via mail</a>
-          </div>
-          <div class="link">
+          <div v-for="(list, index) in contact" :key="index" class="link">
             <img src="../assets/Lines_mini.svg">
             <a
-              target="_blank"
+              v-bind:target="/^http/.test(list.link) ? '_blank' : '_self'"
+              v-bind:href="list.link"
               rel="noopener noreferrer"
-              href="https://twitter.com/Kodziakkk"
-            >Follow me on Twitter</a>
-          </div>
-          <div class="link">
-            <img src="../assets/Lines_mini.svg">
-            <a target="_blank" rel="noopener noreferrer" href="https://floog.me">View my blog</a>
+            >{{ list.content }}</a>
           </div>
         </div>
         <a
@@ -61,7 +41,28 @@
 
 <script>
 export default {
-  name: "Home"
+  name: "Home",
+  data() {
+    return {
+      desc: [
+        "Based in Poland.",
+        "I write tests with Jest.io and Puppeteer.",
+        "I write HTML, CSS and JavaScript with Vue.",
+        "Sometimes I design in Adobe Xd."
+      ],
+      contact: [
+        {
+          link: "mailto:paczoski.przemyslaw@gmail.com",
+          content: "Say hello via mail"
+        },
+        {
+          link: "https://twitter.com/Kodziakkk",
+          content: "Follow me on Twitter"
+        },
+        { link: "https://floog.me", content: "View my blog" }
+      ]
+    };
+  }
 };
 </script>
 
@@ -180,7 +181,7 @@ img {
   padding: 6px 60px;
   background: $shadow-color-opacity;
   border: 2px $text-color solid;
-  border-radius: 10px;
+  border-radius: 3px;
   cursor: pointer;
   color: $header-color;
   font-size: 20px;

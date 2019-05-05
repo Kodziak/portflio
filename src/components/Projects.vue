@@ -55,7 +55,7 @@ export default {
           description:
             "This portfolio. Simple, SPA, light and made for introduce myself.",
           tags: ["html", "javascript", "scss"],
-          img: "../assets/Logo_mini.svg",
+          img: "./Logo_mini.svg",
           github: "http://localhost:8080",
           demo: "http://localhost:8080"
         },
@@ -64,7 +64,7 @@ export default {
           description:
             "This portfolio. Simple, SPA, light and made for introduce myself.",
           tags: ["html", "javascript", "scss"],
-          img: "../assets/Logo_mini.svg",
+          img: "../public/Logo_mini.svg",
           github: "http://localhost:8080",
           demo: "http://localhost:8080"
         },

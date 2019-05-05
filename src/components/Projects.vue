@@ -5,16 +5,16 @@
       <h1>Projects</h1>
     </div>
     <div class="project--flex">
-      <div v-for="(project, index) in projects" :key="index" class="project__card">
-        <img src="../assets/Logo_mini.svg">
-        <div class="project__card--bg project__card--flex">
+      <div v-for="(project, index) in projects" :key="index" class="project-card">
+        <img class="project-card__img" v-bind:src="project.img">
+        <div class="project-card--bg project-card--flex">
           <h2>{{ project.title }}</h2>
           <p>{{ project.description }}</p>
-          <div class="project__card__tags">
+          <div class="project-card__tags">
             <div
               v-for="(tag, index) in project.tags"
               :key="index"
-              class="project__card__tag"
+              class="project-card__tag"
             >{{ tag }}</div>
           </div>
           <div class="btn--row">
@@ -24,14 +24,18 @@
               v-bind:href="project.demo"
               rel="noopener noreferrer"
               class="btn btn--view"
-            ></a>
+            >
+              <img src="../assets/eye.svg">
+            </a>
             <a
               v-if="project.github"
               target="_blank"
               v-bind:href="project.github"
               rel="noopener noreferrer"
               class="btn btn--code"
-            ></a>
+            >
+              <img src="../assets/code.svg">
+            </a>
           </div>
         </div>
       </div>
@@ -51,25 +55,36 @@ export default {
           description:
             "This portfolio. Simple, SPA, light and made for introduce myself.",
           tags: ["html", "javascript", "scss"],
+          img: "../assets/Logo_mini.svg",
           github: "http://localhost:8080",
           demo: "http://localhost:8080"
-        },
-        {
-          title: "Blog",
-          description:
-            "This portfolio. Simple, SPA, light and made for introduce myself."
         },
         {
           title: "Daily News",
           description:
             "This portfolio. Simple, SPA, light and made for introduce myself.",
-          stack: "JavaScript, Vue, Sass"
+          tags: ["html", "javascript", "scss"],
+          img: "../assets/Logo_mini.svg",
+          github: "http://localhost:8080",
+          demo: "http://localhost:8080"
         },
         {
-          title: "Blog",
+          title: "Daily News",
           description:
             "This portfolio. Simple, SPA, light and made for introduce myself.",
-          stack: "JavaScript, Vue, Sass"
+          tags: ["html", "javascript", "scss"],
+          img: "../assets/Logo_mini.svg",
+          github: "http://localhost:8080",
+          demo: "http://localhost:8080"
+        },
+        {
+          title: "Daily News",
+          description:
+            "This portfolio. Simple, SPA, light and made for introduce myself.",
+          tags: ["html", "javascript", "scss"],
+          img: "../assets/Logo_mini.svg",
+          github: "http://localhost:8080",
+          demo: "http://localhost:8080"
         }
       ]
     };
@@ -96,13 +111,13 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 
   @include mediaSmartfon {
     justify-content: center;
   }
 
-  .project__card {
+  .project-card {
     width: 300px;
     margin: 50px 0 20px;
     color: $background-color;
@@ -116,7 +131,6 @@ export default {
       border-radius: 5px;
       position: relative;
       box-shadow: -5px 7px 2px $shadow-color-opacity;
-      height: 200px;
     }
 
     &--flex {
@@ -130,11 +144,10 @@ export default {
       justify-content: space-around;
       width: 200px;
       align-self: center;
-      margin: 20px 0 10px;
+      margin: 20px 0 0 0;
 
-      .project__card__tag {
+      .project-card__tag {
         font-size: 12px;
-        font-weight: 550;
         display: inline-block;
         padding: 2px 10px;
         border-radius: 3px;
@@ -147,7 +160,7 @@ export default {
       font-size: 20px;
       font-weight: bold;
       text-align: center;
-      margin: 10px 0;
+      margin: 20px 0;
     }
 
     p {
@@ -156,8 +169,8 @@ export default {
       text-align: center;
     }
 
-    img {
-      height: 210px;
+    &__img {
+      height: 250px;
       width: 300px;
       border-radius: 5px;
       background: #33333326;
@@ -171,6 +184,7 @@ export default {
     .btn--row {
       flex-direction: row;
       align-self: center;
+      margin: 10px 0 20px;
     }
 
     .btn--view,
@@ -178,6 +192,11 @@ export default {
       height: 25px;
       width: 115px;
       margin: 0 7.5px;
+
+      img {
+        height: 25px;
+        width: 25px;
+      }
     }
 
     .btn--code {

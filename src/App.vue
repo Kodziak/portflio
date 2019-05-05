@@ -4,7 +4,7 @@
       <div class="menu">
         <div class="flex-1"></div>
         <button
-          class="button"
+          class="menu-btn"
           v-for="btn in btns"
           :key="btn.id"
           v-on:click="selectComponent(btn.component, $event)"
@@ -107,7 +107,7 @@ h1:after {
   margin: 0 10%;
   position: relative;
 
-  .button {
+  &-btn {
     margin: 30px 30px;
     font-size: 20px;
     cursor: pointer;
@@ -118,7 +118,7 @@ h1:after {
     }
   }
 
-  .button::after {
+  &-btn::after {
     @include shadow;
   }
 }

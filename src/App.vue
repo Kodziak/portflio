@@ -125,4 +125,14 @@ h1:after {
     @include shadow;
   }
 }
+
+.btn {
+  display: inline-block;
+  color: $header-color;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 5px;
+  cursor: pointer;
+}
 </style>

@@ -28,7 +28,7 @@
           href="./CV_Przemyslaw_Paczoski.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          class="btn"
+          class="btn btn--resume"
         >view resume</a>
       </div>
       <div class="home__logo">
@@ -167,19 +167,13 @@ img {
   }
 }
 
-.btn {
-  display: inline-block;
-  text-align: center;
-  padding: 6px 60px;
+.btn--resume {
+  width: 250px;
+  line-height: 40px;
   background: $shadow-color-opacity;
   border: 1px $text-color solid;
-  border-radius: 5px;
-  cursor: pointer;
-  color: $header-color;
-  font-size: 20px;
 
   @include mediaSmartfon {
-    max-width: 150px;
     margin: auto;
     display: flex;
     justify-content: center;

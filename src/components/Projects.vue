@@ -140,7 +140,7 @@ export default {
         padding: 2px 10px;
         margin: 0 5px;
         border-radius: 3px;
-        box-shadow: 0px 1px 2px grey;
+        box-shadow: 0px 1px 2px lightgrey;
       }
     }
 

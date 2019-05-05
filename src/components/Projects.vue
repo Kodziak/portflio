@@ -107,7 +107,7 @@ export default {
   }
 
   .project-card {
-    width: 600px;
+    width: 300px;
     margin: 50px 20px 20px;
     color: $background-color;
 
@@ -161,7 +161,7 @@ export default {
     }
 
     &__img {
-      width: 600px;
+      width: 300px;
       border-radius: 5px;
       background: #33333326;
       position: relative;
@@ -188,8 +188,8 @@ export default {
 
     .btn--view,
     .btn--code {
-      height: 35px;
-      width: 200px;
+      height: 25px;
+      width: 115px;
       margin: 0 10px;
 
       @include mediaSmartfon {
@@ -197,8 +197,8 @@ export default {
       }
 
       img {
-        height: 35px;
-        width: 35px;
+        height: 25px;
+        width: 25px;
       }
     }
 

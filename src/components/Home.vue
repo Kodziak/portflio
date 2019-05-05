@@ -1,21 +1,21 @@
 <template>
   <div class="home">
     <div class="flex-1"></div>
-    <div class="home_grid">
-      <div class="container_content">
-        <div class="home_header">
+    <div class="home--grid">
+      <div class="home__container">
+        <div class="home__header">
           <h1>Hi, I'm Przemek.</h1>
           <br>
           <h2>I'm a Test Automation Developer.</h2>
         </div>
-        <div class="home_content">
-          <div v-for="(content, index) in desc" :key="index" class="row">
+        <div class="home__content">
+          <div v-for="(content, index) in desc" :key="index" class="home__content__row">
             <img src="../assets/Lines.svg">
             <h3>{{ content }}</h3>
           </div>
         </div>
-        <div class="home_links">
-          <div v-for="(list, index) in contact" :key="index" class="link">
+        <div class="home__links">
+          <div v-for="(list, index) in contact" :key="index" class="home__link">
             <img src="../assets/Lines_mini.svg">
             <a
               v-bind:target="/^http/.test(list.link) ? '_blank' : '_self'"
@@ -28,10 +28,10 @@
           href="./CV_Przemyslaw_Paczoski.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          class="button resume_button"
+          class="btn"
         >view resume</a>
       </div>
-      <div class="container_logo">
+      <div class="home__logo">
         <img src="../assets/Logo.svg">
       </div>
     </div>
@@ -106,7 +106,7 @@ img {
   margin: auto 5px auto 0;
 }
 
-.home_grid {
+.home--grid {
   display: grid;
   grid-template-columns: 10% 40% 40% 10%;
 
@@ -114,11 +114,11 @@ img {
     grid-template-columns: 7% 86% 7%;
   }
 
-  .container_content {
+  .home__container {
     grid-column-start: 2;
   }
 
-  .container_logo {
+  .home__logo {
     grid-column-start: 3;
     display: flex;
     justify-content: flex-end;
@@ -133,7 +133,7 @@ img {
   }
 }
 
-.home_header {
+.home__header {
   position: relative;
 
   @include mediaSmartfon {
@@ -141,24 +141,22 @@ img {
   }
 }
 
-.home_content {
+.home__content {
   margin: 35px 0;
 
-  .row {
+  &__row {
     display: flex;
     flex-direction: row;
     margin: 13px 0;
   }
 }
 
-.home_links {
+.home__links {
   color: $text-color;
-  display: flex;
-  flex-direction: column;
-  margin: 50px 0;
+  margin: 35px 0;
 
-  .link {
-    margin: 2px 0;
+  .home__link {
+    margin: 5px 0;
     display: flex;
 
     a {
@@ -176,17 +174,20 @@ img {
   }
 }
 
-.button {
+.btn {
+  display: inline-block;
   text-align: center;
   padding: 6px 60px;
   background: $shadow-color-opacity;
-  border: 2px $text-color solid;
-  border-radius: 3px;
+  border: 1px $text-color solid;
+  border-radius: 5px;
   cursor: pointer;
   color: $header-color;
   font-size: 20px;
 
   @include mediaSmartfon {
+    max-width: 150px;
+    margin: auto;
     display: flex;
     justify-content: center;
   }

@@ -2,7 +2,6 @@
   <div id="app">
     <header>
       <div class="menu">
-        <img src="./assets/Logo_mini.svg">
         <div class="flex-1"></div>
         <button
           class="button"
@@ -51,6 +50,10 @@ export default {
 
 <style lang="scss">
 @import "components/config";
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -103,14 +106,6 @@ h1:after {
   display: flex;
   margin: 0 10%;
   position: relative;
-
-  img {
-    display: none;
-
-    @include mediaSmartfon {
-      display: block;
-    }
-  }
 
   .button {
     margin: 30px 30px;

@@ -2,7 +2,7 @@
   <div class="projects">
     <div class="flex-1"></div>
     <div class="project_header">
-      <h1>Project's</h1>
+      <h1>Projects</h1>
     </div>
     <div class="project_flex">
       <div v-for="(project, index) in projects" :key="index" class="project_card">
@@ -67,7 +67,7 @@ p {
 
 .projects {
   height: 85vh;
-  margin: 0 7%;
+  margin: 0 10%;
   display: flex;
   flex-direction: column;
 

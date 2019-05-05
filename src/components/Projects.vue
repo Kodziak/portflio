@@ -112,6 +112,7 @@ export default {
     color: $background-color;
 
     @include mediaSmartfon {
+      width: 300px;
       margin: 35px 0 15px;
     }
 
@@ -167,12 +168,22 @@ export default {
       margin-bottom: -10px;
 
       box-shadow: -5px 7px 2px $shadow-color-opacity;
+
+      @include mediaSmartfon {
+        width: 300px;
+      }
     }
 
     .btn--row {
-      flex-direction: row;
+      display: inline-block;
       align-self: center;
       margin: 10px 0 20px;
+
+      @include mediaSmartfon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
     }
 
     .btn--view,
@@ -180,6 +191,10 @@ export default {
       height: 35px;
       width: 200px;
       margin: 0 10px;
+
+      @include mediaSmartfon {
+        margin: 5px auto;
+      }
 
       img {
         height: 35px;

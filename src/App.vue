@@ -37,10 +37,10 @@ export default {
   methods: {
     selectComponent: function(component, event) {
       if (this.activeLink) {
-        this.activeLink.classList.remove("active");
+        this.activeLink.classList.remove("menu-btn--active");
       }
       this.activeLink = event.target;
-      this.activeLink.classList.add("active");
+      this.activeLink.classList.add("menu-btn--active");
 
       this.selectedComponent = component;
     }
@@ -76,7 +76,7 @@ body {
   flex-grow: 1;
 }
 
-.active {
+.menu-btn--active {
   font-weight: 600;
 }
 
@@ -84,7 +84,10 @@ h1,
 h2,
 h3,
 p {
+  color: #cecece;
   display: inline-block;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {

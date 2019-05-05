@@ -75,13 +75,6 @@ export default {
   flex-direction: column;
 }
 
-h1,
-h2,
-h3 {
-  margin: 0;
-  padding: 0;
-}
-
 h2 {
   color: $text-color;
   font-size: 30px;

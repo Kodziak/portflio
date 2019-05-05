@@ -1,11 +1,11 @@
 <template>
-  <div class="projects">
+  <div class="project">
     <div class="flex-1"></div>
-    <div class="project_header">
+    <div>
       <h1>Projects</h1>
     </div>
-    <div class="project_flex">
-      <div v-for="(project, index) in projects" :key="index" class="project_card">
+    <div class="project--flex">
+      <div v-for="(project, index) in projects" :key="index" class="project__card">
         <img src="../assets/Logo_mini.svg">
         <h2>{{ project.title }}</h2>
         <p>{{ project.description }}</p>
@@ -50,22 +50,12 @@ export default {
     };
   }
 };
-
-// TODO: v-for instead of hard coded project_card. Info in params.
 </script>
 
 <style lang="scss">
 @import "config";
 
-h1,
-h2,
-p {
-  color: #cecece;
-  margin: 0;
-  padding: 0;
-}
-
-.projects {
+.project {
   height: 85vh;
   margin: 0 10%;
   display: flex;
@@ -77,7 +67,7 @@ p {
   }
 }
 
-.project_flex {
+.project--flex {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -87,7 +77,7 @@ p {
     justify-content: center;
   }
 
-  .project_card {
+  .project__card {
     width: 220px;
     margin: 50px 0 20px;
     position: relative;

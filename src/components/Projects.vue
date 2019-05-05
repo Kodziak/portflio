@@ -51,40 +51,29 @@ export default {
     return {
       projects: [
         {
-          title: "Daily News",
+          title: "Portfolio",
           description:
-            "This portfolio. Simple, SPA, light and made for introduce myself.",
-          tags: ["html", "javascript", "scss"],
-          img: "./Logo_mini.svg",
-          github: "http://localhost:8080",
-          demo: "http://localhost:8080"
+            "Personal website to introduce myself. My look over the design and developing. Made as a SPA with Mobile First design and page is fully responsive.",
+          tags: ["vue", "scss"],
+          img: "./portfolio.jpg",
+          github: "https://github.com/Kodziak/portfolio",
+          demo: "https://ppaczoski.pl"
         },
         {
           title: "Daily News",
           description:
-            "This portfolio. Simple, SPA, light and made for introduce myself.",
-          tags: ["html", "javascript", "scss"],
-          img: "../public/Logo_mini.svg",
-          github: "http://localhost:8080",
-          demo: "http://localhost:8080"
+            "Information website where user/client can follow the newest information from QA world.",
+          tags: ["nodejs", "vue", "mongodb"],
+          img: "./portfolio.jpg",
+          github: "https://github.com/Kodziak/daily-news"
         },
         {
-          title: "Daily News",
+          title: "Blog",
           description:
-            "This portfolio. Simple, SPA, light and made for introduce myself.",
-          tags: ["html", "javascript", "scss"],
-          img: "../assets/Logo_mini.svg",
-          github: "http://localhost:8080",
-          demo: "http://localhost:8080"
-        },
-        {
-          title: "Daily News",
-          description:
-            "This portfolio. Simple, SPA, light and made for introduce myself.",
-          tags: ["html", "javascript", "scss"],
-          img: "../assets/Logo_mini.svg",
-          github: "http://localhost:8080",
-          demo: "http://localhost:8080"
+            "A personal blog. The whole idea comes to share experience learning automation tests scripts and programming.",
+          tags: ["11ty", "javascript", "scss"],
+          img: "./portfolio.jpg",
+          github: "https://github.com/Kodziak/blog"
         }
       ]
     };
@@ -118,8 +107,8 @@ export default {
   }
 
   .project-card {
-    width: 300px;
-    margin: 50px 0 20px;
+    width: 600px;
+    margin: 50px 20px 20px;
     color: $background-color;
 
     @include mediaSmartfon {
@@ -142,7 +131,6 @@ export default {
       display: flex;
       flex-flow: row wrap;
       justify-content: space-around;
-      width: 200px;
       align-self: center;
       margin: 20px 0 0 0;
 
@@ -150,6 +138,7 @@ export default {
         font-size: 12px;
         display: inline-block;
         padding: 2px 10px;
+        margin: 0 5px;
         border-radius: 3px;
         box-shadow: 0px 1px 2px grey;
       }
@@ -157,25 +146,24 @@ export default {
 
     h2 {
       color: $background-color;
-      font-size: 20px;
+      font-size: 22px;
       font-weight: bold;
       text-align: center;
-      margin: 20px 0;
+      margin: 20px 0 10px;
     }
 
     p {
       color: $background-color;
       font-size: 15px;
       text-align: center;
+      margin: 0 10px;
     }
 
     &__img {
-      height: 250px;
-      width: 300px;
+      width: 600px;
       border-radius: 5px;
       background: #33333326;
       position: relative;
-      z-index: 0;
       margin-bottom: -10px;
 
       box-shadow: -5px 7px 2px $shadow-color-opacity;
@@ -189,13 +177,13 @@ export default {
 
     .btn--view,
     .btn--code {
-      height: 25px;
-      width: 115px;
-      margin: 0 7.5px;
+      height: 35px;
+      width: 200px;
+      margin: 0 10px;
 
       img {
-        height: 25px;
-        width: 25px;
+        height: 35px;
+        width: 35px;
       }
     }
 

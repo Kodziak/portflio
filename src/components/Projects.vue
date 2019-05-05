@@ -53,7 +53,7 @@ export default {
         {
           title: "Portfolio",
           description:
-            "Personal website to introduce myself. My look over the design and developing. Made as a SPA with Mobile First design and page is fully responsive.",
+            "Personal website to introduce myself. My look over the design and developing.",
           tags: ["vue", "scss"],
           img: "./portfolio.jpg",
           github: "https://github.com/Kodziak/portfolio",
@@ -107,7 +107,7 @@ export default {
   }
 
   .project-card {
-    width: 300px;
+    width: 400px;
     margin: 50px 20px 20px;
     color: $background-color;
 
@@ -161,7 +161,7 @@ export default {
     }
 
     &__img {
-      width: 300px;
+      width: 400px;
       border-radius: 5px;
       background: #33333326;
       position: relative;
@@ -188,8 +188,8 @@ export default {
 
     .btn--view,
     .btn--code {
-      height: 25px;
-      width: 115px;
+      height: 30px;
+      width: 155px;
       margin: 0 10px;
 
       @include mediaSmartfon {
@@ -197,8 +197,8 @@ export default {
       }
 
       img {
-        height: 25px;
-        width: 25px;
+        height: 30px;
+        width: 30px;
       }
     }
 

@@ -72,7 +72,7 @@ export default {
           description:
             "A personal blog. The whole idea comes to share experience learning automation tests scripts and programming.",
           tags: ["11ty", "javascript", "scss"],
-          img: "./portfolio.jpg",
+          img: "./blog.jpg",
           github: "https://github.com/Kodziak/blog"
         }
       ]

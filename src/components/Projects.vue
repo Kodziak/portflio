@@ -78,13 +78,6 @@ export default {
 <style lang="scss">
 @import "config";
 
-// Zrobić grida na głównym elemencie
-// dwie kolumny
-// trzy wiersze
-// główny element ma paddingi 20px
-// pierwsza kolumna ma border-right
-//
-
 .project {
   margin: 0 10%;
 
@@ -111,7 +104,7 @@ export default {
       background: white;
       padding: 20px;
       position: relative;
-      box-shadow: -5px 7px 2px $shadow-color-opacity;
+      box-shadow: -5px 7px 2px $shadow-color-opacity, 1px -1px 2px #141414;
     }
 
     &--grid {
@@ -122,6 +115,19 @@ export default {
       @include mediaSmartfon {
         display: flex;
         flex-direction: column;
+      }
+    }
+
+    &__img {
+      width: $card-width;
+      background: #33333326;
+      position: relative;
+      margin-bottom: -10px;
+
+      box-shadow: -5px 7px 2px $shadow-color-opacity, 1px -1px 2px #141414;
+
+      @include mediaSmartfon {
+        width: $card-width-mobile;
       }
     }
 
@@ -167,19 +173,6 @@ export default {
 
       @include mediaSmartfon {
         padding: 10px 0;
-      }
-    }
-
-    &__img {
-      width: $card-width;
-      background: #33333326;
-      position: relative;
-      margin-bottom: -10px;
-
-      box-shadow: -5px 7px 2px $shadow-color-opacity;
-
-      @include mediaSmartfon {
-        width: $card-width-mobile;
       }
     }
 

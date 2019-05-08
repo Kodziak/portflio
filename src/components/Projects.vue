@@ -64,7 +64,7 @@ export default {
           description:
             "Information website where user/client can follow the newest information from QA world.",
           tags: ["nodejs", "vue", "mongodb"],
-          img: "./portfolio.jpg",
+          img: "./cat.jpg",
           github: "https://github.com/Kodziak/daily-news"
         },
         {

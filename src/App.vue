@@ -67,6 +67,10 @@ body {
   }
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 #app {
   display: flex;
   flex-direction: column;
@@ -117,7 +121,13 @@ h1:after {
     position: relative;
 
     @include mediaSmartfon {
-      margin: 25px 10px;
+      margin: 25px 15px;
+    }
+  }
+
+  &-btn:last-child {
+    @include mediaSmartfon {
+      margin: 25px 0 25px 15px;
     }
   }
 
@@ -128,11 +138,12 @@ h1:after {
 
 .btn {
   display: inline-block;
+  line-height: 42px;
   color: $header-color;
   font-size: 20px;
   text-align: center;
   vertical-align: middle;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
 }
 </style>

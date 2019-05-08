@@ -1,46 +1,40 @@
 <template>
   <div class="project">
-    <div class="flex-1"></div>
     <div>
       <h1>Projects</h1>
     </div>
     <div class="project--flex">
       <div v-for="(project, index) in projects" :key="index" class="project-card">
-        <img class="project-card__img" v-bind:src="project.img">
-        <div class="project-card--bg project-card--flex">
+        <img class="project-card__img bor-rad-3" v-bind:src="project.img">
+        <div class="project-card__desc project-card--grid bor-rad-3">
           <h2>{{ project.title }}</h2>
-          <p>{{ project.description }}</p>
           <div class="project-card__tags">
             <div
               v-for="(tag, index) in project.tags"
               :key="index"
-              class="project-card__tag"
+              class="project-card__tag bor-rad-3"
             >{{ tag }}</div>
           </div>
-          <div class="btn--row">
+          <p>{{ project.description }}</p>
+          <div class="project-card__btn--row">
             <a
               v-if="project.demo"
               target="_blank"
               v-bind:href="project.demo"
               rel="noopener noreferrer"
               class="btn btn--view"
-            >
-              <img src="../assets/eye.svg">
-            </a>
+            >demo</a>
             <a
               v-if="project.github"
               target="_blank"
               v-bind:href="project.github"
               rel="noopener noreferrer"
               class="btn btn--code"
-            >
-              <img src="../assets/code.svg">
-            </a>
+            >code</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="flex-1"></div>
   </div>
 </template>
 
@@ -54,7 +48,7 @@ export default {
           title: "Portfolio",
           description:
             "Personal website to introduce myself. My look over the design and developing.",
-          tags: ["vue", "scss"],
+          tags: ["javascript", "vue", "scss"],
           img: "./portfolio.jpg",
           github: "https://github.com/Kodziak/portfolio",
           demo: "https://ppaczoski.pl"
@@ -84,11 +78,15 @@ export default {
 <style lang="scss">
 @import "config";
 
+// Zrobić grida na głównym elemencie
+// dwie kolumny
+// trzy wiersze
+// główny element ma paddingi 20px
+// pierwsza kolumna ma border-right
+//
+
 .project {
-  height: 85vh;
   margin: 0 10%;
-  display: flex;
-  flex-direction: column;
 
   @include mediaSmartfon {
     margin: 0 10% 0;
@@ -98,50 +96,48 @@ export default {
 
 .project--flex {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-
-  @include mediaSmartfon {
-    justify-content: center;
-  }
+  flex-direction: column;
+  align-items: center;
 
   .project-card {
-    width: 400px;
-    margin: 50px 20px 20px;
-    color: $background-color;
+    width: $card-width;
+    margin: 50px 0;
 
     @include mediaSmartfon {
-      width: 300px;
-      margin: 35px 0 15px;
+      width: $card-width-mobile;
     }
 
-    &--bg {
+    &__desc {
       background: white;
-      border-radius: 5px;
+      padding: 20px;
       position: relative;
       box-shadow: -5px 7px 2px $shadow-color-opacity;
     }
 
-    &--flex {
-      display: flex;
-      flex-direction: column;
+    &--grid {
+      display: grid;
+      grid-template-columns: 215px auto;
+      grid-template-rows: repeat(auto-fit, minmax(10%, 50%));
+
+      @include mediaSmartfon {
+        display: flex;
+        flex-direction: column;
+      }
     }
 
     &__tags {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-around;
-      align-self: center;
-      margin: 20px 0 0 0;
+      grid-column: 2;
+      grid-row-start: 1;
+      place-self: center;
 
       .project-card__tag {
         font-size: 12px;
         display: inline-block;
-        padding: 2px 10px;
-        margin: 0 5px;
-        border-radius: 3px;
+        background: $shadow-color-opacity;
+        color: white;
+        padding: 3px 10px;
         box-shadow: 0px 1px 2px lightgrey;
+        margin: 0 5px;
       }
     }
 
@@ -150,19 +146,32 @@ export default {
       font-size: 22px;
       font-weight: bold;
       text-align: center;
-      margin: 20px 0 10px;
+
+      grid-column: 1;
+      grid-row: 1 / 4;
+      place-self: center;
+
+      @include mediaSmartfon {
+        margin-bottom: 10px;
+      }
     }
 
     p {
       color: $background-color;
-      font-size: 15px;
+      font-size: 16px;
       text-align: center;
-      margin: 0 10px;
+      padding: 30px 0;
+
+      grid-column: 2;
+      grid-row-start: 2;
+
+      @include mediaSmartfon {
+        padding: 10px 0;
+      }
     }
 
     &__img {
-      width: 400px;
-      border-radius: 5px;
+      width: $card-width;
       background: #33333326;
       position: relative;
       margin-bottom: -10px;
@@ -170,35 +179,33 @@ export default {
       box-shadow: -5px 7px 2px $shadow-color-opacity;
 
       @include mediaSmartfon {
-        width: 300px;
+        width: $card-width-mobile;
       }
     }
 
-    .btn--row {
-      display: inline-block;
-      align-self: center;
-      margin: 10px 0 20px;
+    .project-card__btn--row {
+      grid-column-start: 2;
+      grid-row-start: 3;
+      place-self: center;
 
       @include mediaSmartfon {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        align-content: center;
       }
     }
 
     .btn--view,
     .btn--code {
-      height: 30px;
-      width: 155px;
+      width: 180px;
       margin: 0 10px;
 
       @include mediaSmartfon {
-        margin: 5px auto;
-      }
+        margin: 0;
 
-      img {
-        height: 30px;
-        width: 30px;
+        &:nth-child(2) {
+          margin: 20px 0 0 0;
+        }
       }
     }
 
@@ -207,6 +214,7 @@ export default {
     }
 
     .btn--view {
+      color: $shadow-color;
       border: 1px solid $shadow-color;
     }
   }

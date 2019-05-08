@@ -29,7 +29,7 @@
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn--resume"
-        >view resume</a>
+        >resume</a>
       </div>
       <div class="home__logo">
         <img src="../assets/Logo.svg">
@@ -168,10 +168,8 @@ img {
 }
 
 .btn--resume {
-  width: 250px;
-  line-height: 40px;
+  width: 160px;
   background: $shadow-color-opacity;
-  border: 1px $text-color solid;
 
   @include mediaSmartfon {
     margin: auto;

@@ -4,6 +4,9 @@ $text-color: #cecece;
 $shadow-color-opacity: rgba(126, 0, 184, 0.4);
 $shadow-color: #7f00b8;
 
+$card-width: 700px;
+$card-width-mobile: 300px;
+
 @mixin mediaDesktop {
   @media screen and (min-width: 1001px) {
     @content;
@@ -25,4 +28,8 @@ $shadow-color: #7f00b8;
   left: -2px;
   background: $shadow-color-opacity;
   z-index: -1;
+}
+
+.bor-rad-3 {
+  border-radius: 3px;
 }

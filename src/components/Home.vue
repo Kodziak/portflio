@@ -122,6 +122,7 @@ img {
 
     img {
       margin: auto 0 auto auto;
+      animation: spin 4s linear infinite;
     }
   }
 }

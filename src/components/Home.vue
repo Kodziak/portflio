@@ -15,14 +15,7 @@
           </div>
         </div>
         <div class="home__links">
-          <div v-for="(list, index) in contact" :key="index" class="home__link">
-            <img src="../assets/Lines_mini.svg">
-            <a
-              v-bind:target="/^http/.test(list.link) ? '_blank' : '_self'"
-              v-bind:href="list.link"
-              rel="noopener noreferrer"
-            >{{ list.content }}</a>
-          </div>
+          <Item v-for="(contact, index) in contacts" :key="index" :contact="contact"/>
         </div>
         <a
           href="./CV_Przemyslaw_Paczoski.pdf"
@@ -40,8 +33,13 @@
 </template>
 
 <script>
+import Item from "./Item.vue";
+
 export default {
   name: "Home",
+  components: {
+    Item
+  },
   data() {
     return {
       desc: [
@@ -50,7 +48,7 @@ export default {
         "I write HTML, CSS and JavaScript with Vue.",
         "Sometimes I design in Adobe Xd."
       ],
-      contact: [
+      contacts: [
         {
           link: "mailto:paczoski.przemyslaw@gmail.com",
           content: "Say hello via mail"

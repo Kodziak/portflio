@@ -38,6 +38,7 @@ export default {
   a::before {
     position: absolute;
     content: url("../../assets/Lines_mini.svg");
+    top: -2px;
     left: -23px;
   }
 

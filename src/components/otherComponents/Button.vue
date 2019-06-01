@@ -36,6 +36,16 @@ export default {
   cursor: pointer;
 }
 
+.btn--resume {
+  background: $shadow-color-opacity;
+
+  @include mediaSmartfon {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .btn--code {
   margin: 0 10px;
   background: $background-color;

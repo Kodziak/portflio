@@ -144,15 +144,4 @@ img {
   color: $text-color;
   margin: 35px 0;
 }
-
-.btn--resume {
-  width: 160px;
-  background: $shadow-color-opacity;
-
-  @include mediaSmartfon {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-  }
-}
 </style>

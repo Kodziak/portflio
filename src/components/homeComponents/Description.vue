@@ -13,15 +13,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../config";
+
 h3 {
   position: relative;
+  width: calc(100% - 30px);
   left: 30px;
 }
 
 h3::before {
   position: absolute;
   content: url("../../assets/Lines.svg");
-  width: 100%;
+  top: -5px;
   left: -30px;
+
+  @include mediaSmartfon {
+    top: 0;
+  }
 }
 </style>

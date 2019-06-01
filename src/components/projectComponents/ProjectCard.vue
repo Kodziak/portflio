@@ -8,7 +8,7 @@
       </div>
       <p>{{ project.description }}</p>
       <div class="project-card__btn--row">
-        <Button v-for="(btn, index) in project.btns" :key="index" :btn="btn">code</Button>
+        <Button v-for="(btn, index) in project.btns" :key="index" :btn="btn">{{ btn.name }}</Button>
       </div>
     </div>
   </div>
@@ -31,3 +31,94 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+@import "../config";
+
+.project-card {
+  width: $card-width;
+  margin: 50px 0;
+
+  @include mediaSmartfon {
+    width: $card-width-mobile;
+  }
+
+  &__desc {
+    background: white;
+    padding: 20px;
+    position: relative;
+    box-shadow: -5px 7px 2px $shadow-color-opacity, 1px -1px 2px #141414;
+  }
+
+  &--grid {
+    display: grid;
+    grid-template-columns: 215px auto;
+    grid-template-rows: repeat(auto-fit, minmax(10%, 50%));
+
+    @include mediaSmartfon {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__img {
+    width: $card-width;
+    background: #33333326;
+    position: relative;
+    margin-bottom: -10px;
+
+    box-shadow: -5px 7px 2px $shadow-color-opacity, 1px -1px 2px #141414;
+
+    @include mediaSmartfon {
+      width: $card-width-mobile;
+    }
+  }
+
+  &__tags {
+    grid-column: 2;
+    grid-row-start: 1;
+    place-self: center;
+  }
+
+  h2 {
+    color: $background-color;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+
+    grid-column: 1;
+    grid-row: 1 / 4;
+    place-self: center;
+
+    @include mediaSmartfon {
+      margin-bottom: 10px;
+    }
+  }
+
+  p {
+    color: $background-color;
+    font-size: 16px;
+    text-align: center;
+    padding: 30px 0;
+
+    grid-column: 2;
+    grid-row-start: 2;
+
+    @include mediaSmartfon {
+      padding: 10px 0;
+    }
+  }
+
+  .project-card__btn--row {
+    grid-column-start: 2;
+    grid-row-start: 3;
+    place-self: center;
+
+    @include mediaSmartfon {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+    }
+  }
+}
+</style>

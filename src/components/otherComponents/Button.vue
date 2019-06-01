@@ -1,5 +1,11 @@
 <template>
-  <a target="_blank" v-bind:href="btn.link" rel="noopener noreferrer" class="btn">
+  <a
+    target="_blank"
+    v-bind:href="btn.link"
+    rel="noopener noreferrer"
+    class="btn"
+    v-bind:class="btn.class"
+  >
     <slot></slot>
   </a>
 </template>

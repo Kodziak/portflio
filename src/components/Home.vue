@@ -14,12 +14,7 @@
         <div class="home__links">
           <Link v-for="(contact, index) in contacts" :key="index" :contact="contact"/>
         </div>
-        <a
-          href="./CV_Przemyslaw_Paczoski.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn--resume"
-        >resume</a>
+        <Button :btn="btn">{{ btn.name }}</Button>
       </div>
       <div class="home__logo">
         <img src="../assets/Logo.svg">
@@ -32,12 +27,14 @@
 <script>
 import Link from "./homeComponents/Link.vue";
 import Description from "./homeComponents/Description.vue";
+import Button from "./otherComponents/Button";
 
 export default {
   name: "Home",
   components: {
     Link,
-    Description
+    Description,
+    Button
   },
   data() {
     return {
@@ -59,6 +56,7 @@ export default {
         { link: "https://floog.me", content: "View my blog" }
       ],
       btn: {
+        name: "resume",
         link: "./CV_Przemyslaw_Paczoski.pdf",
         class: "btn--resume"
       }

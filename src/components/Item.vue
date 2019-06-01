@@ -1,6 +1,5 @@
 <template>
-  <div class="home__link">
-    <img src="../assets/Lines_mini.svg">
+  <div class="link">
     <a
       v-bind:target="/^http/.test(contact.link) ? '_blank' : '_self'"
       v-bind:href="contact.link"
@@ -19,3 +18,31 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+@import "config";
+
+.link {
+  margin: 5px 0;
+  display: flex;
+
+  a {
+    cursor: pointer;
+    position: relative;
+
+    @include mediaSmartfon {
+      font-size: 15px;
+    }
+  }
+
+  a::before {
+    position: absolute;
+    content: url("../assets/Lines_mini.svg");
+    left: -23px;
+  }
+
+  a:after {
+    @include shadow;
+  }
+}
+</style>

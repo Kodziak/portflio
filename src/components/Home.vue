@@ -146,24 +146,6 @@ img {
 .home__links {
   color: $text-color;
   margin: 35px 0;
-
-  .home__link {
-    margin: 5px 0;
-    display: flex;
-
-    a {
-      cursor: pointer;
-      position: relative;
-
-      @include mediaSmartfon {
-        font-size: 15px;
-      }
-    }
-
-    a:after {
-      @include shadow;
-    }
-  }
 }
 
 .btn--resume {

@@ -136,14 +136,7 @@ h1:after {
   }
 }
 
-.btn {
-  display: inline-block;
-  line-height: 42px;
-  color: $header-color;
-  font-size: 20px;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: 3px;
-  cursor: pointer;
+.shadow {
+  @include shadow;
 }
 </style>

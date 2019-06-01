@@ -9,13 +9,10 @@
           <h2>I'm a Test Automation Developer.</h2>
         </div>
         <div class="home__content">
-          <div v-for="(content, index) in desc" :key="index" class="home__content__row">
-            <img src="../assets/Lines.svg">
-            <h3>{{ content }}</h3>
-          </div>
+          <Description v-for="(content, index) in desc" :key="index" :content="content"/>
         </div>
         <div class="home__links">
-          <Item v-for="(contact, index) in contacts" :key="index" :contact="contact"/>
+          <Link v-for="(contact, index) in contacts" :key="index" :contact="contact"/>
         </div>
         <a
           href="./CV_Przemyslaw_Paczoski.pdf"
@@ -33,12 +30,14 @@
 </template>
 
 <script>
-import Item from "./Item.vue";
+import Link from "./homeComponents/Link.vue";
+import Description from "./homeComponents/Description.vue";
 
 export default {
   name: "Home",
   components: {
-    Item
+    Link,
+    Description
   },
   data() {
     return {
@@ -58,13 +57,17 @@ export default {
           content: "Follow me on Twitter"
         },
         { link: "https://floog.me", content: "View my blog" }
-      ]
+      ],
+      btn: {
+        link: "./CV_Przemyslaw_Paczoski.pdf",
+        class: "btn--resume"
+      }
     };
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "config";
 
 .home {
@@ -135,12 +138,8 @@ img {
 
 .home__content {
   margin: 35px 0;
-
-  &__row {
-    display: flex;
-    flex-direction: row;
-    margin: 13px 0;
-  }
+  flex-direction: column;
+  margin: 13px 0;
 }
 
 .home__links {

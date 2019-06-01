@@ -8,31 +8,20 @@
       </div>
       <p>{{ project.description }}</p>
       <div class="project-card__btn--row">
-        <a
-          v-if="project.demo"
-          target="_blank"
-          v-bind:href="project.demo"
-          rel="noopener noreferrer"
-          class="btn btn--view"
-        >demo</a>
-        <a
-          v-if="project.github"
-          target="_blank"
-          v-bind:href="project.github"
-          rel="noopener noreferrer"
-          class="btn btn--code"
-        >code</a>
+        <Button v-for="(btn, index) in project.btns" :key="index" :btn="btn">code</Button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Tag from "./projectComponents/Tag";
+import Tag from "./Tag";
+import Button from "../otherComponents/Button";
 
 export default {
   components: {
-    Tag
+    Tag,
+    Button
   },
   props: {
     project: {

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import ProjectCard from "./ProjectCard.vue";
+import ProjectCard from "./projectComponents/ProjectCard.vue";
 
 export default {
   name: "Projects",
@@ -27,8 +27,16 @@ export default {
             "Personal website to introduce myself. My look over the design and developing.",
           tags: ["javascript", "vue", "scss"],
           img: "./portfolio.jpg",
-          github: "https://github.com/Kodziak/portfolio",
-          demo: "https://ppaczoski.pl"
+          btns: [
+            {
+              link: "https://github.com/Kodziak/portfolio",
+              class: "btn--code"
+            },
+            {
+              link: "https://ppaczoski.pl",
+              class: "btn--view"
+            }
+          ]
         },
         {
           title: "Daily News",
@@ -36,7 +44,12 @@ export default {
             "Information website where user/client can follow the newest information from QA world.",
           tags: ["nodejs", "vue", "mongodb"],
           img: "./cat.jpg",
-          github: "https://github.com/Kodziak/daily-news"
+          btns: [
+            {
+              link: "https://github.com/Kodziak/daily-news",
+              class: "btn--code"
+            }
+          ]
         },
         {
           title: "Blog",
@@ -44,7 +57,12 @@ export default {
             "A personal blog. The whole idea comes to share experience learning automation tests scripts and programming.",
           tags: ["11ty", "javascript", "scss"],
           img: "./blog.jpg",
-          github: "https://github.com/Kodziak/blog"
+          btns: [
+            {
+              link: "https://github.com/Kodziak/blog",
+              class: "btn--code"
+            }
+          ]
         }
       ]
     };
@@ -153,29 +171,6 @@ export default {
         flex-direction: column;
         align-content: center;
       }
-    }
-
-    .btn--view,
-    .btn--code {
-      width: 180px;
-      margin: 0 10px;
-
-      @include mediaSmartfon {
-        margin: 0;
-
-        &:nth-child(2) {
-          margin: 20px 0 0 0;
-        }
-      }
-    }
-
-    .btn--code {
-      background: $background-color;
-    }
-
-    .btn--view {
-      color: $shadow-color;
-      border: 1px solid $shadow-color;
     }
   }
 }

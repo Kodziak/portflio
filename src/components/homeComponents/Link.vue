@@ -20,15 +20,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "config";
+@import "../config";
 
 .link {
   margin: 5px 0;
-  display: flex;
 
   a {
     cursor: pointer;
     position: relative;
+    left: 23px;
 
     @include mediaSmartfon {
       font-size: 15px;
@@ -37,7 +37,7 @@ export default {
 
   a::before {
     position: absolute;
-    content: url("../assets/Lines_mini.svg");
+    content: url("../../assets/Lines_mini.svg");
     left: -23px;
   }
 

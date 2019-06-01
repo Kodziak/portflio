@@ -4,11 +4,7 @@
     <div class="project-card__desc project-card--grid bor-rad-3">
       <h2>{{ project.title }}</h2>
       <div class="project-card__tags">
-        <div
-          v-for="(tag, index) in project.tags"
-          :key="index"
-          class="project-card__tag bor-rad-3"
-        >{{ tag }}</div>
+        <Tag v-for="(tag, index) in project.tags" :key="index" :tag="tag"/>
       </div>
       <p>{{ project.description }}</p>
       <div class="project-card__btn--row">
@@ -32,7 +28,12 @@
 </template>
 
 <script>
+import Tag from "./projectComponents/Tag";
+
 export default {
+  components: {
+    Tag
+  },
   props: {
     project: {
       type: Object,

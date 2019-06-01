@@ -112,16 +112,6 @@ export default {
       grid-column: 2;
       grid-row-start: 1;
       place-self: center;
-
-      .project-card__tag {
-        font-size: 12px;
-        display: inline-block;
-        background: $shadow-color-opacity;
-        color: white;
-        padding: 3px 10px;
-        box-shadow: 0px 1px 2px lightgrey;
-        margin: 0 5px;
-      }
     }
 
     h2 {

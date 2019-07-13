@@ -17,8 +17,8 @@ export default {
 
 h3 {
   position: relative;
-  width: calc(100% - 30px);
-  left: 30px;
+  width: calc(100% - 29px);
+  left: 29px;
   margin: 16px 0;
 
   @include mediaSmartfon {
@@ -29,8 +29,8 @@ h3 {
 h3::before {
   position: absolute;
   content: url("../../assets/Lines.svg");
-  top: -5px;
-  left: -30px;
+  top: -3px;
+  left: -29px;
 
   @include mediaSmartfon {
     top: 0;

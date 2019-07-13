@@ -1,11 +1,5 @@
 <template>
-  <a
-    target="_blank"
-    v-bind:href="btn.link"
-    rel="noopener noreferrer"
-    class="btn"
-    v-bind:class="btn.class"
-  >
+  <a target="_blank" v-bind:href="btn.link" rel="noopener noreferrer" class="btn" v-bind:class="btn.class">
     <slot></slot>
   </a>
 </template>
@@ -26,18 +20,21 @@ export default {
 
 .btn {
   display: inline-block;
-  width: 180px;
-  line-height: 42px;
-  color: $header-color;
-  font-size: 20px;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: 3px;
+  padding: 8px 48px;
+  color: $text-color;
+  font-size: 24px;
+  border-radius: 2px;
   cursor: pointer;
+  transition: 0.4s;
 }
 
 .btn--resume {
   background: $shadow-color-opacity;
+
+  &:hover {
+    background: $shadow-color;
+    color: $header-color;
+  }
 
   @include mediaSmartfon {
     margin: auto;

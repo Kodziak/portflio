@@ -19,7 +19,11 @@ h3 {
   position: relative;
   width: calc(100% - 30px);
   left: 30px;
-  margin: 8px 0;
+  margin: 16px 0;
+
+  @include mediaSmartfon {
+    margin: 8px 0;
+  }
 }
 
 h3::before {

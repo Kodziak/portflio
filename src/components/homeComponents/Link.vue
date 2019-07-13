@@ -1,17 +1,19 @@
 <template>
-  <div class="link">
+  <div class="link" v-bind:class="media.icon_class">
     <a
-      v-bind:target="/^http/.test(contact.link) ? '_blank' : '_self'"
-      v-bind:href="contact.link"
+      v-bind:target="/^http/.test(media.link) ? '_blank' : '_self'"
+      v-bind:href="media.link"
       rel="noopener noreferrer"
-    >{{ contact.content }}</a>
+      v-bind:title="media.title"
+    >
+    </a>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    contact: {
+    media: {
       type: Object,
       required: true
     }
@@ -23,27 +25,36 @@ export default {
 @import "../config";
 
 .link {
-  margin: 5px 0;
-
   a {
     cursor: pointer;
     position: relative;
-    left: 23px;
 
     @include mediaSmartfon {
-      font-size: 15px;
     }
   }
 
-  a::before {
-    position: absolute;
-    content: url("../../assets/Lines_mini.svg");
-    top: -2px;
-    left: -23px;
+  &-mail {
+    a::before {
+      content: url("../../assets/mail.svg");
+    }
   }
 
-  a:after {
-    @include shadow;
+  &-linkedin {
+    a::before {
+      content: url("../../assets/linkedin.svg");
+    }
+  }
+
+  &-twitter {
+    a::before {
+      content: url("../../assets/twitter.svg");
+    }
+  }
+
+  &-github {
+    a::before {
+      content: url("../../assets/github.svg");
+    }
   }
 }
 </style>

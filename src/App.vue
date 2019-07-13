@@ -3,7 +3,6 @@
     <header>
       <div class="line"></div>
       <div class="menu">
-        <div class="flex-1"></div>
         <button class="menu-btn" v-for="btn in btns" :key="btn.id" v-on:click="selectComponent(btn.component, $event)">
           {{ btn.name }}
         </button>
@@ -51,6 +50,8 @@ export default {
 }
 
 body {
+  width: 100%;
+  height: 100%;
   margin: 0;
   font-family: "Montserrat", sans-serif;
   color: $header-color;
@@ -86,8 +87,6 @@ body {
 }
 
 h1,
-h2,
-h3,
 p {
   display: inline-block;
   margin: 0;
@@ -96,32 +95,27 @@ p {
 
 .menu {
   display: flex;
-  margin: 0 10%;
-  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
 
   &-btn {
-    margin: 30px 30px;
-    font-size: 20px;
-    cursor: pointer;
+    font-size: 24px;
+    margin: 0 10px;
     position: relative;
+    cursor: pointer;
 
     @include mediaSmartfon {
-      margin: 25px 15px;
     }
   }
 
   &-btn:last-child {
     @include mediaSmartfon {
-      margin: 25px 0 25px 15px;
     }
   }
 
   &-btn::after {
     @include shadow;
   }
-}
-
-.shadow {
-  @include shadow;
 }
 </style>

@@ -120,7 +120,7 @@ h3 {
 
 .home--grid {
   display: grid;
-  grid-template-columns: 10% repeat(12, 8%) 10%;
+  grid-template-columns: repeat(12, 8%);
   grid-column-gap: 8px;
 
   @include mediaSmartfon {
@@ -130,7 +130,7 @@ h3 {
 
   .home__header {
     grid-column-start: 3;
-    grid-column-end: 8;
+    grid-column-end: 7;
 
     @include mediaSmartfon {
       grid-column-start: 1;
@@ -139,7 +139,7 @@ h3 {
 
   .home__content {
     grid-column-start: 8;
-    grid-column-end: 12;
+    grid-column-end: 11;
 
     @include mediaSmartfon {
       grid-column-start: 1;

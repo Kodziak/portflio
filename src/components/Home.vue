@@ -75,16 +75,20 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include mediaSmartfon {
+    height: 80vh;
+  }
 }
 
 h1 {
-  font-size: 45px;
+  font-size: 48px;
   font-weight: 600;
   color: $header-color;
   position: relative;
 
   @include mediaSmartfon {
-    font-size: 30px;
+    font-size: 32px;
   }
 }
 
@@ -99,8 +103,8 @@ h2 {
   margin: 5px 0 0 0;
 
   @include mediaSmartfon {
-    font-size: 20px;
-    margin: 0 10%;
+    font-size: 24px;
+    margin: 5px 10% 0;
   }
 }
 
@@ -110,7 +114,7 @@ h3 {
   font-weight: 400;
 
   @include mediaSmartfon {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 
@@ -168,6 +172,7 @@ h3 {
 
     @include mediaSmartfon {
       justify-content: center;
+      margin-top: 10px;
     }
 
     .link {

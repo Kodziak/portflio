@@ -2,22 +2,14 @@
   <div class="home">
     <div class="flex-1"></div>
     <div class="home--grid">
-      <div class="home__container">
-        <div class="home__header">
-          <h1>Hi, I'm Przemek.</h1>
-          <br>
-          <h2>I'm a Test Automation Developer.</h2>
-        </div>
-        <div class="home__content">
-          <Description v-for="(content, index) in desc" :key="index" :content="content"/>
-        </div>
-        <div class="home__links">
-          <Link v-for="(contact, index) in contacts" :key="index" :contact="contact"/>
-        </div>
-        <Button :btn="btn">{{ btn.name }}</Button>
+      <div class="home__header">
+        <h1>Hi, I'm Przemek.</h1>
+        <br />
+        <h2>I'm a Test Developer and Scrum Master.</h2>
       </div>
-      <div class="home__logo">
-        <img src="../assets/Logo.svg">
+      <div class="home__content">
+        <Description v-for="(content, index) in desc" :key="index" :content="content" />
+        <Button :btn="btn">{{ btn.name }}</Button>
       </div>
     </div>
     <div class="flex-1"></div>
@@ -40,20 +32,10 @@ export default {
     return {
       desc: [
         "Based in Poland.",
-        "I write tests with Jest.io and Puppeteer.",
-        "I write HTML, CSS and JavaScript with Vue.",
+        "I write in JavaScript and Go.",
+        "I write tests in Puppeteer with Jest.",
+        "I'm a Security and Scrum enthusiast.",
         "Sometimes I design in Adobe Xd."
-      ],
-      contacts: [
-        {
-          link: "mailto:paczoski.przemyslaw@gmail.com",
-          content: "Say hello via mail"
-        },
-        {
-          link: "https://twitter.com/Kodziakkk",
-          content: "Follow me on Twitter"
-        },
-        { link: "https://floog.me", content: "View my blog" }
       ],
       btn: {
         name: "resume",
@@ -74,9 +56,24 @@ export default {
   flex-direction: column;
 }
 
+h1 {
+  font-size: 45px;
+  font-weight: 600;
+  color: $header-color;
+  position: relative;
+
+  @include mediaSmartfon {
+    font-size: 30px;
+  }
+}
+
+h1:after {
+  @include shadow;
+}
+
 h2 {
   color: $text-color;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 400;
 
   @include mediaSmartfon {
@@ -85,8 +82,8 @@ h2 {
 }
 
 h3 {
-  font-size: 27px;
   color: $text-color;
+  font-size: 24px;
   font-weight: 400;
 
   @include mediaSmartfon {
@@ -94,35 +91,23 @@ h3 {
   }
 }
 
-img {
-  margin: auto 5px auto 0;
-}
-
 .home--grid {
   display: grid;
-  grid-template-columns: 10% 40% 40% 10%;
+  grid-template-columns: 230px repeat(12, 107px) 230px;
+  grid-column-gap: 16px;
 
   @include mediaSmartfon {
     grid-template-columns: 7% 86% 7%;
   }
 
-  .home__container {
-    grid-column-start: 2;
+  .home__header {
+    grid-column-start: 3;
+    grid-column-end: 9;
   }
 
-  .home__logo {
-    grid-column-start: 3;
-    display: flex;
-    justify-content: flex-end;
-
-    @include mediaSmartfon {
-      display: none;
-    }
-
-    img {
-      margin: auto 0 auto auto;
-      animation: spin 4s linear infinite;
-    }
+  .home__content {
+    grid-column-start: 9;
+    grid-column-end: 15;
   }
 }
 
@@ -132,16 +117,5 @@ img {
   @include mediaSmartfon {
     text-align: center;
   }
-}
-
-.home__content {
-  margin: 35px 0;
-  flex-direction: column;
-  margin: 13px 0;
-}
-
-.home__links {
-  color: $text-color;
-  margin: 35px 0;
 }
 </style>

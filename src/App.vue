@@ -1,14 +1,12 @@
 <template>
   <div id="app">
     <header>
+      <div class="line"></div>
       <div class="menu">
         <div class="flex-1"></div>
-        <button
-          class="menu-btn"
-          v-for="btn in btns"
-          :key="btn.id"
-          v-on:click="selectComponent(btn.component, $event)"
-        >{{btn.name}}</button>
+        <button class="menu-btn" v-for="btn in btns" :key="btn.id" v-on:click="selectComponent(btn.component, $event)">
+          {{ btn.name }}
+        </button>
       </div>
     </header>
     <component v-bind:is="selectedComponent"></component>
@@ -28,10 +26,7 @@ export default {
   data() {
     return {
       selectedComponent: "Home",
-      btns: [
-        { id: 1, name: "home", component: "Home" },
-        { id: 2, name: "projects", component: "Projects" }
-      ]
+      btns: [{ id: 1, name: "home", component: "Home" }, { id: 2, name: "projects", component: "Projects" }]
     };
   },
   methods: {
@@ -80,6 +75,12 @@ body {
   flex-grow: 1;
 }
 
+.line {
+  width: 100%;
+  height: 10px;
+  background-color: $shadow-color;
+}
+
 .menu-btn--active {
   font-weight: 600;
 }
@@ -88,25 +89,9 @@ h1,
 h2,
 h3,
 p {
-  color: #cecece;
   display: inline-block;
   margin: 0;
   padding: 0;
-}
-
-h1 {
-  font-size: 45px;
-  font-weight: 600;
-  color: $header-color;
-  position: relative;
-
-  @include mediaSmartfon {
-    font-size: 30px;
-  }
-}
-
-h1:after {
-  @include shadow;
 }
 
 .menu {

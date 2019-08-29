@@ -1,24 +1,34 @@
-# Portfolio
+<h1 align="center">Portfolio</h1>
+<h2 align="center"><a href="https://www.ppaczoski.pl">Click to visit!</a></h2>
+<p align="center"><a href="https://app.netlify.com/sites/lucid-engelbart-901023/deploys"><img src="https://api.netlify.com/api/v1/badges/057a003d-86b7-4327-bc32-413075f30033/deploy-status"/></a></p>
+<h3 align="center">Personal website to introduce myself. My look over the design and developing. Made as a SPA with Mobile First design and page is fully responsive.</h3>
+<p align="center"><img src="public/portfolio.gif"></p>
 
-Link: [ppaczoski.pl](https://www.ppaczoski.pl)
+# Table of Contents
 
-## Description
+- [Set up locally](#set-up-locally)
+- [Tech used](#tech-used)
+- [License](#license)
 
-Personal website to introduce myself. My look over the design and developing. Made as a SPA with Mobile First design and page is fully responsive.
+<a id="set-up-locally"></a>
 
-## Stage
+# :cloud: Set Up Locally
 
-Deployed.
+First:
 
-https://www.ppaczoski.pl
+```
+npm install
+```
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/057a003d-86b7-4327-bc32-413075f30033/deploy-status)](https://app.netlify.com/sites/lucid-engelbart-901023/deploys)
+Then to run on port:8080
 
-## Preview
+```
+npm run serve
+```
 
-![Portfolio demo](public/portfolio.gif)
+<a id="tech-used"></a>
 
-## Tech used
+# :clipboard: Tech used
 
 <b>Designed in:</b>
 
@@ -27,3 +37,9 @@ https://www.ppaczoski.pl
 <b>Built with:</b>
 
 - [Vue.js](https://vuejs.org)
+
+<a id="license"></a>
+
+# :scroll: License
+
+MIT

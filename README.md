@@ -20,10 +20,16 @@ First:
 npm install
 ```
 
-Then to run on port:8080
+Then to run locally on port:8080
 
 ```
 npm run serve
+```
+
+Visit:
+
+```
+https://localhost:8080
 ```
 
 <a id="tech-used"></a>

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <h1 class="home__header">oh, <br />hello there.</h1>
-    <Button>{{ btn.name }}</Button>
+    <h1>oh, <br />hello there.</h1>
+    <Button :class="btn.type">{{ btn.name }}</Button>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
     return {
       btn: {
         name: "GET TO KNOW ME",
-        class: "primary"
+        type: "btn--primary"
       }
     };
   }
@@ -28,29 +28,9 @@ export default {
 @import "../configs/_config";
 
 .home {
-  height: calc(100vh - 59px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  @include mediaSmartfon {
-    height: 80vh;
-  }
-}
-
-h1 {
-  font-size: 128px;
-  font-weight: bold;
-  color: $text-basic-color;
-  margin: 0 0 40px 0;
-
-  @include mediaSmartfon {
-  }
-}
-
-.home {
   grid-column-start: 7;
   grid-column-end: 13;
+  justify-items: center;
   justify-self: end;
 
   @include mediaSmartfon {

@@ -60,6 +60,7 @@ html {
 }
 
 body {
+  height: 100%;
   margin: 0;
   font-family: "Montserrat", sans-serif;
   color: $text-basic-color;
@@ -76,6 +77,7 @@ body {
 }
 
 #app {
+  height: 100%;
   display: grid;
   grid-template-columns: 2% repeat(12, 7%) 2%;
   grid-column-gap: 1%;
@@ -93,7 +95,17 @@ header {
   .menu {
     margin-top: 20px;
 
+    &-btn--active:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      top: -20px;
+      background: $text-basic-color;
+    }
+
     &-btn {
+      position: relative;
       font-size: 24px;
       cursor: pointer;
     }
@@ -101,6 +113,16 @@ header {
     &-btn:nth-child(2) {
       margin: 0 80px;
     }
+  }
+}
+
+h1 {
+  font-size: 128px;
+  font-weight: bold;
+  color: $text-basic-color;
+  margin: 0 0 40px 0;
+
+  @include mediaSmartfon {
   }
 }
 </style>

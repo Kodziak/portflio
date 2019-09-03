@@ -8,8 +8,7 @@
 export default {
   props: {
     btn: {
-      type: Object,
-      required: true
+      type: Object
     }
   }
 };
@@ -21,18 +20,20 @@ export default {
 .btn {
   display: inline-block;
   width: 280px;
-  color: $background-color;
-  background: $text-basic-color;
   text-align: center;
   font-size: 24px;
   padding: 10px 0;
-  border: 0.5px solid $background-color;
   cursor: pointer;
 
   &--primary {
+    color: $background-color;
+    background: $text-basic-color;
+    border: 0.5px solid $background-color;
   }
 
   &--secondary {
+    color: $text-basic-color;
+    border: 0.5px solid $text-description-color;
   }
 }
 </style>

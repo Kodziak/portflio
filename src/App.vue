@@ -13,19 +13,25 @@
 </template>
 
 <script>
-import Home from "./components/Home.vue";
-import Projects from "./components/Projects.vue";
+import Home from "./views/Home.vue";
+import WhoAmI from "./views/WhoAmI.vue";
+import Projects from "./views/Projects.vue";
 
 export default {
   name: "app",
   components: {
     Home,
+    WhoAmI,
     Projects
   },
   data() {
     return {
       selectedComponent: "Home",
-      btns: [{ id: 1, name: "home", component: "Home" }, { id: 2, name: "projects", component: "Projects" }]
+      btns: [
+        { id: 1, name: "HOME", component: "Home" },
+        { id: 2, name: "WHO AM I", component: "WhoAmI" },
+        { id: 3, name: "PROJECTS", component: "Projects" }
+      ]
     };
   },
   methods: {
@@ -43,19 +49,22 @@ export default {
 </script>
 
 <style lang="scss">
-@import "components/config";
+@import "./configs/_config";
 
 * {
   box-sizing: border-box;
 }
 
-body {
-  width: 100%;
+html {
   height: 100%;
+  width: 100%;
+}
+
+body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  color: $header-color;
-  background: $background-color;
+  color: $text-basic-color;
+  background-image: linear-gradient(45deg, $background-color, $background-opacity-color);
 
   a,
   button {
@@ -67,36 +76,14 @@ body {
   display: none;
 }
 
-#app {
-  display: flex;
-  flex-direction: column;
-}
-
-.flex-1 {
-  flex-grow: 1;
-}
-
-.line {
-  width: 100%;
-  height: 10px;
-  background-color: $shadow-color;
-}
-
 .menu-btn--active {
-  font-weight: 600;
-}
-
-h1,
-p {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
+  font-weight: bold;
 }
 
 .menu {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   margin-top: 20px;
 
   &-btn {
@@ -112,10 +99,6 @@ p {
   &-btn:last-child {
     @include mediaSmartfon {
     }
-  }
-
-  &-btn::after {
-    @include shadow;
   }
 }
 </style>

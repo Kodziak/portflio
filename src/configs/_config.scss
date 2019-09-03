@@ -1,0 +1,16 @@
+$background-color: #191919;
+$background-opacity-color: rgba(25, 25, 25, 0.9);
+$text-basic-color: #ecebf3;
+$text-description-color: rgba(236, 235, 243, 0.5);
+
+@mixin mediaDesktop {
+  @media screen and (min-width: 1001px) {
+    @content;
+  }
+}
+
+@mixin mediaSmartfon {
+  @media screen and (min-width: 100px) and (max-width: 1000px) {
+    @content;
+  }
+}

@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <header>
-      <div class="line"></div>
       <div class="menu">
         <button class="menu-btn" v-for="btn in btns" :key="btn.id" v-on:click="selectComponent(btn.component, $event)">
           {{ btn.name }}
@@ -76,28 +75,31 @@ body {
   display: none;
 }
 
+#app {
+  display: grid;
+  grid-template-columns: 2% repeat(12, 7%) 2%;
+  grid-column-gap: 1%;
+}
+
 .menu-btn--active {
   font-weight: bold;
 }
 
-.menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-top: 20px;
+header {
+  grid-column-start: 7;
+  grid-column-end: 13;
+  justify-self: end;
 
-  &-btn {
-    font-size: 24px;
-    margin: 0 10px;
-    position: relative;
-    cursor: pointer;
+  .menu {
+    margin-top: 20px;
 
-    @include mediaSmartfon {
+    &-btn {
+      font-size: 24px;
+      cursor: pointer;
     }
-  }
 
-  &-btn:last-child {
-    @include mediaSmartfon {
+    &-btn:nth-child(2) {
+      margin: 0 80px;
     }
   }
 }

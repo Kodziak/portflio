@@ -1,7 +1,7 @@
 <template>
-  <a target="_blank" v-bind:href="btn.link" rel="noopener noreferrer" class="btn" v-bind:class="btn.class">
+  <button class="btn">
     <slot></slot>
-  </a>
+  </button>
 </template>
 
 <script>
@@ -16,49 +16,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../config";
+@import "../configs/_config";
 
 .btn {
   display: inline-block;
-  padding: 8px 48px;
-  color: $text-color;
+  width: 280px;
+  color: $background-color;
+  background: $text-basic-color;
+  text-align: center;
   font-size: 24px;
-  border-radius: 2px;
+  padding: 10px 0;
+  border: 0.5px solid $background-color;
   cursor: pointer;
-  transition: 0.4s;
-}
 
-.btn--resume {
-  background: $shadow-color-opacity;
-
-  &:hover {
-    background: $shadow-color;
-    color: $header-color;
+  &--primary {
   }
 
-  @include mediaSmartfon {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-  }
-}
-
-.btn--code {
-  margin: 0 10px;
-  background: $background-color;
-
-  @include mediaSmartfon {
-    margin: 0;
-  }
-}
-
-.btn--view {
-  margin: 0 10px;
-  color: $shadow-color;
-  border: 1px solid $shadow-color;
-
-  @include mediaSmartfon {
-    margin: 0;
+  &--secondary {
   }
 }
 </style>

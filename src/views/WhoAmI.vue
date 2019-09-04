@@ -10,7 +10,7 @@
       <p>Currently working in <span>DOC PLANNER</span> team.</br> Had to presence to work in <span>XTB</span>.</p>
       <div v-for="(btn, index) in btns" :key="index" class="whoami__content__buttons">
         <Link v-if="btn.link" :btn="btn" :class="btn.type">{{ btn.name }}</Link>
-        <Button v-else :btn="btn" :class="btn.type">{{ btn.name }}</Button>
+        <Button v-else :btn="btn" :class="btn.type" @componentFromChildren="handleComponent">{{ btn.name }}</Button>
       </div>
       
     </div>
@@ -38,10 +38,16 @@ export default {
         }, 
         {
           name: "CHECK MY WORK",
-          type: "btn--primary"
+          type: "btn--primary",
+          component: "Projects"
         }
-      ]
+      ],
     };
+  },
+  methods: {
+      handleComponent(component) {
+        this.$emit('componentFromChildren', component);
+      }
   }
 };
 </script>

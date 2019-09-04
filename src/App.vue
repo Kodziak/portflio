@@ -7,7 +7,7 @@
         </button>
       </div>
     </header>
-    <component v-bind:is="selectedComponent"></component>
+    <component :is="selectedComponent" @componentFromChildren="handleComponent"></component>
   </div>
 </template>
 
@@ -34,6 +34,9 @@ export default {
     };
   },
   methods: {
+    handleComponent(component) {
+      this.selectedComponent = component;
+    },
     selectComponent: function(component, event) {
       if (this.activeLink) {
         this.activeLink.classList.remove("menu-btn--active");

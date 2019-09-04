@@ -2,7 +2,7 @@
   <div class="home wrapper--grid">
     <div class="home__content">
       <h1>oh, <br />hello there.</h1>
-      <Button :class="btn.type">{{ btn.name }}</Button>
+      <Button :btn="btn" :class="btn.type" @componentFromChildren="handleComponent">{{ btn.name }}</Button>
     </div>
   </div>
 </template>
@@ -19,9 +19,15 @@ export default {
     return {
       btn: {
         name: "GET TO KNOW ME",
-        type: "btn--primary"
+        type: "btn--primary",
+        component: "WhoAmI"
       }
     };
+  },
+  methods: {
+    handleComponent(component) {
+      this.$emit("componentFromChildren", component);
+    }
   }
 };
 </script>

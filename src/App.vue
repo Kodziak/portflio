@@ -159,19 +159,15 @@ h2 {
 }
 
 h3 {
-  font-size: 32px;
+  font-size: 36px;
 }
 
 h4 {
   font-size: 24px;
 }
 
-h5 {
-  font-size: 18px;
-}
-
 p {
-  font-size: 12px;
+  font-size: 10px;
   color: $text-description-color;
 }
 </style>

@@ -52,11 +52,12 @@ export default {
 
   &__cards {
     grid-column: 3 / 13;
-    grid-row: 3 / 14;
+    grid-row: 4 / 12;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 </style>

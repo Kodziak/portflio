@@ -30,12 +30,12 @@ export default {
   height: 260px;
   z-index: 0;
   overflow: hidden;
+  transition: all 0.5s ease, z-index 0s step-end;
 
   &:hover {
     z-index: 1;
-    transform: scale(1.5);
-    transition: all 0.5s ease-in-out;
-    will-change: scale, z-index;
+    transform: scale(1.6);
+    will-change: scale, z-index, opacity, filter;
 
     .project-card__image {
       filter: blur(3px);
@@ -43,12 +43,10 @@ export default {
 
     .project-card__background {
       opacity: 1;
-      transition: opacity 0.5s ease-in-out;
     }
 
     .project-card__description {
       opacity: 1;
-      transition: opacity 0.5s ease-in-out;
     }
   }
 
@@ -68,6 +66,7 @@ export default {
 
   &__description {
     position: absolute;
+    width: calc(100% - 60px);
     left: 30px;
     bottom: 30px;
     opacity: 0;

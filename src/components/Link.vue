@@ -1,7 +1,7 @@
 <template>
-  <button class="btn" @click="handleClick">
+  <a target="_blank" v-bind:href="btn.link" rel="noopener noreferrer" class="btn" v-bind:class="btn.class">
     <slot></slot>
-  </button>
+  </a>
 </template>
 
 <script>

@@ -1,5 +1,7 @@
 <template>
-  <div class="whoami"></div>
+  <div class="whoami content--grid">
+    <h2 class="header">WHO</h2>
+  </div>
 </template>
 
 <script>
@@ -18,4 +20,19 @@ export default {
 
 <style lang="scss">
 @import "../configs/_config";
+
+.whoami {
+  h2 {
+    position: relative;
+  }
+
+  h2:after {
+    content: "AM I";
+    position: absolute;
+    width: 100%;
+    font-weight: 400;
+    top: 32px;
+    left: 72%;
+  }
+}
 </style>

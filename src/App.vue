@@ -81,10 +81,7 @@ body {
   display: grid;
   grid-template-columns: 2% repeat(12, 7%) 2%;
   grid-column-gap: 1%;
-}
-
-.menu-btn--active {
-  font-weight: bold;
+  grid-template-rows: 5% repeat(9, 10%) 5%;
 }
 
 header {
@@ -101,7 +98,14 @@ header {
       width: 100%;
       height: 4px;
       top: -20px;
+      // opacity: 1;
       background: $text-basic-color;
+      // transition: opacity 1s ease-in-out;
+      // TODO: Add effet on click. Old element - remove bar smoothly, clicked element add bar smoothly
+    }
+
+    &-btn--active {
+      font-weight: bold;
     }
 
     &-btn {
@@ -118,11 +122,25 @@ header {
 
 h1 {
   font-size: 128px;
-  font-weight: bold;
+  font-weight: 600;
   color: $text-basic-color;
-  margin: 0 0 40px 0;
+  @include mediaSmartfon {
+  }
+}
+
+h2 {
+  font-size: 64px;
+  font-weight: 600;
+  color: $text-basic-color;
+}
+
+.content--grid {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 2;
 
   @include mediaSmartfon {
+    grid-column-start: 1;
   }
 }
 </style>

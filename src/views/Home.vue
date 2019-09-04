@@ -30,11 +30,15 @@ export default {
 .home {
   grid-column-start: 7;
   grid-column-end: 13;
-  justify-items: center;
+  grid-row-start: 6;
   justify-self: end;
 
   @include mediaSmartfon {
     grid-column-start: 1;
+  }
+
+  h1 {
+    margin: 0 0 40px 0;
   }
 }
 </style>

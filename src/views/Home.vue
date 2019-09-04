@@ -1,7 +1,9 @@
 <template>
-  <div class="home">
-    <h1>oh, <br />hello there.</h1>
-    <Button :class="btn.type">{{ btn.name }}</Button>
+  <div class="home wrapper--grid">
+    <div class="home__content">
+      <h1>oh, <br />hello there.</h1>
+      <Button :class="btn.type">{{ btn.name }}</Button>
+    </div>
   </div>
 </template>
 
@@ -28,17 +30,14 @@ export default {
 @import "../configs/_config";
 
 .home {
-  grid-column-start: 7;
-  grid-column-end: 13;
-  grid-row-start: 6;
-  justify-self: end;
+  &__content {
+    grid-column: 7 / 13;
+    grid-row: 6 / 12;
+    justify-self: end;
 
-  @include mediaSmartfon {
-    grid-column-start: 1;
-  }
-
-  h1 {
-    margin: 0 0 40px 0;
+    h1 {
+      margin-bottom: 40px;
+    }
   }
 }
 </style>

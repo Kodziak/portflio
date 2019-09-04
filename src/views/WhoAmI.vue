@@ -1,16 +1,16 @@
 <template>
-  <div class="whoami content--grid">
-    <h2 class="header">WHO</h2>
+  <div class="whoami wrapper--grid">
+    <h2>WHO</h2>
   </div>
 </template>
 
 <script>
-import Button from "../components/Button";
+// import Button from "../components/Button";
 
 export default {
   name: "WhoAmI",
   components: {
-    Button
+    // Button
   },
   data() {
     return {};
@@ -23,6 +23,8 @@ export default {
 
 .whoami {
   h2 {
+    grid-column: 3 / 5;
+    grid-row: 2 / 2;
     position: relative;
   }
 
@@ -32,7 +34,7 @@ export default {
     width: 100%;
     font-weight: 400;
     top: 32px;
-    left: 72%;
+    right: -175px;
   }
 }
 </style>

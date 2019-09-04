@@ -20,6 +20,7 @@ export default {
 .btn {
   display: inline-block;
   width: 280px;
+  height: 50px;
   text-align: center;
   font-size: 24px;
   padding: 10px 0;

@@ -78,18 +78,18 @@ body {
 
 #app {
   height: 100%;
-  display: grid;
-  grid-template-columns: 2% repeat(12, 7%) 2%;
-  grid-column-gap: 1%;
-  grid-template-rows: 5% repeat(9, 10%) 5%;
+  width: 100%;
 }
 
 header {
-  grid-column-start: 7;
-  grid-column-end: 13;
-  justify-self: end;
+  height: 5%;
+  display: grid;
+  grid-template-columns: 2% repeat(12, 7%) 2%;
+  grid-column-gap: 1%;
 
   .menu {
+    grid-column: 7 / 13;
+    justify-self: end;
     margin-top: 20px;
 
     &-btn--active:before {
@@ -120,9 +120,20 @@ header {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   font-size: 128px;
   font-weight: 600;
+  line-height: 156px;
   color: $text-basic-color;
   @include mediaSmartfon {
   }
@@ -134,13 +145,33 @@ h2 {
   color: $text-basic-color;
 }
 
-.content--grid {
-  grid-column-start: 3;
-  grid-column-end: 5;
-  grid-row-start: 2;
+.wrapper--grid {
+  height: 95%;
+  display: grid;
+  grid-template-columns: 2% repeat(12, 7%) 2%;
+  grid-column-gap: 1%;
+  grid-template-rows: 2% repeat(12, 7%) 2%;
+  grid-row-gap: 1%;
 
   @include mediaSmartfon {
     grid-column-start: 1;
   }
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 12px;
+  color: $text-description-color;
 }
 </style>

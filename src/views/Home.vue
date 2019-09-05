@@ -42,6 +42,9 @@ export default {
     justify-self: end;
 
     @include mediaSmartfon {
+      grid-row: 8 / 13;
+      justify-self: center;
+      align-self: end;
     }
 
     h1 {

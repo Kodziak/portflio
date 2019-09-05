@@ -13,11 +13,11 @@
         Currently working in <span>DOC PLANNER</span> team.<br />
         Had to presence to work in <span>XTB</span>.
       </p>
-      <div class="whoami__content__buttons">
-        <div v-for="(btn, index) in btns" :key="index">
-          <LinkedButton v-if="btn.link" :btn="btn" :class="btn.type">{{ btn.name }}</LinkedButton>
-          <Button v-else :btn="btn" :class="btn.type" @componentFromChildren="handleComponent">{{ btn.name }}</Button>
-        </div>
+    </div>
+    <div class="whoami__buttons">
+      <div v-for="(btn, index) in btns" :key="index">
+        <LinkedButton v-if="btn.link" :btn="btn" :class="btn.type">{{ btn.name }}</LinkedButton>
+        <Button v-else :btn="btn" :class="btn.type" @componentFromChildren="handleComponent">{{ btn.name }}</Button>
       </div>
     </div>
     <img src="../assets/guy_youre_looking_for.svg" alt="Nothing" />
@@ -72,7 +72,7 @@ export default {
     content: "AM I";
     position: absolute;
     font-weight: 400;
-    top: 32px;
+    top: 32%;
   }
 
   img {
@@ -88,7 +88,14 @@ export default {
 
   &__content {
     grid-column: 3 / 8;
-    grid-row: 5 / 12;
+    grid-row: 5 / 10;
+
+    @include mediaSmartfon {
+      grid-row: 5 / 9;
+      width: 280px;
+      justify-self: center;
+      align-self: end;
+    }
 
     h3 {
       margin-bottom: 15px;
@@ -102,31 +109,41 @@ export default {
       font-size: 18px;
       line-height: 27px;
 
+      @include mediaSmartfon {
+        font-size: 13px;
+        line-height: 20px;
+      }
+
       span {
         color: $text-basic-color;
         font-weight: bold;
       }
     }
 
-    &__buttons {
-      display: flex;
-      margin-top: 40px;
+    @include mediaSmartfon {
+      grid-column: 3 / 13;
+    }
+  }
 
-      a {
-        margin-right: 40px;
-      }
+  &__buttons {
+    grid-column: 3 / 8;
+    grid-row: 9 / 13;
+    display: flex;
 
-      @include mediaSmartfon {
-        flex-direction: column;
-
-        a {
-          margin: 0 0 20px 0;
-        }
-      }
+    a {
+      margin-right: 40px;
     }
 
     @include mediaSmartfon {
       grid-column: 3 / 13;
+      grid-row: 10 / 13;
+      flex-direction: column;
+      justify-self: center;
+      align-self: end;
+
+      a {
+        margin: 0 0 20px 0;
+      }
     }
   }
 }

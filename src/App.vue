@@ -15,6 +15,9 @@
       </div>
     </header>
     <component :is="selectedComponent" @componentFromChildren="handleComponent"></component>
+    <div class="socials">
+      <Social v-for="(social, index) in socials" :key="index" :social="social"></Social>
+    </div>
   </div>
 </template>
 
@@ -22,13 +25,15 @@
 import Home from "./views/Home.vue";
 import WhoAmI from "./views/WhoAmI.vue";
 import Projects from "./views/Projects.vue";
+import Social from "./components/Social";
 
 export default {
   name: "app",
   components: {
     Home,
     WhoAmI,
-    Projects
+    Projects,
+    Social
   },
   data() {
     return {
@@ -37,8 +42,38 @@ export default {
         { id: 1, name: "HOME", component: "Home" },
         { id: 2, name: "WHO AM I", component: "WhoAmI" },
         { id: 3, name: "PROJECTS", component: "Projects" }
+      ],
+      socials: [
+        {
+          title: "Mail",
+          link: "mailto:kodziak1416@gmail.com",
+          icon_class: "link-mail"
+        },
+        {
+          title: "Linkedin",
+          link: "https://linkedin.com/in/ppaczoski/",
+          icon_class: "link-linkedin"
+        },
+        {
+          title: "Twitter",
+          link: "https://twitter.com/Kodziakkk",
+          icon_class: "link-twitter"
+        },
+        {
+          title: "Github",
+          link: "https://github.com/Kodziak/",
+          icon_class: "link-github"
+        }
       ]
     };
+  },
+  created() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+    window.addEventListener("resize", () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    });
   },
   methods: {
     handleComponent(component) {
@@ -54,7 +89,7 @@ export default {
       const menuHamburger = document.querySelector(".menu__hamburger");
       const menu = document.querySelector(".menu");
       const menuButtons = document.querySelectorAll(".menu-btn");
-      menuButtons.forEach(el => {
+      menuButtons.forEach(() => {
         menuHamburger.classList.remove("active");
         menu.classList.remove("active");
       });
@@ -84,17 +119,10 @@ export default {
   box-sizing: border-box;
 }
 
-html {
-  height: 100vh;
-  width: 100vw;
-}
-
 body {
-  height: 100vh;
   margin: 0;
   font-family: "Montserrat", sans-serif;
   color: $text-basic-color;
-  background-image: linear-gradient(45deg, $background-color, $background-opacity-color);
 
   a,
   button {
@@ -108,7 +136,10 @@ body {
 
 #app {
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  // min-height: -webkit-fill-available;
   width: 100vw;
+  background-image: linear-gradient(45deg, $background-color, $background-opacity-color);
 }
 
 header {
@@ -132,7 +163,7 @@ header {
     }
 
     &.active {
-      background: black;
+      background: $black;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -141,6 +172,7 @@ header {
       width: 100vw;
       z-index: 99;
       margin-top: 0;
+      animation: fadeInOut 1s ease-in-out;
 
       .menu-btn {
         align-self: center;
@@ -184,7 +216,7 @@ header {
     align-self: flex-end;
     width: 45px;
     padding: 10px;
-    margin: 10px 3% 0 0;
+    margin: 20px 20px 0 0;
 
     @include mediaDesktop {
       display: none;
@@ -202,7 +234,7 @@ header {
         position: absolute;
         width: 25px;
         height: 3px;
-        background: white;
+        background: $text-basic-color;
         transform: rotate(0deg);
 
         &:nth-child(2) {
@@ -219,6 +251,10 @@ header {
       z-index: 100;
 
       ul {
+        li {
+          transition: all 1s ease;
+        }
+
         li:first-child {
           transform: rotate(45deg);
           top: 10px;
@@ -234,6 +270,20 @@ header {
         }
       }
     }
+  }
+}
+
+.socials {
+  display: flex;
+  margin-left: 30px;
+
+  @include mediaSmartfon {
+    justify-content: center;
+    margin: 0;
+  }
+
+  .link {
+    margin: 0 20px;
   }
 }
 
@@ -253,8 +303,8 @@ h1 {
   line-height: 156px;
   color: $text-basic-color;
   @include mediaSmartfon {
-    font-size: 64px;
-    line-height: 96px;
+    font-size: 48px;
+    line-height: 72px;
   }
 }
 
@@ -262,10 +312,14 @@ h2 {
   font-size: 64px;
   font-weight: 600;
   color: $text-basic-color;
+
+  @include mediaSmartfon {
+    font-size: 36px;
+  }
 }
 
 .wrapper--grid {
-  height: 95%;
+  height: 90%;
   display: grid;
   grid-template-columns: 2% repeat(12, 7%) 2%;
   grid-column-gap: 1%;
@@ -279,10 +333,18 @@ h2 {
 
 h3 {
   font-size: 36px;
+
+  @include mediaSmartfon {
+    font-size: 24px;
+  }
 }
 
 h4 {
   font-size: 24px;
+
+  @include mediaSmartfon {
+    font-size: 18px;
+  }
 }
 
 p {

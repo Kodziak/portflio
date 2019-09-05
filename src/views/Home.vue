@@ -37,7 +37,7 @@ export default {
 
 .home {
   &__content {
-    grid-column: 7 / 13;
+    grid-column: 3 / 13;
     grid-row: 6 / 12;
     justify-self: end;
 

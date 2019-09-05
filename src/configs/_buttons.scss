@@ -6,15 +6,24 @@
   font-size: 24px;
   padding: 10px 0;
   cursor: pointer;
+  transition: all 0.4s ease;
 
   &--primary {
     color: $background-color;
     background: $text-basic-color;
     border: 0.5px solid $background-color;
+
+    &:hover {
+      background: $white;
+    }
   }
 
   &--secondary {
     color: $text-basic-color;
     border: 0.5px solid $text-description-color;
+
+    &:hover {
+      background: $background-color;
+    }
   }
 }

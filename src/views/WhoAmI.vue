@@ -4,15 +4,21 @@
     <div class="whoami__content">
       <h3>Meet me.</h3>
       <p>
-        My name is Przemek. I’m a <span>IT STUDENT</span> based in <span>WARSAW</span> with over two years industry experience. I’m specialised with <span>TEST DEVELOPMENT</span>, using JavaScript, Puppeteer and Cucumber. Also I’am fascinated about <span>SCRUM METHODOLOGY</span>.
+        My name is Przemek. I’m a <span>IT STUDENT</span> based in <span>WARSAW</span> with over two years industry experience.
+        I’m specialised with <span>TEST DEVELOPMENT</span>, using JavaScript, Puppeteer and Cucumber. Also I’am fascinated about
+        <span>SCRUM METHODOLOGY</span>.
       </p>
       <h4>Experience.</h4>
-      <p>Currently working in <span>DOC PLANNER</span> team.</br> Had to presence to work in <span>XTB</span>.</p>
-      <div v-for="(btn, index) in btns" :key="index" class="whoami__content__buttons">
-        <Link v-if="btn.link" :btn="btn" :class="btn.type">{{ btn.name }}</Link>
-        <Button v-else :btn="btn" :class="btn.type" @componentFromChildren="handleComponent">{{ btn.name }}</Button>
+      <p>
+        Currently working in <span>DOC PLANNER</span> team.<br />
+        Had to presence to work in <span>XTB</span>.
+      </p>
+      <div class="whoami__content__buttons">
+        <div v-for="(btn, index) in btns" :key="index">
+          <LinkedButton v-if="btn.link" :btn="btn" :class="btn.type">{{ btn.name }}</LinkedButton>
+          <Button v-else :btn="btn" :class="btn.type" @componentFromChildren="handleComponent">{{ btn.name }}</Button>
+        </div>
       </div>
-      
     </div>
     <img src="../assets/guy_youre_looking_for.svg" alt="Nothing" />
   </div>
@@ -20,13 +26,13 @@
 
 <script>
 import Button from "../components/Button";
-import Link from "../components/Link";
+import LinkedButton from "../components/LinkedButton";
 
 export default {
   name: "WhoAmI",
   components: {
     Button,
-    Link
+    LinkedButton
   },
   data() {
     return {
@@ -35,19 +41,19 @@ export default {
           name: "VIEW RESUME",
           type: "btn--secondary",
           link: "./CV_Przemyslaw_Paczoski.pdf"
-        }, 
+        },
         {
           name: "CHECK MY WORK",
           type: "btn--primary",
           component: "Projects"
         }
-      ],
+      ]
     };
   },
   methods: {
-      handleComponent(component) {
-        this.$emit('componentFromChildren', component);
-      }
+    handleComponent(component) {
+      this.$emit("componentFromChildren", component);
+    }
   }
 };
 </script>
@@ -57,7 +63,7 @@ export default {
 
 .whoami {
   h2 {
-    grid-column: 3 / 5;
+    grid-column: 3 / 13;
     grid-row: 2 / 2;
     position: relative;
   }
@@ -65,16 +71,14 @@ export default {
   h2:after {
     content: "AM I";
     position: absolute;
-    width: 100%;
     font-weight: 400;
     top: 32px;
-    right: -175px;
   }
 
   img {
     grid-column: 8 / 13;
     grid-row: 3 / 12;
-    margin-top: 25px;
+    // margin-top: 25px;
     justify-self: end;
 
     @include mediaSmartfon {
@@ -105,11 +109,19 @@ export default {
     }
 
     &__buttons {
-      display: inline-block;
+      display: flex;
       margin-top: 40px;
 
-      &:last-child {
-        margin-left: 45px;
+      a {
+        margin-right: 40px;
+      }
+
+      @include mediaSmartfon {
+        flex-direction: column;
+
+        a {
+          margin: 0 0 20px 0;
+        }
       }
     }
 

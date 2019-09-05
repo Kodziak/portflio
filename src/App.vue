@@ -91,9 +91,13 @@ header {
   grid-column-gap: 1%;
 
   .menu {
-    grid-column: 7 / 13;
+    grid-column: 3 / 13;
     justify-self: end;
     margin-top: 20px;
+
+    @include mediaSmartfon {
+      display: none;
+    }
 
     &-btn--active:before {
       content: "";

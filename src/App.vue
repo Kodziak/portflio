@@ -1,6 +1,13 @@
 <template>
   <div id="app">
     <header>
+      <div class="menu__hamburger" v-on:click="handleHamburger">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
       <div class="menu">
         <button class="menu-btn" v-for="btn in btns" :key="btn.id" v-on:click="selectComponent(btn.component, $event)">
           {{ btn.name }}
@@ -44,7 +51,32 @@ export default {
       this.activeLink = event.target;
       this.activeLink.classList.add("menu-btn--active");
 
+      const menuHamburger = document.querySelector(".menu__hamburger");
+      const menu = document.querySelector(".menu");
+      const menuButtons = document.querySelectorAll(".menu-btn");
+      menuButtons.forEach(el => {
+        if (menuHamburger.classList.contains("active")) {
+          menuHamburger.classList.remove("active");
+          menu.classList.remove("active");
+        } else {
+          menuHamburger.classList.add("active");
+          menu.classList.add("active");
+        }
+      });
+
       this.selectedComponent = component;
+    },
+    handleHamburger() {
+      const menuHamburger = document.querySelector(".menu__hamburger");
+      const menu = document.querySelector(".menu");
+
+      if (menuHamburger.classList.contains("active")) {
+        menuHamburger.classList.remove("active");
+        menu.classList.remove("active");
+      } else {
+        menuHamburger.classList.add("active");
+        menu.classList.add("active");
+      }
     }
   }
 };
@@ -58,12 +90,12 @@ export default {
 }
 
 html {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 body {
-  height: 100%;
+  height: 100vh;
   margin: 0;
   font-family: "Montserrat", sans-serif;
   color: $text-basic-color;
@@ -80,8 +112,8 @@ body {
 }
 
 #app {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 header {
@@ -89,6 +121,11 @@ header {
   display: grid;
   grid-template-columns: 2% repeat(12, 7%) 2%;
   grid-column-gap: 1%;
+
+  @include mediaSmartfon {
+    display: flex;
+    flex-direction: column;
+  }
 
   .menu {
     grid-column: 3 / 13;
@@ -99,16 +136,34 @@ header {
       display: none;
     }
 
-    &-btn--active:before {
-      content: "";
+    &.active {
+      background: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       position: absolute;
-      width: 100%;
-      height: 4px;
-      top: -20px;
-      // opacity: 1;
-      background: $text-basic-color;
-      // transition: opacity 1s ease-in-out;
-      // TODO: Add effet on click. Old element - remove bar smoothly, clicked element add bar smoothly
+      height: 100vh;
+      width: 100vw;
+      z-index: 99;
+      margin-top: 0;
+
+      .menu-btn {
+        align-self: center;
+      }
+    }
+
+    @include mediaDesktop {
+      &-btn--active:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        top: -20px;
+        // opacity: 1;
+        background: $text-basic-color;
+        // transition: opacity 1s ease-in-out;
+        // TODO: Add effet on click. Old element - remove bar smoothly, clicked element add bar smoothly
+      }
     }
 
     &-btn--active {
@@ -123,6 +178,66 @@ header {
 
     &-btn:nth-child(2) {
       margin: 0 80px;
+
+      @include mediaSmartfon {
+        margin: 50px 0;
+      }
+    }
+  }
+
+  .menu__hamburger {
+    align-self: flex-end;
+    width: 45px;
+    padding: 10px;
+    margin: 10px 3% 0 0;
+
+    @include mediaDesktop {
+      display: none;
+    }
+
+    ul {
+      width: 25px;
+      height: 19px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+
+      li {
+        position: absolute;
+        width: 25px;
+        height: 3px;
+        background: white;
+        transform: rotate(0deg);
+
+        &:nth-child(2) {
+          top: 8px;
+        }
+
+        &:last-child {
+          top: 16px;
+        }
+      }
+    }
+
+    &.active {
+      z-index: 100;
+
+      ul {
+        li:first-child {
+          transform: rotate(45deg);
+          top: 10px;
+        }
+
+        li:nth-child(2) {
+          display: none;
+        }
+
+        li:last-child {
+          top: 10px;
+          transform: rotate(135deg);
+        }
+      }
     }
   }
 }
@@ -143,6 +258,8 @@ h1 {
   line-height: 156px;
   color: $text-basic-color;
   @include mediaSmartfon {
+    font-size: 64px;
+    line-height: 96px;
   }
 }
 

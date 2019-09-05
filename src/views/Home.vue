@@ -41,6 +41,9 @@ export default {
     grid-row: 6 / 12;
     justify-self: end;
 
+    @include mediaSmartfon {
+    }
+
     h1 {
       margin-bottom: 40px;
     }

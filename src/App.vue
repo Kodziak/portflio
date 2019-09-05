@@ -55,13 +55,8 @@ export default {
       const menu = document.querySelector(".menu");
       const menuButtons = document.querySelectorAll(".menu-btn");
       menuButtons.forEach(el => {
-        if (menuHamburger.classList.contains("active")) {
-          menuHamburger.classList.remove("active");
-          menu.classList.remove("active");
-        } else {
-          menuHamburger.classList.add("active");
-          menu.classList.add("active");
-        }
+        menuHamburger.classList.remove("active");
+        menu.classList.remove("active");
       });
 
       this.selectedComponent = component;

@@ -34,7 +34,7 @@ https://localhost:8080
 
 <a id="tech-used"></a>
 
-# :clipboard: Tech used
+# :wrench: Tech used
 
 <b>Designed in:</b>
 

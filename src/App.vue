@@ -9,7 +9,7 @@
         </ul>
       </div>
       <div class="menu">
-        <button class="menu-btn" v-for="btn in btns" :key="btn.id" v-on:click="selectComponent(btn.component, $event)">
+        <button class="menu-btn" v-for="btn in btns" :key="btn.id" v-on:click="selectComponent(btn.component)">
           {{ btn.name }}
         </button>
       </div>
@@ -75,17 +75,31 @@ export default {
       document.documentElement.style.setProperty("--vh", `${vh}px`);
     });
   },
+  mounted() {
+    this.setMenuState("Home");
+  },
   methods: {
-    handleComponent(component) {
+    setComponent(component) {
       this.selectedComponent = component;
     },
-    selectComponent: function(component, event) {
-      if (this.activeLink) {
-        this.activeLink.classList.remove("menu-btn--active");
-      }
-      this.activeLink = event.target;
-      this.activeLink.classList.add("menu-btn--active");
+    setMenuState(component) {
+      const menuButtons = document.querySelectorAll(".menu-btn");
 
+      menuButtons.forEach(el => {
+        let clicked = el.textContent.replace(/\s/g, "").toLowerCase();
+        let comp = component.replace(/\s/g, "").toLowerCase();
+        el.classList.remove("menu-btn--active");
+        if (clicked === comp) {
+          el.classList.add("menu-btn--active");
+        }
+      });
+    },
+
+    handleComponent(component) {
+      this.setMenuState(component);
+      this.setComponent(component);
+    },
+    selectComponent: function(component) {
       const menuHamburger = document.querySelector(".menu__hamburger");
       const menu = document.querySelector(".menu");
       const menuButtons = document.querySelectorAll(".menu-btn");
@@ -94,8 +108,10 @@ export default {
         menu.classList.remove("active");
       });
 
-      this.selectedComponent = component;
+      this.setMenuState(component);
+      this.setComponent(component);
     },
+
     handleHamburger() {
       const menuHamburger = document.querySelector(".menu__hamburger");
       const menu = document.querySelector(".menu");
@@ -119,6 +135,11 @@ export default {
   box-sizing: border-box;
 }
 
+html {
+  background-image: linear-gradient(45deg, $background-color, $background-opacity-color);
+  background-repeat: no-repeat;
+}
+
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -139,7 +160,7 @@ body {
   height: calc(var(--vh, 1vh) * 100);
   // min-height: -webkit-fill-available;
   width: 100vw;
-  background-image: linear-gradient(45deg, $background-color, $background-opacity-color);
+  mix-blend-mode: screen;
 }
 
 header {
@@ -295,13 +316,14 @@ h5,
 p {
   margin: 0;
   padding: 0;
+  color: $text-basic-color;
 }
 
 h1 {
   font-size: 128px;
   font-weight: 600;
   line-height: 156px;
-  color: $text-basic-color;
+
   @include mediaSmartfon {
     font-size: 48px;
     line-height: 72px;
@@ -311,7 +333,6 @@ h1 {
 h2 {
   font-size: 64px;
   font-weight: 600;
-  color: $text-basic-color;
 
   @include mediaSmartfon {
     font-size: 36px;
@@ -325,9 +346,27 @@ h2 {
   grid-column-gap: 1%;
   grid-template-rows: 2% repeat(12, 7%) 2%;
   grid-row-gap: 1%;
+  position: relative;
 
   @include mediaSmartfon {
     grid-column-start: 1;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background: $background-color;
+    z-index: -1;
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 100%;
+    background: $shadow-color;
+    z-index: 1;
   }
 }
 

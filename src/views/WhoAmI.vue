@@ -1,6 +1,8 @@
 <template>
   <div class="whoami wrapper--grid">
-    <h2>WHO</h2>
+    <div class="whoami__header">
+      <h2>WHO</h2>
+    </div>
     <div class="whoami__content">
       <h3>Meet me.</h3>
       <p>
@@ -61,18 +63,37 @@ export default {
 <style lang="scss">
 @import "../configs/_config";
 
-.whoami {
-  h2 {
-    grid-column: 3 / 13;
-    grid-row: 2 / 2;
-    position: relative;
+.wrapper--grid {
+  &:before {
+    height: 500px;
+    top: 23%;
   }
 
-  h2:after {
-    content: "AM I";
-    position: absolute;
-    font-weight: 400;
-    top: 32%;
+  &:after {
+    bottom: calc(100% - 23% - 500px);
+  }
+}
+
+.whoami {
+  &__header {
+    grid-column: 3 / 13;
+    grid-row: 2 / 2;
+  }
+  h2 {
+    position: relative;
+    display: inline-block;
+
+    &:before {
+      @include shadow;
+    }
+
+    &:after {
+      content: "AM I";
+      position: absolute;
+      width: 100%;
+      font-weight: 400;
+      top: 32%;
+    }
   }
 
   img {
@@ -80,6 +101,7 @@ export default {
     grid-row: 3 / 12;
     // margin-top: 25px;
     justify-self: end;
+    z-index: 2;
 
     @include mediaSmartfon {
       display: none;
@@ -88,7 +110,7 @@ export default {
 
   &__content {
     grid-column: 3 / 8;
-    grid-row: 5 / 10;
+    grid-row: 5 / 9;
 
     @include mediaSmartfon {
       grid-row: 5 / 9;
@@ -99,10 +121,22 @@ export default {
 
     h3 {
       margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        @include halfShadow;
+      }
     }
 
     h4 {
       margin: 25px 0 15px 0;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        @include halfShadow;
+      }
     }
 
     p {
@@ -116,7 +150,7 @@ export default {
 
       span {
         color: $text-basic-color;
-        font-weight: bold;
+        font-weight: 600;
       }
     }
 

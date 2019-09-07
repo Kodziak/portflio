@@ -1,6 +1,8 @@
 <template>
   <div class="project wrapper--grid">
-    <h2>PROJECTS</h2>
+    <div class="project__header">
+      <h2>PROJECTS</h2>
+    </div>
     <div class="project__cards" v-if="projects.length">
       <ProjectCard v-for="(project, index) in projects" :key="index" :project="project" />
     </div>
@@ -45,9 +47,18 @@ export default {
 @import "../configs/_config";
 
 .project {
-  h2 {
+  &__header {
     grid-column: 3 / 5;
     grid-row: 2 / 2;
+  }
+
+  h2 {
+    position: relative;
+    display: inline-block;
+
+    &:after {
+      @include shadow;
+    }
   }
 
   &__cards {

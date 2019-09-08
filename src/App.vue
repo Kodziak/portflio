@@ -177,7 +177,7 @@ header {
   .menu {
     grid-column: 3 / 13;
     justify-self: end;
-    margin-top: 20px;
+    // margin-top: 20px;
 
     @include mediaSmartfon {
       display: none;
@@ -189,8 +189,6 @@ header {
       flex-direction: column;
       justify-content: center;
       position: absolute;
-      height: 100vh;
-      width: 100vw;
       z-index: 99;
       margin-top: 0;
       animation: fadeInOut 1s ease-in-out;
@@ -206,10 +204,9 @@ header {
         position: absolute;
         width: 100%;
         height: 4px;
-        top: -20px;
-        // opacity: 1;
+        top: 0;
+        right: 0;
         background: $text-basic-color;
-        // transition: opacity 1s ease-in-out;
         // TODO: Add effet on click. Old element - remove bar smoothly, clicked element add bar smoothly
       }
     }
@@ -221,7 +218,13 @@ header {
     &-btn {
       position: relative;
       font-size: 24px;
+      padding: 20px 5px 10px;
       cursor: pointer;
+
+      &:hover {
+        background: lighten($background-color, 10%);
+        border-radius: 4px;
+      }
     }
 
     &-btn:nth-child(2) {
@@ -339,18 +342,8 @@ h2 {
   }
 }
 
-.wrapper--grid {
-  height: 90%;
-  display: grid;
-  grid-template-columns: 2% repeat(12, 7%) 2%;
-  grid-column-gap: 1%;
-  grid-template-rows: 2% repeat(12, 7%) 2%;
-  grid-row-gap: 1%;
+.wrapper--background {
   position: relative;
-
-  @include mediaSmartfon {
-    grid-column-start: 1;
-  }
 
   &:before {
     content: "";
@@ -367,6 +360,19 @@ h2 {
     width: 100%;
     background: $shadow-color;
     z-index: 1;
+  }
+}
+
+.wrapper--grid {
+  height: 90%;
+  display: grid;
+  grid-template-columns: 2% repeat(12, 7%) 2%;
+  grid-column-gap: 1%;
+  grid-template-rows: 2% repeat(12, 7%) 2%;
+  grid-row-gap: 1%;
+
+  @include mediaSmartfon {
+    grid-column-start: 1;
   }
 }
 

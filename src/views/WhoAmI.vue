@@ -1,5 +1,5 @@
 <template>
-  <div class="whoami wrapper--grid">
+  <div class="whoami wrapper--grid wrapper--background">
     <div class="whoami__header">
       <h2>WHO</h2>
     </div>
@@ -62,19 +62,18 @@ export default {
 
 <style lang="scss">
 @import "../configs/_config";
-
-.wrapper--grid {
-  &:before {
-    height: 500px;
-    top: 23%;
-  }
-
-  &:after {
-    bottom: calc(100% - 23% - 500px);
-  }
-}
-
 .whoami {
+  &.wrapper--background {
+    &:before {
+      height: 500px;
+      top: 23%;
+    }
+
+    &:after {
+      bottom: calc(100% - 23% - 500px);
+    }
+  }
+
   &__header {
     grid-column: 3 / 13;
     grid-row: 2 / 2;

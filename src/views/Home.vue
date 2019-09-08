@@ -1,5 +1,5 @@
 <template>
-  <div class="home wrapper--grid">
+  <div class="home wrapper--grid wrapper--background">
     <div class="home__content">
       <div class="triangle"></div>
       <h1>oh, <br />hello there.</h1>
@@ -37,7 +37,7 @@ export default {
 @import "../configs/_config";
 
 .home {
-  &.wrapper--grid {
+  &.wrapper--background {
     &:before {
       height: 435px;
       top: 35%;
@@ -59,6 +59,7 @@ export default {
 
     .triangle {
       position: absolute;
+      // top: 40px;
       left: -30px;
       width: 0;
       height: 0;
@@ -73,13 +74,13 @@ export default {
     }
 
     h1 {
-      // margin-bottom: 40px;
+      margin-bottom: 30px;
       mix-blend-mode: difference;
     }
 
     .btn {
       mix-blend-mode: difference;
-      margin-left: 180px;
+      margin-left: 200px;
 
       &:after {
         opacity: 0;

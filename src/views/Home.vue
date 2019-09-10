@@ -45,6 +45,7 @@ export default {
 
     &:after {
       bottom: calc(100% - 35% - 435px);
+      z-index: -1;
     }
   }
 
@@ -59,12 +60,11 @@ export default {
 
     .triangle {
       position: absolute;
-      // top: 40px;
       left: -30px;
-      width: 0;
-      height: 0;
-      border-bottom: 425px solid $text-basic-color;
-      border-right: 425px solid transparent;
+      top: 0;
+      bottom: 0;
+      right: calc(50% + 30px);
+      background: $text-basic-color;
     }
 
     @include mediaSmartfon {
@@ -80,7 +80,8 @@ export default {
 
     .btn {
       mix-blend-mode: difference;
-      margin-left: 200px;
+      align-self: center;
+      margin-right: 60px;
 
       &:after {
         opacity: 0;

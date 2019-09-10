@@ -156,15 +156,15 @@ body {
 }
 
 #app {
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  // height: 100vh;
+  // height: calc(var(--vh, 1vh) * 100);
   // min-height: -webkit-fill-available;
   width: 100vw;
   mix-blend-mode: screen;
 }
 
 header {
-  height: 5%;
+  height: calc(var(--vh, 1vh) * 5);
   display: grid;
   grid-template-columns: 2% repeat(12, 7%) 2%;
   grid-column-gap: 1%;
@@ -298,6 +298,7 @@ header {
 }
 
 .socials {
+  height: calc(var(--vh, 1vh) * 5);
   display: flex;
   margin-left: 30px;
 
@@ -364,7 +365,7 @@ h2 {
 }
 
 .wrapper--grid {
-  height: 90%;
+  height: calc(var(--vh, 1vh) * 90);
   display: grid;
   grid-template-columns: 2% repeat(12, 7%) 2%;
   grid-column-gap: 1%;
@@ -393,7 +394,7 @@ h4 {
 }
 
 p {
-  font-size: 10px;
+  font-size: 18px;
   color: $text-description-color;
 }
 </style>

@@ -87,9 +87,9 @@ export default {
     }
 
     &:after {
-      content: "AM I";
+      content: "AM I?";
       position: absolute;
-      width: 100%;
+      width: 200%;
       font-weight: 400;
       top: 32%;
     }

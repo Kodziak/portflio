@@ -347,8 +347,8 @@ h2 {
   position: relative;
 
   &:before {
-    content: "";
     position: absolute;
+    content: "";
     width: 100%;
     background: $background-color;
     z-index: -1;

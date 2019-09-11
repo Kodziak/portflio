@@ -26,6 +26,7 @@ export default {
           title: "PORTFOLIO",
           description: "Personal website to introduce myself. My look over the design and developing.",
           img: "./portfolio.png",
+          tags: ["javascript", "vue", "scss"],
           btns: [
             {
               name: "VIEW RESUME",
@@ -43,6 +44,7 @@ export default {
           title: "DAILY NEWS",
           description: "Information website where user/client can follow the newest information from QA world.",
           img: "./cat.jpg",
+          tags: ["javascript", "vue", "scss"],
           btns: [
             {
               name: "VIEW RESUME",
@@ -61,6 +63,7 @@ export default {
           description:
             "A personal blog. The whole idea comes to share experience learning automation tests scripts and programming.",
           img: "./blog.jpg",
+          tags: ["javascript", "vue", "scss"],
           btns: [
             {
               name: "VIEW RESUME",
@@ -111,8 +114,6 @@ export default {
   &__cards {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
 
     .project-card {
       margin: 100px 0;

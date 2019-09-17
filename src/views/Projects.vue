@@ -23,57 +23,39 @@ export default {
     return {
       projects: [
         {
-          title: "PORTFOLIO",
+          title: "Portfolio",
           description: "Personal website to introduce myself. My look over the design and developing.",
           img: "./portfolio.png",
-          tags: ["javascript", "vue", "scss"],
+          tags: ["javascript", "vue", "scss", "adobe Xd"],
           btns: [
             {
-              name: "VIEW RESUME",
+              name: "VIEW CODE",
               type: "btn--secondary",
-              link: "./CV_Przemyslaw_Paczoski.pdf"
+              link: "https://www.github.com/kodziak/portfolio"
             },
             {
-              name: "CHECK MY WORK",
+              name: "VIEW DEMO",
               type: "btn--primary",
-              component: "Projects"
+              link: "https://www.ppaczoski.pl"
             }
           ]
         },
         {
-          title: "DAILY NEWS",
-          description: "Information website where user/client can follow the newest information from QA world.",
-          img: "./cat.jpg",
-          tags: ["javascript", "vue", "scss"],
-          btns: [
-            {
-              name: "VIEW RESUME",
-              type: "btn--secondary",
-              link: "./CV_Przemyslaw_Paczoski.pdf"
-            },
-            {
-              name: "CHECK MY WORK",
-              type: "btn--primary",
-              component: "Projects"
-            }
-          ]
-        },
-        {
-          title: "BLOG",
+          title: "HomePage",
           description:
-            "A personal blog. The whole idea comes to share experience learning automation tests scripts and programming.",
-          img: "./blog.jpg",
-          tags: ["javascript", "vue", "scss"],
+            "An browser extension which replace default homepage. Build to cover my needs when starting browsering an internet.",
+          img: "./work_in_progress.png",
+          tags: ["javascript", "adobe Xd"],
           btns: [
             {
-              name: "VIEW RESUME",
-              type: "btn--secondary",
-              link: "./CV_Przemyslaw_Paczoski.pdf"
+              name: "VIEW CODE",
+              type: "btn--secondary btn--inactive",
+              link: ""
             },
             {
-              name: "CHECK MY WORK",
-              type: "btn--primary",
-              component: "Projects"
+              name: "VIEW DEMO",
+              type: "btn--primary btn--inactive",
+              link: ""
             }
           ]
         }
@@ -87,6 +69,12 @@ export default {
 @import "../configs/_config";
 
 .project {
+  min-height: calc(var(--vh, 1vh) * 90);
+
+  @include mediaSmartfon {
+    margin-bottom: 60px;
+  }
+
   .wrapper--grid {
     height: 9vh;
     grid-template-rows: 20% 70%;
@@ -94,6 +82,7 @@ export default {
 
     @include mediaSmartfon {
       grid-column-start: 1;
+      margin-top: 30px;
     }
   }
 
@@ -117,6 +106,16 @@ export default {
 
     .project-card {
       margin: 100px 0;
+
+      @include mediaSmartfon {
+        margin: 30px 0;
+
+        &__tags {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+      }
     }
   }
 }

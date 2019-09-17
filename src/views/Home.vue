@@ -1,7 +1,7 @@
 <template>
   <div class="home wrapper--grid wrapper--background">
     <div class="home__content">
-      <div class="triangle"></div>
+      <div class="box"></div>
       <h1>oh, <br />hello there.</h1>
       <Button :btn="btn" :class="btn.type" @componentFromChildren="handleComponent">{{ btn.name }}</Button>
     </div>
@@ -40,37 +40,51 @@ export default {
   &.wrapper--background {
     &:before {
       height: 435px;
-      top: 35%;
+      grid-row: 5 / 14;
     }
 
     &:after {
-      bottom: calc(100% - 35% - 435px);
+      bottom: calc(100% - 27% - 435px);
       z-index: -1;
+    }
+
+    @include mediaSmartfon {
+      &:before {
+        height: 250px;
+        grid-row-start: 7;
+      }
+
+      &:after {
+        bottom: calc(100% - 43% - 250px);
+      }
     }
   }
 
   &__content {
     grid-column: 3 / 13;
-    grid-row: 6 / 12;
+    grid-row-start: 5;
     justify-self: end;
     position: relative;
-
     display: flex;
     flex-direction: column;
 
-    .triangle {
-      position: absolute;
-      left: -30px;
-      top: 0;
-      bottom: 0;
-      right: calc(50% + 30px);
-      background: $text-basic-color;
+    @include mediaSmartfon {
+      grid-row-start: 7;
+      justify-self: center;
     }
 
-    @include mediaSmartfon {
-      grid-row: 8 / 13;
-      justify-self: center;
-      align-self: end;
+    .box {
+      position: absolute;
+      left: -30px;
+      min-height: 460px;
+      max-height: 500px;
+      right: calc(50% + 30px);
+      background: $text-basic-color;
+
+      @include mediaSmartfon {
+        min-height: 280px;
+        right: calc(50% + 15px);
+      }
     }
 
     h1 {
@@ -82,6 +96,10 @@ export default {
       mix-blend-mode: difference;
       align-self: center;
       margin-right: 60px;
+
+      @include mediaSmartfon {
+        margin-right: 0;
+      }
 
       &:after {
         opacity: 0;

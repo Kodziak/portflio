@@ -24,5 +24,9 @@ export default {
   margin: 0 5px;
   border-radius: 2px;
   text-transform: uppercase;
+
+  @include mediaSmartfon {
+    font-size: 9px;
+  }
 }
 </style>

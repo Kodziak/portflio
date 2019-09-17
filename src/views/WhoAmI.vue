@@ -6,20 +6,20 @@
     <div class="whoami__content">
       <h3>Meet me.</h3>
       <p>
-        My name is Przemek. I’m a <span>IT STUDENT</span> based in <span>WARSAW</span> with over two years industry experience.
-        I’m specialised with <span>TEST DEVELOPMENT</span>, using JavaScript, Puppeteer and Cucumber. Also I’am fascinated about
-        <span>SCRUM METHODOLOGY</span>.
+        My name is Przemek. I’m a <span>IT student</span> based in <span>warsaw</span> with over two years industry experience.
+        I’m specialised with <span>test development</span>, using JavaScript, Puppeteer and Cucumber. Also I’am fascinated about
+        <span>SCRUM methodology</span>.
       </p>
       <h4>Experience.</h4>
       <p>
         Currently working in <span>DOC PLANNER</span> team.<br />
         Had to presence to work in <span>XTB</span>.
       </p>
-    </div>
-    <div class="whoami__buttons">
-      <div v-for="(btn, index) in btns" :key="index">
-        <LinkedButton v-if="btn.link" :btn="btn" :class="btn.type">{{ btn.name }}</LinkedButton>
-        <Button v-else :btn="btn" :class="btn.type" @componentFromChildren="handleComponent">{{ btn.name }}</Button>
+      <div class="whoami__buttons">
+        <div v-for="(btn, index) in btns" :key="index">
+          <LinkedButton v-if="btn.link" :btn="btn" :class="btn.type">{{ btn.name }}</LinkedButton>
+          <Button v-else :btn="btn" :class="btn.type" @componentFromChildren="handleComponent">{{ btn.name }}</Button>
+        </div>
       </div>
     </div>
     <img src="../assets/guy_youre_looking_for.svg" alt="Nothing" />
@@ -63,6 +63,10 @@ export default {
 <style lang="scss">
 @import "../configs/_config";
 .whoami {
+  @include mediaSmartfon {
+    margin-bottom: 60px;
+  }
+
   &.wrapper--background {
     &:before {
       height: 500px;
@@ -72,12 +76,27 @@ export default {
     &:after {
       bottom: calc(100% - 23% - 500px);
     }
+
+    @include mediaSmartfon {
+      &:before {
+        top: 20%;
+      }
+
+      &:after {
+        bottom: calc(100% - 20% - 500px);
+      }
+    }
   }
 
   &__header {
     grid-column: 3 / 13;
     grid-row: 2 / 2;
+
+    @include mediaSmartfon {
+      margin-top: 30px;
+    }
   }
+
   h2 {
     position: relative;
     display: inline-block;
@@ -109,13 +128,13 @@ export default {
 
   &__content {
     grid-column: 3 / 8;
-    grid-row: 5 / 9;
+    grid-row: 5 / 12;
 
     @include mediaSmartfon {
       grid-row: 5 / 9;
       width: 280px;
       justify-self: center;
-      align-self: end;
+      // align-self: end;
     }
 
     h3 {
@@ -150,6 +169,7 @@ export default {
       span {
         color: $text-basic-color;
         font-weight: 600;
+        text-transform: uppercase;
       }
     }
 
@@ -159,20 +179,36 @@ export default {
   }
 
   &__buttons {
-    grid-column: 3 / 8;
-    grid-row: 9 / 13;
+    margin-top: 30px;
     display: flex;
 
-    a {
-      margin-right: 40px;
+    @include buttons {
+      flex-direction: column;
+    }
+
+    div:first-child {
+      margin: 5px 30px 5px 0;
+
+      @include mediaSmartfon {
+        margin: 5px;
+      }
+    }
+
+    div:last-child {
+      margin: 5px 5px 5px 0;
+      z-index: 2;
+
+      @include mediaSmartfon {
+        margin: 5px;
+      }
     }
 
     @include mediaSmartfon {
-      grid-column: 3 / 13;
-      grid-row: 10 / 13;
       flex-direction: column;
-      justify-self: center;
-      align-self: end;
+
+      div {
+        align-self: center;
+      }
 
       a {
         margin: 0 0 20px 0;

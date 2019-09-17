@@ -43,16 +43,24 @@ export default {
   flex-direction: row;
   justify-content: center;
 
-  &:nth-child(even) {
-    flex-direction: row-reverse;
+  img {
+    @include mediaSmartfon {
+      display: none;
+    }
+  }
 
-    .project-card__description {
-      text-align: end;
-      margin-left: 0;
-      margin-right: 30px;
+  @include mediaDesktop {
+    &:nth-child(even) {
+      flex-direction: row-reverse;
 
-      p {
-        margin-left: auto;
+      .project-card__description {
+        text-align: end;
+        margin-left: 0;
+        margin-right: 30px;
+
+        p {
+          margin-left: auto;
+        }
       }
     }
   }
@@ -69,11 +77,27 @@ export default {
       bottom: calc(100% - 20% - 400px);
       z-index: 5;
     }
+
+    @include mediaSmartfon {
+      &:before {
+        top: 10%;
+        height: 380px;
+      }
+
+      &:after {
+        bottom: calc(100% - 10% - 380px);
+      }
+    }
   }
 
   &__description {
     margin-top: 130px;
     margin-left: 30px;
+
+    @include mediaSmartfon {
+      width: 280px;
+      margin: 80px 0 0 0;
+    }
 
     h3 {
       position: relative;
@@ -88,6 +112,12 @@ export default {
     p {
       max-width: 450px;
       line-height: 27px;
+
+      @include mediaSmartfon {
+        font-size: 13px;
+        line-height: 20px;
+        text-align: justify;
+      }
     }
 
     .project-card__tags {
@@ -96,8 +126,28 @@ export default {
     }
 
     .project-card__buttons {
-      .btn:nth-child(1) {
-        margin-right: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      @include mediaSmartfon {
+        justify-content: center;
+
+        .btn {
+          margin: 5px !important;
+
+          &:first-child {
+            margin-bottom: 25px !important;
+          }
+        }
+      }
+
+      .btn:first-child {
+        margin: 5px 30px 5px 0;
+      }
+
+      .btn:last-child {
+        margin: 5px 5px 5px 0;
       }
     }
   }

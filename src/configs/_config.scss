@@ -7,13 +7,19 @@ $white: #fff;
 $black: #000;
 
 @mixin mediaDesktop {
-  @media screen and (min-width: 1051px) {
+  @media screen and (min-width: 1151px) {
     @content;
   }
 }
 
 @mixin mediaSmartfon {
-  @media screen and (min-width: 100px) and (max-width: 1050px) {
+  @media screen and (min-width: 100px) and (max-width: 1150px) {
+    @content;
+  }
+}
+
+@mixin buttons {
+  @media screen and (max-width: 1250px) {
     @content;
   }
 }

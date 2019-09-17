@@ -1,13 +1,6 @@
 <template>
   <div id="app">
     <header>
-      <div class="menu__hamburger" v-on:click="handleHamburger">
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
       <div class="menu">
         <button class="menu-btn" v-for="btn in btns" :key="btn.id" v-on:click="selectComponent(btn.component)">
           {{ btn.name }}
@@ -100,29 +93,14 @@ export default {
       this.setComponent(component);
     },
     selectComponent: function(component) {
-      const menuHamburger = document.querySelector(".menu__hamburger");
       const menu = document.querySelector(".menu");
       const menuButtons = document.querySelectorAll(".menu-btn");
       menuButtons.forEach(() => {
-        menuHamburger.classList.remove("active");
         menu.classList.remove("active");
       });
 
       this.setMenuState(component);
       this.setComponent(component);
-    },
-
-    handleHamburger() {
-      const menuHamburger = document.querySelector(".menu__hamburger");
-      const menu = document.querySelector(".menu");
-
-      if (menuHamburger.classList.contains("active")) {
-        menuHamburger.classList.remove("active");
-        menu.classList.remove("active");
-      } else {
-        menuHamburger.classList.add("active");
-        menu.classList.add("active");
-      }
     }
   }
 };
@@ -156,9 +134,6 @@ body {
 }
 
 #app {
-  // height: 100vh;
-  // height: calc(var(--vh, 1vh) * 100);
-  // min-height: -webkit-fill-available;
   width: 100vw;
   mix-blend-mode: screen;
 }
@@ -169,18 +144,13 @@ header {
   grid-template-columns: 2% repeat(12, 7%) 2%;
   grid-column-gap: 1%;
 
-  @include mediaSmartfon {
-    display: flex;
-    flex-direction: column;
-  }
-
   .menu {
     grid-column: 3 / 13;
     justify-self: end;
-    // margin-top: 20px;
 
     @include mediaSmartfon {
-      display: none;
+      grid-column: 2 / 14;
+      justify-self: center;
     }
 
     &.active {
@@ -198,17 +168,15 @@ header {
       }
     }
 
-    @include mediaDesktop {
-      &-btn--active:before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 4px;
-        top: 0;
-        right: 0;
-        background: $text-basic-color;
-        // TODO: Add effet on click. Old element - remove bar smoothly, clicked element add bar smoothly
-      }
+    &-btn--active:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      top: 0;
+      right: 0;
+      background: $text-basic-color;
+      // TODO: Add effet on click. Old element - remove bar smoothly, clicked element add bar smoothly
     }
 
     &-btn--active {
@@ -221,6 +189,10 @@ header {
       padding: 20px 5px 10px;
       cursor: pointer;
 
+      @include mediaSmartfon {
+        font-size: 18px;
+      }
+
       &:hover {
         background: lighten($background-color, 10%);
         border-radius: 4px;
@@ -231,67 +203,7 @@ header {
       margin: 0 80px;
 
       @include mediaSmartfon {
-        margin: 50px 0;
-      }
-    }
-  }
-
-  .menu__hamburger {
-    align-self: flex-end;
-    width: 45px;
-    padding: 10px;
-    margin: 20px 20px 0 0;
-
-    @include mediaDesktop {
-      display: none;
-    }
-
-    ul {
-      width: 25px;
-      height: 19px;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      position: relative;
-
-      li {
-        position: absolute;
-        width: 25px;
-        height: 3px;
-        background: $text-basic-color;
-        transform: rotate(0deg);
-
-        &:nth-child(2) {
-          top: 8px;
-        }
-
-        &:last-child {
-          top: 16px;
-        }
-      }
-    }
-
-    &.active {
-      z-index: 100;
-
-      ul {
-        li {
-          transition: all 1s ease;
-        }
-
-        li:first-child {
-          transform: rotate(45deg);
-          top: 10px;
-        }
-
-        li:nth-child(2) {
-          display: none;
-        }
-
-        li:last-child {
-          top: 10px;
-          transform: rotate(135deg);
-        }
+        margin: 0 20px;
       }
     }
   }

@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <img src="../assets/guy_youre_looking_for.svg" alt="Nothing" />
+    <img src="../assets/guy_youre_looking_for.svg" alt="Guy you're looking for." />
   </div>
 </template>
 

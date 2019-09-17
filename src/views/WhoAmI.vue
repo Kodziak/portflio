@@ -6,14 +6,15 @@
     <div class="whoami__content">
       <h3>Meet me.</h3>
       <p>
-        My name is Przemek. I’m a <span>IT student</span> based in <span>warsaw</span> with over two years industry experience.
-        I’m specialised with <span>test development</span>, using JavaScript, Puppeteer and Cucumber. Also I’am fascinated about
-        <span>SCRUM methodology</span>.
+        My name is <span>Przemek</span>. I’m a <span>IT student</span> based in <span>warsaw</span> with over two years industry
+        experience. Currently working as a <span>test engineer</span>. I have also experience industry as a
+        <span>scrum master</span>.<br />
+        My main technologies are: <span>javascript, puppeteer and cucumber</span>.
       </p>
       <h4>Experience.</h4>
       <p>
-        Currently working in <span>DOC PLANNER</span> team.<br />
-        Had to presence to work in <span>XTB</span>.
+        Currently working in <span>DOC PLANNER</span>.<br />
+        Had to pleasure to work in <span>XTB</span>.
       </p>
       <div class="whoami__buttons">
         <div v-for="(btn, index) in btns" :key="index">

@@ -26,6 +26,10 @@
     &:hover {
       background: $white;
     }
+
+    &.btn--inactive {
+      background-color: #cccccc;
+    }
   }
 
   &--secondary {
@@ -36,16 +40,15 @@
     &:hover {
       background: $background-color;
     }
+
+    &.btn--inactive {
+      background-color: none;
+    }
   }
 
   &--inactive {
     border: 0.5px solid #999999;
-    background-color: #cccccc;
     color: #666666;
     cursor: not-allowed;
-
-    &:hover {
-      background-color: #cccccc;
-    }
   }
 }

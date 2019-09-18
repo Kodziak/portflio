@@ -1,10 +1,10 @@
 <template>
-  <div class="link" v-bind:class="media.icon_class">
+  <div class="link" v-bind:class="social.icon_class">
     <a
-      v-bind:target="/^http/.test(media.link) ? '_blank' : '_self'"
-      v-bind:href="media.link"
+      v-bind:target="/^http/.test(social.link) ? '_blank' : '_self'"
+      v-bind:href="social.link"
       rel="noopener noreferrer"
-      v-bind:title="media.title"
+      v-bind:title="social.title"
     >
     </a>
   </div>
@@ -13,7 +13,7 @@
 <script>
 export default {
   props: {
-    media: {
+    social: {
       type: Object,
       required: true
     }
@@ -22,9 +22,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../config";
+@import "../configs/_config";
 
 .link {
+  width: 25px;
+  height: 25px;
+
   a {
     cursor: pointer;
     position: relative;
@@ -35,25 +38,25 @@ export default {
 
   &-mail {
     a::before {
-      content: url("../../assets/mail.svg");
+      content: url("../assets/mail.svg");
     }
   }
 
   &-linkedin {
     a::before {
-      content: url("../../assets/linkedin.svg");
+      content: url("../assets/linkedin.svg");
     }
   }
 
   &-twitter {
     a::before {
-      content: url("../../assets/twitter.svg");
+      content: url("../assets/twitter.svg");
     }
   }
 
   &-github {
     a::before {
-      content: url("../../assets/github.svg");
+      content: url("../assets/github.svg");
     }
   }
 }

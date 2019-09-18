@@ -13,15 +13,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../config";
+@import "../configs/_config";
 
 .tag {
   font-size: 12px;
   display: inline-block;
-  background: $shadow-color-opacity;
-  color: white;
-  padding: 3px 10px;
-  box-shadow: 0px 1px 2px lightgrey;
+  background: lighten($background-color, 10);
+  color: $text-basic-color;
+  padding: 3px 5px;
   margin: 0 5px;
+  border-radius: 2px;
+  text-transform: uppercase;
+
+  @include mediaSmartfon {
+    font-size: 9px;
+  }
 }
 </style>

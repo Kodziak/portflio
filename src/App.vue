@@ -203,7 +203,7 @@ header {
       margin: 0 80px;
 
       @include mediaSmartfon {
-        margin: 0 20px;
+        margin: 0 10px;
       }
     }
   }

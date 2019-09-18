@@ -51,11 +51,11 @@ export default {
     @include mediaSmartfon {
       &:before {
         height: 250px;
-        grid-row-start: 7;
+        grid-row-start: 6;
       }
 
       &:after {
-        bottom: calc(100% - 43% - 250px);
+        bottom: calc(100% - 35% - 250px);
       }
     }
   }
@@ -69,7 +69,8 @@ export default {
     flex-direction: column;
 
     @include mediaSmartfon {
-      grid-row-start: 7;
+      grid-column: 2 / 14;
+      grid-row-start: 6;
       justify-self: center;
     }
 

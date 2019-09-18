@@ -6,15 +6,11 @@
     <div class="whoami__content">
       <h3>Meet me.</h3>
       <p>
-        My name is <span>Przemek</span>. I’m a <span>IT student</span> based in <span>warsaw</span> with over two years industry
-        experience. Currently working as a <span>test engineer</span>. I have also experience industry as a
-        <span>scrum master</span>.<br />
-        My main technologies are: <span>javascript, puppeteer and cucumber</span>.
-      </p>
-      <h4>Experience.</h4>
-      <p>
-        Currently working in <span>DOC PLANNER</span>.<br />
-        Had to pleasure to work in <span>XTB</span>.
+        My name is <span>Przemek</span>. I’m an <span>it student</span> based in <span>warsaw, poland</span> with over two years
+        of industry experience. Currently working as a <span>test developer</span> in <span>xtb</span> where also I have a
+        pleasure to work as a servant-leader - <span>scrum master</span>.<br />
+        My main technology is <span>javascript</span> with <span>puppeteer</span>. In private time I'm learning
+        <span>golang</span> and <span>vue</span>.
       </p>
       <div class="whoami__buttons">
         <div v-for="(btn, index) in btns" :key="index">
@@ -65,7 +61,7 @@ export default {
 @import "../configs/_config";
 .whoami {
   @include mediaSmartfon {
-    margin-bottom: 60px;
+    margin-bottom: 100px;
   }
 
   &.wrapper--background {

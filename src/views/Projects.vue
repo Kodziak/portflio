@@ -72,7 +72,7 @@ export default {
   min-height: calc(var(--vh, 1vh) * 90);
 
   @include mediaSmartfon {
-    margin-bottom: 60px;
+    margin-bottom: 100px;
   }
 
   .wrapper--grid {

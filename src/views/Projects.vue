@@ -1,9 +1,7 @@
 <template>
-  <div class="project">
-    <div class="wrapper--grid">
-      <div class="project__header">
-        <h2>PROJECTS</h2>
-      </div>
+  <div class="project view">
+    <div class="view__header">
+      <h2>PROJECTS</h2>
     </div>
     <div class="project__cards">
       <ProjectCard v-for="(project, index) in projects" :key="index" :project="project" />

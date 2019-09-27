@@ -120,6 +120,7 @@ html {
 
 body {
   margin: 0;
+
   font-family: "Montserrat", sans-serif;
   color: $text-basic-color;
 
@@ -261,7 +262,10 @@ h2 {
   &:before {
     position: absolute;
     content: "";
-    width: 100%;
+    width: 100vw;
+    height: 140%;
+    left: -11vw;
+    top: -20%;
     background: $background-color;
     z-index: -1;
   }
@@ -270,9 +274,11 @@ h2 {
     position: absolute;
     content: "";
     height: 10px;
-    width: 100%;
+    width: 100vw;
+    left: -11vw;
+    top: 120%;
     background: $shadow-color;
-    z-index: 1;
+    z-index: -1;
   }
 }
 
@@ -308,5 +314,15 @@ h4 {
 p {
   font-size: 18px;
   color: $text-description-color;
+}
+
+.view {
+  width: 78%;
+  height: calc(var(--vh, 1vh) * 90);
+  margin: 0 auto;
+}
+
+.view__header {
+  padding-top: 30px;
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
-  <div class="whoami">
-    <div class="whoami__header">
+  <div class="whoami view">
+    <div class="view__header">
       <h2>WHO</h2>
     </div>
     <div class="whoami__content">
-      <div class="whoami__description">
+      <div class="whoami__description wrapper--background">
         <h3>Meet me.</h3>
         <p>
           My name is <span>Przemek</span>. I’m an <span>it student</span> based in <span>warsaw, poland</span> with over two
@@ -115,94 +115,108 @@ export default {
     }
   }
 
-  img {
-    z-index: 2;
-
-    @include mediaSmartfon {
-      display: none;
-    }
-  }
-
   &__content {
-    @include mediaSmartfon {
-      width: 280px;
-    }
-
-    h3 {
-      margin-bottom: 15px;
-      position: relative;
-      display: inline-block;
-
-      &::after {
-        @include halfShadow;
-      }
-    }
-
-    h4 {
-      margin: 25px 0 15px 0;
-      position: relative;
-      display: inline-block;
-
-      &::after {
-        @include halfShadow;
-      }
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 27px;
-
-      @include mediaSmartfon {
-        font-size: 13px;
-        line-height: 20px;
-      }
-
-      span {
-        color: $text-basic-color;
-        font-weight: 600;
-        text-transform: uppercase;
-      }
-    }
-
-    @include mediaSmartfon {
-      grid-column: 3 / 13;
-    }
-  }
-
-  &__buttons {
-    margin-top: 30px;
+    margin-top: 15px;
     display: flex;
+    flex-direction: row;
 
-    @include buttons {
-      flex-direction: column;
+    .whoami__photo {
+      img {
+        z-index: 2;
+
+        @include mediaSmartfon {
+          display: none;
+        }
+      }
     }
 
-    div:first-child {
-      margin: 5px 30px 5px 0;
+    .wrapper--background {
+      &:before {
+      }
+
+      &:after {
+      }
+    }
+
+    .whoami__description {
+      margin: auto 0;
+
+      h3 {
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+
+        &::after {
+          @include halfShadow;
+        }
+      }
+
+      h4 {
+        margin: 25px 0 15px 0;
+        position: relative;
+        display: inline-block;
+
+        &::after {
+          @include halfShadow;
+        }
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 27px;
+
+        @include mediaSmartfon {
+          font-size: 13px;
+          line-height: 20px;
+        }
+
+        span {
+          color: $text-basic-color;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+      }
 
       @include mediaSmartfon {
-        margin: 5px;
-      }
-    }
-
-    div:last-child {
-      margin: 5px 5px 5px 0;
-      z-index: 2;
-
-      @include mediaSmartfon {
-        margin: 5px;
-      }
-    }
-
-    @include mediaSmartfon {
-      flex-direction: column;
-
-      div {
-        align-self: center;
+        grid-column: 3 / 13;
       }
 
-      a {
-        margin: 0 0 20px 0;
+      .whoami__buttons {
+        margin-top: 30px;
+        display: flex;
+
+        @include buttons {
+          flex-direction: column;
+        }
+
+        div:first-child {
+          margin: 5px 30px 5px 0;
+
+          @include mediaSmartfon {
+            margin: 5px;
+          }
+        }
+
+        div:last-child {
+          margin: 5px 5px 5px 0;
+          z-index: 2;
+
+          @include mediaSmartfon {
+            margin: 5px;
+          }
+        }
+
+        @include mediaSmartfon {
+          flex-direction: column;
+
+          div {
+            align-self: center;
+          }
+
+          a {
+            margin: 0 0 20px 0;
+          }
+        }
       }
     }
   }

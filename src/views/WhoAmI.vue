@@ -1,25 +1,29 @@
 <template>
-  <div class="whoami wrapper--grid wrapper--background">
+  <div class="whoami">
     <div class="whoami__header">
       <h2>WHO</h2>
     </div>
     <div class="whoami__content">
-      <h3>Meet me.</h3>
-      <p>
-        My name is <span>Przemek</span>. I’m an <span>it student</span> based in <span>warsaw, poland</span> with over two years
-        of industry experience. Currently working as a <span>test developer</span> in <span>xtb</span> where also I have a
-        pleasure to work as a servant-leader - <span>scrum master</span>.<br />
-        My main technology is <span>javascript</span> with <span>puppeteer</span>. In private time I'm learning
-        <span>golang</span> and <span>vue</span>.
-      </p>
-      <div class="whoami__buttons">
-        <div v-for="(btn, index) in btns" :key="index">
-          <LinkedButton v-if="btn.link" :btn="btn" :class="btn.type">{{ btn.name }}</LinkedButton>
-          <Button v-else :btn="btn" :class="btn.type" @componentFromChildren="handleComponent">{{ btn.name }}</Button>
+      <div class="whoami__description">
+        <h3>Meet me.</h3>
+        <p>
+          My name is <span>Przemek</span>. I’m an <span>it student</span> based in <span>warsaw, poland</span> with over two
+          years of industry experience. Currently working as a <span>test developer</span> in <span>xtb</span> where also I have
+          a pleasure to work as a servant-leader - <span>scrum master</span>.<br />
+          My main technology is <span>javascript</span> with <span>puppeteer</span>. In private time I'm learning
+          <span>golang</span> and <span>vue</span>.
+        </p>
+        <div class="whoami__buttons">
+          <div v-for="(btn, index) in btns" :key="index">
+            <LinkedButton v-if="btn.link" :btn="btn" :class="btn.type">{{ btn.name }}</LinkedButton>
+            <Button v-else :btn="btn" :class="btn.type" @componentFromChildren="handleComponent">{{ btn.name }}</Button>
+          </div>
         </div>
       </div>
+      <div class="whoami__photo">
+        <img src="../assets/guy_youre_looking_for.svg" alt="Guy you're looking for." />
+      </div>
     </div>
-    <img src="../assets/guy_youre_looking_for.svg" alt="Guy you're looking for." />
   </div>
 </template>
 
@@ -112,10 +116,6 @@ export default {
   }
 
   img {
-    grid-column: 8 / 13;
-    grid-row: 3 / 12;
-    // margin-top: 25px;
-    justify-self: end;
     z-index: 2;
 
     @include mediaSmartfon {
@@ -124,14 +124,8 @@ export default {
   }
 
   &__content {
-    grid-column: 3 / 8;
-    grid-row: 5 / 12;
-
     @include mediaSmartfon {
-      grid-row: 5 / 9;
       width: 280px;
-      justify-self: center;
-      // align-self: end;
     }
 
     h3 {

@@ -59,17 +59,6 @@ export default {
         top: calc(100% + 40px);
         left: auto;
       }
-
-      @include mediaSmartfon {
-        &:before {
-          height: 250px;
-          grid-row-start: 6;
-        }
-
-        &:after {
-          bottom: calc(100% - 35% - 250px);
-        }
-      }
     }
 
     .home__description {

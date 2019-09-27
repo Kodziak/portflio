@@ -108,6 +108,7 @@ export default {
 
 <style lang="scss">
 @import "./configs/_config";
+@import "./configs/_font";
 
 * {
   box-sizing: border-box;
@@ -225,37 +226,6 @@ header {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-p {
-  margin: 0;
-  padding: 0;
-  color: $text-basic-color;
-}
-
-h1 {
-  font-size: 128px;
-  font-weight: 600;
-  line-height: 156px;
-
-  @include mediaSmartfon {
-    font-size: 48px;
-    line-height: 72px;
-  }
-}
-
-h2 {
-  font-size: 64px;
-  font-weight: 600;
-
-  @include mediaSmartfon {
-    font-size: 36px;
-  }
-}
-
 .wrapper--background {
   position: relative;
 
@@ -280,40 +250,6 @@ h2 {
     background: $shadow-color;
     z-index: -1;
   }
-}
-
-.wrapper--grid {
-  height: calc(var(--vh, 1vh) * 90);
-  display: grid;
-  grid-template-columns: 2% repeat(12, 7%) 2%;
-  grid-column-gap: 1%;
-  grid-template-rows: 2% repeat(12, 7%) 2%;
-  grid-row-gap: 1%;
-
-  @include mediaSmartfon {
-    grid-column-start: 1;
-  }
-}
-
-h3 {
-  font-size: 36px;
-
-  @include mediaSmartfon {
-    font-size: 24px;
-  }
-}
-
-h4 {
-  font-size: 24px;
-
-  @include mediaSmartfon {
-    font-size: 18px;
-  }
-}
-
-p {
-  font-size: 18px;
-  color: $text-description-color;
 }
 
 .view {

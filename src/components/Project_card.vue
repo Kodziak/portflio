@@ -83,9 +83,12 @@ export default {
 
     @include mediaSmartfon {
       &:before {
+        top: 5%;
+        height: 105%;
       }
 
       &:after {
+        top: 110%;
       }
     }
   }
@@ -96,7 +99,7 @@ export default {
 
     @include mediaSmartfon {
       width: 280px;
-      margin: 80px 0 0 0;
+      margin: 30px 0 0 0;
     }
 
     h3 {

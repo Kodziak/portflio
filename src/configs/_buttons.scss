@@ -1,8 +1,7 @@
 .btn {
   display: inline-block;
-  // width: 280px;
-  // line-height: 50px;
-  padding: 18px 32px;
+  width: 280px;
+  line-height: 50px;
   text-align: center;
   font-size: 16pt;
   cursor: pointer;
@@ -10,6 +9,9 @@
   position: relative;
 
   @include mediaSmartfon {
+    width: 190px;
+    line-height: 32px;
+    font-size: 11pt;
   }
 
   &:after {

@@ -64,37 +64,10 @@ export default {
 <style lang="scss">
 @import "../configs/_config";
 .whoami {
-  @include mediaSmartfon {
-    margin-bottom: 100px;
-  }
-
-  &.wrapper--background {
-    &:before {
-      height: 500px;
-      top: 23%;
-    }
-
-    &:after {
-      bottom: calc(100% - 23% - 500px);
-    }
-
+  &.view {
     @include mediaSmartfon {
-      &:before {
-        top: 20%;
-      }
-
-      &:after {
-        bottom: calc(100% - 20% - 500px);
-      }
-    }
-  }
-
-  &__header {
-    grid-column: 3 / 13;
-    grid-row: 2 / 2;
-
-    @include mediaSmartfon {
-      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -119,6 +92,11 @@ export default {
     margin-top: 15px;
     display: flex;
     flex-direction: row;
+
+    @include mediaSmartfon {
+      align-self: center;
+      justify-self: center;
+    }
 
     .whoami__photo {
       img {
@@ -175,10 +153,6 @@ export default {
           font-weight: 600;
           text-transform: uppercase;
         }
-      }
-
-      @include mediaSmartfon {
-        grid-column: 3 / 13;
       }
 
       .whoami__buttons {

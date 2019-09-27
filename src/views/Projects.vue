@@ -75,22 +75,6 @@ export default {
     margin-bottom: 100px;
   }
 
-  .wrapper--grid {
-    height: 9vh;
-    grid-template-rows: 20% 70%;
-    grid-row-gap: 10%;
-
-    @include mediaSmartfon {
-      grid-column-start: 1;
-      margin-top: 30px;
-    }
-  }
-
-  &__header {
-    grid-column: 3 / 5;
-    grid-row: 2 / 2;
-  }
-
   h2 {
     position: relative;
     display: inline-block;

@@ -1,6 +1,6 @@
 <template>
-  <div class="project view">
-    <div class="view__header">
+  <div class="project">
+    <div class="view__header view">
       <h2>PROJECTS</h2>
     </div>
     <div class="project__cards">
@@ -67,7 +67,9 @@ export default {
 @import "../configs/_config";
 
 .project {
-  min-height: calc(var(--vh, 1vh) * 90);
+  .view {
+    height: unset !important;
+  }
 
   @include mediaSmartfon {
     margin-bottom: 100px;

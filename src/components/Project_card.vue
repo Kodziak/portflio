@@ -69,23 +69,23 @@ export default {
     position: relative;
 
     &:before {
-      height: 400px;
+      height: 90%;
       top: 20%;
+      left: 0;
+      right: 0;
     }
 
     &:after {
-      bottom: calc(100% - 20% - 400px);
-      z-index: 5;
+      top: 110%;
+      left: 0;
+      right: 0;
     }
 
     @include mediaSmartfon {
       &:before {
-        top: 10%;
-        height: 380px;
       }
 
       &:after {
-        bottom: calc(100% - 10% - 380px);
       }
     }
   }

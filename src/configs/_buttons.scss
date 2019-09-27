@@ -10,9 +10,6 @@
   position: relative;
 
   @include mediaSmartfon {
-    width: 196px;
-    line-height: 35px;
-    font-size: 18px;
   }
 
   &:after {

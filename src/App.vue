@@ -264,7 +264,7 @@ h2 {
     content: "";
     width: 100vw;
     height: 140%;
-    left: -11vw;
+    left: -10vw;
     top: -20%;
     background: $background-color;
     z-index: -1;
@@ -275,7 +275,7 @@ h2 {
     content: "";
     height: 10px;
     width: 100vw;
-    left: -11vw;
+    left: -10vw;
     top: 120%;
     background: $shadow-color;
     z-index: -1;
@@ -317,7 +317,7 @@ p {
 }
 
 .view {
-  width: 78%;
+  width: 80%;
   height: calc(var(--vh, 1vh) * 90);
   margin: 0 auto;
 }

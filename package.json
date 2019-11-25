@@ -1,18 +1,18 @@
 {
-  "name": "potrfolio",
+  "name": "portfolio",
   "version": "2.0.0",
   "private": true,
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "eslint ./src/*.*"
+    "eslint": "eslint src/*.*"
   },
   "dependencies": {
     "mailgo": "^0.8.2",
-    "sass": "^1.17.2",
-    "sass-loader": "^7.1.0",
-    "vue": "^2.6.6"
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",

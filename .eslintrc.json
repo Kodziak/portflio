@@ -16,7 +16,20 @@
   },
   "plugins": ["vue"],
   "rules": {
+    "quotes": ["error", "single"],
     "no-console": "off",
-    "quotes": ["error", "single"]
+    "no-await-in-loop": "off",
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "no-var-requires": "off",
+    "strict": "off",
+    "global-require": "off",
+    "lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
   }
 }

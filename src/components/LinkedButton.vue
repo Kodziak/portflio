@@ -11,9 +11,9 @@
 export default {
   props: {
     btn: {
-      type: Object
-    }
-  }
+      type: Object,
+    },
+  },
 };
 </script>
 

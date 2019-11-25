@@ -28,36 +28,36 @@
 </template>
 
 <script>
-import Button from "../components/Button";
-import LinkedButton from "../components/LinkedButton";
+import Button from '../components/Button.vue';
+import LinkedButton from '../components/LinkedButton.vue';
 
 export default {
-  name: "WhoAmI",
+  name: 'WhoAmI',
   components: {
     Button,
-    LinkedButton
+    LinkedButton,
   },
   data() {
     return {
       btns: [
         {
-          name: "VIEW RESUME",
-          type: "btn--secondary",
-          link: "./CV_Przemyslaw_Paczoski.pdf"
+          name: 'VIEW RESUME',
+          type: 'btn--secondary',
+          link: './CV_Przemyslaw_Paczoski.pdf',
         },
         {
-          name: "CHECK MY WORK",
-          type: "btn--primary",
-          component: "Projects"
-        }
-      ]
+          name: 'CHECK MY WORK',
+          type: 'btn--primary',
+          component: 'Projects',
+        },
+      ],
     };
   },
   methods: {
     handleComponent(component) {
-      this.$emit("componentFromChildren", component);
-    }
-  }
+      this.$emit('componentFromChildren', component);
+    },
+  },
 };
 </script>
 

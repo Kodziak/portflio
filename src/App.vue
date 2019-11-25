@@ -2,88 +2,100 @@
   <div id="app">
     <header>
       <div class="menu">
-        <button class="menu-btn" v-for="btn in btns" :key="btn.id" v-on:click="selectComponent(btn.component)">
+        <button
+          class="menu-btn"
+          v-for="btn in btns"
+          :key="btn.id"
+          v-on:click="selectComponent(btn.component)"
+        >
           {{ btn.name }}
         </button>
       </div>
     </header>
-    <component :is="selectedComponent" @componentFromChildren="handleComponent"></component>
+    <component
+      :is="selectedComponent"
+      @componentFromChildren="handleComponent"
+    ></component>
     <div class="socials">
-      <Social v-for="(social, index) in socials" :key="index" :social="social"></Social>
+      <Social
+        v-for="(social, index) in socials"
+        :key="index"
+        :social="social"
+      ></Social>
     </div>
   </div>
 </template>
 
 <script>
-import Home from "./views/Home.vue";
-import WhoAmI from "./views/WhoAmI.vue";
-import Projects from "./views/Projects.vue";
-import Social from "./components/Social";
+import Home from './views/Home.vue';
+import WhoAmI from './views/WhoAmI.vue';
+import Projects from './views/Projects.vue';
+import Social from './components/Social.vue';
 
 export default {
-  name: "app",
+  name: 'app',
   components: {
     Home,
     WhoAmI,
     Projects,
-    Social
+    Social,
   },
   data() {
     return {
-      selectedComponent: "Home",
+      selectedComponent: 'Home',
       btns: [
-        { id: 1, name: "HOME", component: "Home" },
-        { id: 2, name: "WHO AM I", component: "WhoAmI" },
-        { id: 3, name: "PROJECTS", component: "Projects" }
+        { id: 1, name: 'HOME', component: 'Home' },
+        { id: 2, name: 'WHO AM I', component: 'WhoAmI' },
+        { id: 3, name: 'PROJECTS', component: 'Projects' },
       ],
       socials: [
         {
-          title: "Mail",
-          link: "mailto:kodziak1416@gmail.com",
-          icon_class: "link-mail"
+          title: 'Mail',
+          link: 'mailto:kodziak1416@gmail.com',
+          icon_class: 'link-mail',
         },
         {
-          title: "Linkedin",
-          link: "https://linkedin.com/in/ppaczoski/",
-          icon_class: "link-linkedin"
+          title: 'Linkedin',
+          link: 'https://linkedin.com/in/ppaczoski/',
+          icon_class: 'link-linkedin',
         },
         {
-          title: "Twitter",
-          link: "https://twitter.com/Kodziakkk",
-          icon_class: "link-twitter"
+          title: 'Twitter',
+          link: 'https://twitter.com/Kodziakkk',
+          icon_class: 'link-twitter',
         },
         {
-          title: "Github",
-          link: "https://github.com/Kodziak/",
-          icon_class: "link-github"
-        }
-      ]
+          title: 'Github',
+          link: 'https://github.com/Kodziak/',
+          icon_class: 'link-github',
+        },
+      ],
     };
   },
   created() {
     let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-    window.addEventListener("resize", () => {
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    window.addEventListener('resize', () => {
+      vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
     });
   },
   mounted() {
-    this.setMenuState("Home");
+    this.setMenuState('Home');
   },
   methods: {
     setComponent(component) {
       this.selectedComponent = component;
     },
     setMenuState(component) {
-      const menuButtons = document.querySelectorAll(".menu-btn");
+      const menuButtons = document.querySelectorAll('.menu-btn');
 
-      menuButtons.forEach(el => {
-        let clicked = el.textContent.replace(/\s/g, "").toLowerCase();
-        let comp = component.replace(/\s/g, "").toLowerCase();
-        el.classList.remove("menu-btn--active");
+      menuButtons.forEach((el) => {
+        const clicked = el.textContent.replace(/\s/g, '').toLowerCase();
+        const comp = component.replace(/\s/g, '').toLowerCase();
+        el.classList.remove('menu-btn--active');
         if (clicked === comp) {
-          el.classList.add("menu-btn--active");
+          el.classList.add('menu-btn--active');
         }
       });
     },
@@ -92,17 +104,17 @@ export default {
       this.setMenuState(component);
       this.setComponent(component);
     },
-    selectComponent: function(component) {
-      const menu = document.querySelector(".menu");
-      const menuButtons = document.querySelectorAll(".menu-btn");
+    selectComponent(component) {
+      const menu = document.querySelector('.menu');
+      const menuButtons = document.querySelectorAll('.menu-btn');
       menuButtons.forEach(() => {
-        menu.classList.remove("active");
+        menu.classList.remove('active');
       });
 
       this.setMenuState(component);
       this.setComponent(component);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -115,7 +127,11 @@ export default {
 }
 
 html {
-  background-image: linear-gradient(45deg, $background-color, $background-opacity-color);
+  background-image: linear-gradient(
+    45deg,
+    $background-color,
+    $background-opacity-color
+  );
   background-repeat: no-repeat;
 }
 
@@ -178,7 +194,6 @@ header {
       top: 0;
       right: 0;
       background: $text-basic-color;
-      // TODO: Add effet on click. Old element - remove bar smoothly, clicked element add bar smoothly
     }
 
     &-btn--active {

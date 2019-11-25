@@ -17,20 +17,20 @@
 </template>
 
 <script>
-import Tag from "./Tag";
-import LinkedButton from "./LinkedButton";
+import Tag from './Tag.vue';
+import LinkedButton from './LinkedButton.vue';
 
 export default {
   components: {
     Tag,
-    LinkedButton
+    LinkedButton,
   },
   props: {
     project: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 

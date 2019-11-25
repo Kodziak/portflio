@@ -10,56 +10,56 @@
 </template>
 
 <script>
-import ProjectCard from "../components/Project_card";
+import ProjectCard from '../components/Project_card.vue';
 
 export default {
-  name: "Projects",
+  name: 'Projects',
   components: {
-    ProjectCard
+    ProjectCard,
   },
   data() {
     return {
       projects: [
         {
-          title: "Portfolio",
-          description: "Personal website to introduce myself. My look over the design and developing.",
-          img: "./portfolio.png",
-          tags: ["javascript", "vue", "scss", "adobe Xd"],
+          title: 'Portfolio',
+          description: 'Personal website to introduce myself. My look over the design and developing.',
+          img: './portfolio.png',
+          tags: ['javascript', 'vue', 'scss', 'adobe Xd'],
           btns: [
             {
-              name: "VIEW CODE",
-              type: "btn--secondary",
-              link: "https://www.github.com/kodziak/portfolio"
+              name: 'VIEW CODE',
+              type: 'btn--secondary',
+              link: 'https://www.github.com/kodziak/portfolio',
             },
             {
-              name: "VIEW DEMO",
-              type: "btn--primary",
-              link: "https://www.ppaczoski.pl"
-            }
-          ]
+              name: 'VIEW DEMO',
+              type: 'btn--primary',
+              link: 'https://www.ppaczoski.pl',
+            },
+          ],
         },
         {
-          title: "HomePage",
+          title: 'HomePage',
           description:
-            "An browser extension which replace default homepage. Build to cover my needs when starting browsering an internet.",
-          img: "./work_in_progress.png",
-          tags: ["javascript", "adobe Xd"],
+            'An browser extension which replace default homepage. Build to cover my needs when starting browsering an internet.',
+          img: './work_in_progress.png',
+          tags: ['javascript', 'adobe Xd'],
           btns: [
             {
-              name: "VIEW CODE",
-              type: "btn--secondary btn--inactive",
-              link: ""
+              name: 'VIEW CODE',
+              type: 'btn--secondary btn--inactive',
+              link: '',
             },
             {
-              name: "VIEW DEMO",
-              type: "btn--primary btn--inactive",
-              link: ""
-            }
-          ]
-        }
-      ]
+              name: 'VIEW DEMO',
+              type: 'btn--primary btn--inactive',
+              link: '',
+            },
+          ],
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 

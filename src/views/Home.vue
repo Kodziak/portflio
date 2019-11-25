@@ -11,27 +11,27 @@
 </template>
 
 <script>
-import Button from "../components/Button";
+import Button from '../components/Button.vue';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    Button
+    Button,
   },
   data() {
     return {
       btn: {
-        name: "GET TO KNOW ME",
-        type: "btn--primary",
-        component: "WhoAmI"
-      }
+        name: 'GET TO KNOW ME',
+        type: 'btn--primary',
+        component: 'WhoAmI',
+      },
     };
   },
   methods: {
     handleComponent(component) {
-      this.$emit("componentFromChildren", component);
-    }
-  }
+      this.$emit('componentFromChildren', component);
+    },
+  },
 };
 </script>
 

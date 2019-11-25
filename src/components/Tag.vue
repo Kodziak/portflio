@@ -6,9 +6,9 @@
 export default {
   props: {
     tag: {
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 

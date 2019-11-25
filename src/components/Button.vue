@@ -8,17 +8,17 @@
 export default {
   props: {
     btn: {
-      type: Object
-    }
+      type: Object,
+    },
   },
   data() {
     return {};
   },
   methods: {
     handleClick(component) {
-      this.$emit("componentFromChildren", component);
-    }
-  }
+      this.$emit('componentFromChildren', component);
+    },
+  },
 };
 </script>
 

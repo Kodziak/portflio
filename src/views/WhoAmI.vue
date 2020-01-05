@@ -7,11 +7,11 @@
       <div class="whoami__description wrapper--background">
         <h3>Meet me.</h3>
         <p>
-          My name is <span>Przemek</span>. I’m an <span>it student</span> based in <span>warsaw, poland</span> with over two
-          years of industry experience. Currently working as a <span>test developer</span> in <span>xtb</span> where also I have
-          a pleasure to work as a servant-leader - <span>scrum master</span>.<br />
-          My main technology is <span>javascript</span> with <span>puppeteer</span>. In private time I'm learning
-          <span>golang</span> and <span>vue</span>.
+          Software is my passion, in which I happily improving daily by reading articles, building software and learning new technologies.
+          Also, I’m spending much time reading books about personal growth, productivity, finances, security, design and other similar things.
+          Currently, I’m an <span>IT student</span> based in <span>Warsaw, Poland</span> with over two years of experience.
+          <br>I’m specialized in <span>test development</span> but had to presence working also as a <span>Scrum Master</span>.
+          <br><span>Technologies</span> I work with: JavaScript (ES6+), TypeScript, Vue, Jest, Puppeteer, Cucumber, NodeJS, Sass, HTML5, CSS3, Git.
         </p>
         <div class="whoami__buttons">
           <div v-for="(btn, index) in btns" :key="index">
@@ -108,14 +108,6 @@ export default {
       }
     }
 
-    .wrapper--background {
-      &:before {
-      }
-
-      &:after {
-      }
-    }
-
     .whoami__description {
       margin: auto 0;
 
@@ -151,7 +143,6 @@ export default {
         span {
           color: $text-basic-color;
           font-weight: 600;
-          text-transform: uppercase;
         }
       }
 

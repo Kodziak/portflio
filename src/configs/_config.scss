@@ -8,7 +8,7 @@ $background-base: #191919;
 $background-top: #242424;
 
 $white: #ECEBF3;
-$black: #011828;
+$black: #191919;
 $purple: #7647B9;
 $purple-opacity: rgba(118, 71, 185, 0.5);
 
@@ -50,9 +50,10 @@ $purple-opacity: rgba(118, 71, 185, 0.5);
   content: "";
   width: 100%;
   height: 100%;
-  bottom: -10px;
-  left: -10px;
-  background: $purple-opacity;
+  bottom: -5px;
+  left: -5px;
+  background: $purple;
+  border: 0.5px solid lighten($black, 3);
   z-index: -1;
 }
 
@@ -63,6 +64,6 @@ $purple-opacity: rgba(118, 71, 185, 0.5);
   height: 50%;
   bottom: -5px;
   left: -5px;
-  background: $purple-opacity;
+  background: $purple;
   z-index: -1;
 }

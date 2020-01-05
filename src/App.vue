@@ -134,8 +134,8 @@ export default {
 html {
   background-image: linear-gradient(
     45deg,
-    $background-color,
-    $background-opacity-color
+    $background-base,
+    $background-top
   );
   background-repeat: no-repeat;
 }
@@ -216,7 +216,7 @@ header {
       }
 
       &:hover {
-        background: lighten($background-color, 10%);
+        background: lighten($background-base, 10%);
         border-radius: 4px;
       }
     }
@@ -252,7 +252,7 @@ header {
     height: 140%;
     left: -10vw;
     top: -20%;
-    background: $background-color;
+    background: $background-base;
     z-index: -1;
   }
 

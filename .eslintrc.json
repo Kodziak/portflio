@@ -25,7 +25,7 @@
     "strict": "off",
     "global-require": "off",
     "max-len": [
-      "error",
+      "warn",
       {
         "code": 150
       }

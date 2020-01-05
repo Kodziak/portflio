@@ -61,6 +61,11 @@ export default {
   &__description {
     font-weight: 400;
     margin: 50px 0;
+
+    @include mediaSmartfon {
+      font-size: 18px;
+      margin: 20px 0;
+    }
   }
 }
 </style>

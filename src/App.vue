@@ -21,6 +21,7 @@
         v-for="(social, index) in socials"
         :key="index"
         :social="social"
+        :class="social.background"
       ></Social>
     </div>
   </div>
@@ -53,25 +54,25 @@ export default {
           title: 'Mail',
           link: 'mailto:kodziak1416@gmail.com',
           icon: 'mail',
-          // background: 'active-mail',
+          background: 'icon-mail',
         },
         {
           title: 'Linkedin',
           link: 'https://linkedin.com/in/ppaczoski/',
           icon: 'linkedin',
-          // background: 'active-linkedin',
+          background: 'icon-linkedin',
         },
         {
           title: 'Twitter',
           link: 'https://twitter.com/Kodziakkk',
           icon: 'twitter',
-          // background: 'active-twitter',
+          background: 'icon-twitter',
         },
         {
           title: 'Github',
           link: 'https://github.com/Kodziak/',
           icon: 'github',
-          // background: 'active-github',
+          background: 'icon-github',
         },
       ],
     };

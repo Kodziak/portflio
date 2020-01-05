@@ -51,28 +51,27 @@ a {
 
 a:hover {
   transition: background 0.3s ease-in-out;
-  background: rgba(102, 153, 255, 0.5);
 
   span {
     display: inline;
   }
 }
 
-.active {
-  // &-mail {
-  //   background: red;
-  // }
+.icon {
+  &-mail:hover {
+    background: #D44638;
+  }
 
-  // &-linkedin {
-  //   background: blue;
-  // }
+  &-linkedin:hover {
+    background: #2867B2;
+  }
 
-  // &-twitter {
-  //   background: rgba(102, 153, 255, 0.5);
-  // }
+  &-twitter:hover {
+    background: rgba(102, 153, 255);
+  }
 
-  // &-github {
-  //   background: grey;
-  // }
+  &-github:hover {
+    background: #333;
+  }
 }
 </style>

@@ -52,22 +52,26 @@ export default {
         {
           title: 'Mail',
           link: 'mailto:kodziak1416@gmail.com',
-          icon_class: 'link-mail',
+          icon: 'mail',
+          // background: 'active-mail',
         },
         {
           title: 'Linkedin',
           link: 'https://linkedin.com/in/ppaczoski/',
-          icon_class: 'link-linkedin',
+          icon: 'linkedin',
+          // background: 'active-linkedin',
         },
         {
           title: 'Twitter',
           link: 'https://twitter.com/Kodziakkk',
-          icon_class: 'link-twitter',
+          icon: 'twitter',
+          // background: 'active-twitter',
         },
         {
           title: 'Github',
           link: 'https://github.com/Kodziak/',
-          icon_class: 'link-github',
+          icon: 'github',
+          // background: 'active-github',
         },
       ],
     };
@@ -229,15 +233,11 @@ header {
 .socials {
   height: calc(var(--vh, 1vh) * 5);
   display: flex;
-  margin-left: 30px;
+  justify-content: center;
 
   @include mediaSmartfon {
     justify-content: center;
     margin: 0;
-  }
-
-  .link {
-    margin: 0 20px;
   }
 }
 

@@ -1,13 +1,13 @@
 <template>
-  <div class="link" v-bind:class="social.icon_class">
-    <a
-      v-bind:target="/^http/.test(social.link) ? '_blank' : '_self'"
-      v-bind:href="social.link"
-      rel="noopener noreferrer"
-      v-bind:title="social.title"
-    >
-    </a>
-  </div>
+  <a
+    :target="/^http/.test(social.link) ? '_blank' : '_self'"
+    :href="social.link"
+    rel="noopener noreferrer"
+    :title="social.title"
+  >
+    <img :src="getImage(social.icon)" :alt="social.icon" />
+    <span>{{social.title}}</span>
+  </a>
 </template>
 
 <script>
@@ -18,46 +18,61 @@ export default {
       required: true,
     },
   },
+  methods: {
+    getImage(icon) {
+      const icons = require.context('@/assets/', false, /\.svg$/);
+      return icons(`./${icon}.svg`);
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../configs/_config";
+a {
+  height: 60px;
+  width: 60px;
+  margin: 0 10px;
+  border-radius: 15%;
 
-.link {
-  width: 25px;
-  height: 25px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  a {
-    cursor: pointer;
-    position: relative;
-
-    @include mediaSmartfon {
-    }
+  span {
+    display: none;
+    margin-top: 5px;
+    font-size: 12px;
   }
+}
 
-  &-mail {
-    a::before {
-      content: url("../assets/mail.svg");
-    }
-  }
+a:hover {
+  transition: background 0.3s ease-in-out;
+  background: rgba(102, 153, 255, 0.5);
 
-  &-linkedin {
-    a::before {
-      content: url("../assets/linkedin.svg");
-    }
+  span {
+    display: inline;
   }
+}
 
-  &-twitter {
-    a::before {
-      content: url("../assets/twitter.svg");
-    }
-  }
+.active {
+  // &-mail {
+  //   background: red;
+  // }
 
-  &-github {
-    a::before {
-      content: url("../assets/github.svg");
-    }
-  }
+  // &-linkedin {
+  //   background: blue;
+  // }
+
+  // &-twitter {
+  //   background: rgba(102, 153, 255, 0.5);
+  // }
+
+  // &-github {
+  //   background: grey;
+  // }
 }
 </style>

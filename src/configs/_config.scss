@@ -1,10 +1,17 @@
 $background-color: #191919;
-$background-opacity-color: rgba(25, 25, 25, 0.9);
+$background-opacity-color: #242424;
 $text-basic-color: #ecebf3;
 $text-description-color: rgba(236, 235, 243, 0.5);
-$shadow-color: rgba(127, 41, 247, 0.3);
-$white: #fff;
-$black: #000;
+$shadow-color: #7647B9;
+
+$background-base: #191919;
+$background-top: #242424;
+
+$white: #ECEBF3;
+$black: #011828;
+$purple: #7647B9;
+$purple-opacity: rgba(118, 71, 185, 0.5);
+
 
 @mixin mediaDesktop {
   @media screen and (min-width: 1151px) {
@@ -45,7 +52,7 @@ $black: #000;
   height: 100%;
   bottom: -10px;
   left: -10px;
-  background: $shadow-color;
+  background: $purple-opacity;
   z-index: -1;
 }
 
@@ -56,6 +63,6 @@ $black: #000;
   height: 50%;
   bottom: -5px;
   left: -5px;
-  background: $shadow-color;
+  background: $purple-opacity;
   z-index: -1;
 }

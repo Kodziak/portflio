@@ -35,6 +35,11 @@ a {
   margin: 0 10px;
   border-radius: 15%;
 
+  @include mediaSmartfon {
+    height: 35px;
+    width: 40px;
+  }
+
   cursor: pointer;
   position: relative;
   display: flex;
@@ -52,9 +57,12 @@ a {
 a:hover {
   transition: background 0.3s ease-in-out;
 
-  span {
-    display: inline;
+  @include mediaDesktop {
+    span {
+      display: inline;
+    }
   }
+
 }
 
 .icon {

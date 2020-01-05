@@ -1,13 +1,13 @@
 <template>
-  <div class="link" v-bind:class="social.icon_class">
-    <a
-      v-bind:target="/^http/.test(social.link) ? '_blank' : '_self'"
-      v-bind:href="social.link"
-      rel="noopener noreferrer"
-      v-bind:title="social.title"
-    >
-    </a>
-  </div>
+  <a
+    :target="/^http/.test(social.link) ? '_blank' : '_self'"
+    :href="social.link"
+    rel="noopener noreferrer"
+    :title="social.title"
+  >
+    <img :src="getImage(social.icon)" :alt="social.icon" />
+    <span>{{social.title}}</span>
+  </a>
 </template>
 
 <script>
@@ -18,46 +18,68 @@ export default {
       required: true,
     },
   },
+  methods: {
+    getImage(icon) {
+      const icons = require.context('@/assets/', false, /\.svg$/);
+      return icons(`./${icon}.svg`);
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../configs/_config";
+a {
+  height: 60px;
+  width: 60px;
+  margin: 0 10px;
+  border-radius: 15%;
 
-.link {
-  width: 25px;
-  height: 25px;
+  @include mediaSmartfon {
+    height: 35px;
+    width: 40px;
+  }
 
-  a {
-    cursor: pointer;
-    position: relative;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    @include mediaSmartfon {
+  span {
+    display: none;
+    margin-top: 5px;
+    font-size: 12px;
+  }
+}
+
+a:hover {
+  transition: background 0.3s ease-in-out;
+
+  @include mediaDesktop {
+    span {
+      display: inline;
     }
   }
 
-  &-mail {
-    a::before {
-      content: url("../assets/mail.svg");
-    }
+}
+
+.icon {
+  &-mail:hover {
+    background: #D44638;
   }
 
-  &-linkedin {
-    a::before {
-      content: url("../assets/linkedin.svg");
-    }
+  &-linkedin:hover {
+    background: #2867B2;
   }
 
-  &-twitter {
-    a::before {
-      content: url("../assets/twitter.svg");
-    }
+  &-twitter:hover {
+    background: rgba(102, 153, 255);
   }
 
-  &-github {
-    a::before {
-      content: url("../assets/github.svg");
-    }
+  &-github:hover {
+    background: #333;
   }
 }
 </style>

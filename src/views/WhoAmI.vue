@@ -1,7 +1,7 @@
 <template>
   <div class="whoami view">
     <div class="view__header">
-      <h2>WHO</h2>
+      <h2 class="glitch" data-text="WHO AM I?">WHO AM I?</h2>
     </div>
     <div class="whoami__content">
       <div class="whoami__description wrapper--background">
@@ -63,28 +63,13 @@ export default {
 
 <style lang="scss">
 @import "../configs/_config";
+@import "../configs/_glitch";
+
 .whoami {
   &.view {
     @include mediaSmartfon {
       display: flex;
       flex-direction: column;
-    }
-  }
-
-  h2 {
-    position: relative;
-    display: inline-block;
-
-    &:before {
-      @include shadow;
-    }
-
-    &:after {
-      content: "AM I?";
-      position: absolute;
-      width: 200%;
-      font-weight: 400;
-      top: 32%;
     }
   }
 

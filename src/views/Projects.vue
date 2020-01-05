@@ -1,7 +1,7 @@
 <template>
   <div class="project">
     <div class="view__header view">
-      <h2>PROJECTS</h2>
+      <h2 class="glitch" data-text="PROJECTS">PROJECTS</h2>
     </div>
     <div class="project__cards">
       <ProjectCard v-for="(project, index) in projects" :key="index" :project="project" />
@@ -65,6 +65,7 @@ export default {
 
 <style lang="scss">
 @import "../configs/_config";
+@import "../configs/_glitch";
 
 .project {
   .view {
@@ -73,15 +74,6 @@ export default {
 
   @include mediaSmartfon {
     margin-bottom: 100px;
-  }
-
-  h2 {
-    position: relative;
-    display: inline-block;
-
-    &:after {
-      @include shadow;
-    }
   }
 
   &__cards {

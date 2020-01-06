@@ -1,6 +1,9 @@
 <template>
-  <div id="app">
+  <div id="app" :class="mode">
     <header>
+      <button class="mode-change">
+        <img v-on:click="changeMode()" src="../src/assets/icons/sun.svg" alt="Sun">
+      </button>
       <div class="menu">
         <button
           class="menu-btn"
@@ -44,6 +47,7 @@ export default {
   },
   data() {
     return {
+      mode: 'dark',
       selectedComponent: 'Home',
       btns: [
         { id: 1, name: 'HOME', component: 'Home' },
@@ -120,6 +124,9 @@ export default {
       this.setMenuState(component);
       this.setComponent(component);
     },
+    changeMode() {
+      console.log('state');
+    },
   },
 };
 </script>
@@ -145,7 +152,7 @@ body {
   margin: 0;
 
   font-family: "Montserrat", sans-serif;
-  color: $text-basic-color;
+  color: $white;
 
   a,
   button {
@@ -168,6 +175,15 @@ header {
   display: grid;
   grid-template-columns: 2% repeat(12, 7%) 2%;
   grid-column-gap: 1%;
+
+  .mode-change {
+    grid-column: 2 / 2;
+
+    img {
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
 
   .menu {
     grid-column: 3 / 13;
@@ -200,7 +216,7 @@ header {
       height: 4px;
       top: 0;
       right: 0;
-      background: $text-basic-color;
+      background: $white;
     }
 
     &-btn--active {
@@ -265,7 +281,7 @@ header {
     width: 100vw;
     left: -10vw;
     top: 120%;
-    background: $shadow-color;
+    background: $purple-opacity;
     z-index: -1;
   }
 }

@@ -108,7 +108,7 @@ export default {
         margin: 40px 0 50px;
 
         span {
-          color: $text-basic-color;
+          color: $white;
           font-weight: 600;
         }
       }

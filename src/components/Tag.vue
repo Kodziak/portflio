@@ -18,8 +18,8 @@ export default {
 .tag {
   font-size: 12px;
   display: inline-block;
-  background: lighten($background-color, 10);
-  color: $text-basic-color;
+  background: lighten($black, 10);
+  color: $white;
   padding: 3px 5px;
   margin: 0 5px;
   border-radius: 2px;

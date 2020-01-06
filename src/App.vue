@@ -274,6 +274,7 @@ header {
   width: 70%;
   height: calc(var(--vh, 1vh) * 85);
   margin: 0 auto;
+  max-width: 1350px;
 }
 
 .view__header {

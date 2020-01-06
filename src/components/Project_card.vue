@@ -1,5 +1,5 @@
 <template>
-  <div class="project-card wrapper--background">
+  <div class="project-card">
     <img class="project-card__image" v-bind:src="project.img" />
     <div class="project-card__description">
       <h3>{{ project.title }}</h3>
@@ -39,6 +39,7 @@ export default {
 
 .project-card {
   width: 100%;
+  background: $black;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -65,37 +66,8 @@ export default {
     }
   }
 
-  &.wrapper--background {
-    position: relative;
-
-    &:before {
-      height: 90%;
-      top: 20%;
-      left: 0;
-      right: 0;
-    }
-
-    &:after {
-      top: 110%;
-      left: 0;
-      right: 0;
-    }
-
-    @include mediaSmartfon {
-      &:before {
-        top: 5%;
-        height: 105%;
-      }
-
-      &:after {
-        top: 110%;
-      }
-    }
-  }
-
   &__description {
-    margin-top: 130px;
-    margin-left: 30px;
+    margin: auto 0 auto 30px;
 
     @include mediaSmartfon {
       width: 280px;
@@ -105,7 +77,6 @@ export default {
     h3 {
       position: relative;
       display: inline-block;
-      margin-bottom: 20px;
 
       &:after {
         @include halfShadow;
@@ -113,26 +84,19 @@ export default {
     }
 
     p {
-      max-width: 450px;
-      line-height: 27px;
+      margin: 40px 0 0 0;
 
       @include mediaSmartfon {
-        font-size: 13px;
-        line-height: 20px;
         text-align: justify;
       }
     }
 
     .project-card__tags {
       margin-top: 10px;
-      margin-bottom: 30px;
+      margin-bottom: 50px;
     }
 
     .project-card__buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-
       @include mediaSmartfon {
         justify-content: center;
 
@@ -143,14 +107,6 @@ export default {
             margin-bottom: 25px !important;
           }
         }
-      }
-
-      .btn:first-child {
-        margin: 5px 30px 5px 0;
-      }
-
-      .btn:last-child {
-        margin: 5px 5px 5px 0;
       }
     }
   }

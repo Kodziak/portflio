@@ -1,10 +1,12 @@
 <template>
-  <div class="whoami view">
+  <div class="whoami">
     <div class="view__header">
-      <h2 class="glitch" data-text="WHO AM I?">WHO AM I?</h2>
+      <div class="header--bg">
+        <h2 class="glitch" data-text="WHO AM I?">WHO AM I?</h2>
+      </div>
     </div>
-    <div class="whoami__content">
-      <div class="whoami__description wrapper--background">
+    <div class="whoami__content view">
+      <div class="whoami__description">
         <h3>Meet me.</h3>
         <p>
           Software is my passion, in which I happily improving daily by reading articles, building software and learning new technologies.
@@ -21,7 +23,7 @@
         </div>
       </div>
       <div class="whoami__photo">
-        <img src="../assets/guy_youre_looking_for.svg" alt="Guy you're looking for." />
+        <img src="../assets/photos/photo_dark.svg" alt="Guy you're looking for." />
       </div>
     </div>
   </div>
@@ -66,15 +68,7 @@ export default {
 @import "../configs/_glitch";
 
 .whoami {
-  &.view {
-    @include mediaSmartfon {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-
   &__content {
-    margin-top: 15px;
     display: flex;
     flex-direction: row;
 
@@ -84,6 +78,7 @@ export default {
     }
 
     .whoami__photo {
+      margin: auto 0;
       img {
         z-index: 2;
 
@@ -94,20 +89,9 @@ export default {
     }
 
     .whoami__description {
-      margin: auto 0;
+      margin: auto 100px auto 0;
 
       h3 {
-        margin-bottom: 15px;
-        position: relative;
-        display: inline-block;
-
-        &::after {
-          @include halfShadow;
-        }
-      }
-
-      h4 {
-        margin: 25px 0 15px 0;
         position: relative;
         display: inline-block;
 
@@ -117,13 +101,7 @@ export default {
       }
 
       p {
-        font-size: 18px;
-        line-height: 27px;
-
-        @include mediaSmartfon {
-          font-size: 13px;
-          line-height: 20px;
-        }
+        margin: 40px 0 50px;
 
         span {
           color: $text-basic-color;
@@ -132,7 +110,6 @@ export default {
       }
 
       .whoami__buttons {
-        margin-top: 30px;
         display: flex;
 
         @include buttons {

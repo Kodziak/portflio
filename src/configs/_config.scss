@@ -52,7 +52,7 @@ $purple-opacity: rgba(118, 71, 185, 0.5);
   height: 100%;
   bottom: -5px;
   left: -5px;
-  background: $purple;
+  background: $purple-opacity;
   border: 0.5px solid lighten($black, 3);
   z-index: -1;
 }
@@ -60,10 +60,10 @@ $purple-opacity: rgba(118, 71, 185, 0.5);
 @mixin halfShadow {
   position: absolute;
   content: "";
-  width: 100%;
+  width: 50%;
   height: 50%;
   bottom: -5px;
   left: -5px;
-  background: $purple;
+  background: $purple-opacity;
   z-index: -1;
 }

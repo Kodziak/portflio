@@ -24,6 +24,7 @@
         :class="social.background"
       ></Social>
     </div>
+    <img class="polygons" src="../src/assets/polygons_dark.svg" alt="Darkness...">
   </div>
 </template>
 
@@ -158,7 +159,8 @@ body {
 
 #app {
   width: 100vw;
-  mix-blend-mode: screen;
+  position: relative;
+  overflow: hidden;
 }
 
 header {
@@ -292,5 +294,12 @@ header {
     @include mediaSmartfon {
       margin: 30px 0;
     }
+  }
+
+  .polygons {
+    position: absolute;
+    right: -220px;
+    bottom: -90px;
+    overflow: hidden;
   }
 </style>

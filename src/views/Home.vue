@@ -1,7 +1,7 @@
 <template>
   <div class="home view">
     <div class="home__content">
-      <div class="home__header">
+      <div class="home__header header--bg">
         <h1 class="glitch" data-text="Przemysław Paczoski">Przemysław Paczoski</h1>
       </div>
         <h2 class="home__description">Test Developer | Scrum Master</h2>
@@ -45,17 +45,14 @@ export default {
   justify-content: center;
   align-items: center;
 
+  &.view {
+  height: calc(var(--vh, 1vh) * 90);
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  &__header {
-    background: $purple-opacity;
-    width: 105%;
-    text-align: center;
-
   }
 
   &__description {

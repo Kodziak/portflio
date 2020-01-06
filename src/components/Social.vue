@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     getImage(icon) {
-      const icons = require.context('@/assets/', false, /\.svg$/);
+      const icons = require.context('@/assets/icons/', false, /\.svg$/);
       return icons(`./${icon}.svg`);
     },
   },

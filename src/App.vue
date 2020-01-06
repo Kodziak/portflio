@@ -24,6 +24,7 @@
         :class="social.background"
       ></Social>
     </div>
+    <img class="polygons" src="../src/assets/polygons_dark.svg" alt="Darkness...">
   </div>
 </template>
 
@@ -158,7 +159,8 @@ body {
 
 #app {
   width: 100vw;
-  mix-blend-mode: screen;
+  position: relative;
+  overflow: hidden;
 }
 
 header {
@@ -269,12 +271,36 @@ header {
 }
 
 .view {
-  width: 80%;
-  height: calc(var(--vh, 1vh) * 90);
+  width: 70%;
+  height: calc(var(--vh, 1vh) * 85);
   margin: 0 auto;
+  max-width: 1350px;
 }
 
 .view__header {
-  padding-top: 30px;
+  height: calc(var(--vh, 1vh) * 5);
+  padding-left: 140px;
+  display: inline-block;
+
+  @include mediaSmartfon {
+    padding-left: 30px;
+  }
 }
+
+.header--bg {
+    background: $purple-opacity;
+    width: 105%;
+    text-align: center;
+
+    @include mediaSmartfon {
+      margin: 30px 0;
+    }
+  }
+
+  .polygons {
+    position: absolute;
+    right: -220px;
+    bottom: -90px;
+    overflow: hidden;
+  }
 </style>

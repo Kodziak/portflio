@@ -25,7 +25,7 @@ export default {
         {
           title: 'Portfolio',
           description: 'Personal website to introduce myself. My look over the design and developing.',
-          img: './portfolio.png',
+          img: './portfolio.jpg',
           tags: ['javascript', 'vue', 'scss', 'adobe Xd'],
           btns: [
             {

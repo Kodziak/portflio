@@ -302,5 +302,13 @@ header {
     right: -220px;
     bottom: -90px;
     overflow: hidden;
+    z-index: -1;
+
+    @include mediaSmartfon {
+      right: -65px;
+      bottom: -100px;
+      width: 50%;
+      height: 50%;
+    }
   }
 </style>

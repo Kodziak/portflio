@@ -52,6 +52,10 @@ a {
     margin-top: 5px;
     font-size: 12px;
   }
+
+  img {
+    mix-blend-mode: difference;
+  }
 }
 
 a:hover {

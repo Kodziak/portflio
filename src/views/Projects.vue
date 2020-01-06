@@ -40,7 +40,7 @@ export default {
             },
           ],
         },
-        {
+        /*         {
           title: 'HomePage',
           description:
             'An browser extension which replace default homepage. Build to cover my needs when starting browsering an internet.',
@@ -58,7 +58,7 @@ export default {
               link: '',
             },
           ],
-        },
+        }, */
       ],
     };
   },
@@ -70,31 +70,10 @@ export default {
 @import "../configs/_glitch";
 
 .project {
-  .view {
-    height: unset !important;
-  }
-
-  @include mediaSmartfon {
-    margin-bottom: 100px;
-  }
-
   &__cards {
     display: flex;
     flex-direction: column;
-
-    .project-card {
-      margin: 100px 0;
-
-      @include mediaSmartfon {
-        margin: 30px 0;
-
-        &__tags {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-        }
-      }
-    }
+    justify-content: center;
   }
 }
 </style>

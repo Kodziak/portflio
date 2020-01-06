@@ -91,6 +91,10 @@ export default {
     .whoami__description {
       margin: auto 100px auto 0;
 
+      @include mediaSmartfon {
+        margin: auto 0;
+      }
+
       h3 {
         position: relative;
         display: inline-block;
@@ -141,7 +145,7 @@ export default {
           }
 
           a {
-            margin: 0 0 20px 0;
+            margin: 0 0 15px 0;
           }
         }
       }

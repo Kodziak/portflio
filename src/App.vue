@@ -278,11 +278,19 @@ header {
   height: calc(var(--vh, 1vh) * 5);
   padding-left: 140px;
   display: inline-block;
+
+  @include mediaSmartfon {
+    padding-left: 30px;
+  }
 }
 
 .header--bg {
     background: $purple-opacity;
     width: 105%;
     text-align: center;
+
+    @include mediaSmartfon {
+      margin: 30px 0;
+    }
   }
 </style>

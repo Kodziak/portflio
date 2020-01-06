@@ -1,5 +1,7 @@
 <template>
   <div class="project-card">
+    <div class="line-horizontal"></div>
+    <div class="line-vertical"></div>
     <img class="project-card__image" v-bind:src="project.img" />
     <div class="project-card__description">
       <h3>{{ project.title }}</h3>
@@ -43,8 +45,50 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  position: relative;
+  box-shadow: 10px 5px 5px $black;
 
-  img {
+  .line-horizontal::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -10px;
+    width: calc(100% + 10px);
+    height: 2px;
+    background: $white;
+  }
+
+  .line-horizontal::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -20px;
+    width: calc(100% + 20px);
+    height: 2px;
+    background: $white;
+  }
+
+  .line-vertical::before {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    height: calc(60% + 10px);
+    width: 2px;
+    background: $white;
+  }
+
+  .line-vertical::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    height: calc(80% + 20px);
+    width: 2px;
+    background: $white;
+  }
+
+  &__image {
     @include mediaSmartfon {
       display: none;
     }
@@ -68,10 +112,11 @@ export default {
 
   &__description {
     margin: auto 0 auto 30px;
+    z-index: 2;
 
     @include mediaSmartfon {
       width: 280px;
-      margin: 30px 0 0 0;
+      margin: 10px 15px;
     }
 
     h3 {
@@ -87,24 +132,36 @@ export default {
       margin: 40px 0 0 0;
 
       @include mediaSmartfon {
-        text-align: justify;
+        text-align: center;
       }
     }
 
     .project-card__tags {
       margin-top: 10px;
-      margin-bottom: 50px;
+      margin-bottom: 45px;
+
+      @include mediaSmartfon {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
     }
 
     .project-card__buttons {
+      .btn {
+        margin: 5px 20px 5px 0;
+      }
+
       @include mediaSmartfon {
-        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         .btn {
           margin: 5px !important;
 
           &:first-child {
-            margin-bottom: 25px !important;
+            margin-bottom: 15px !important;
           }
         }
       }

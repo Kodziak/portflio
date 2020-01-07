@@ -52,7 +52,7 @@ $purple-opacity: rgba(118, 71, 185, 0.5);
   height: 100%;
   bottom: -5px;
   left: -5px;
-  background: $purple-opacity;
+  background: $purple;
   border: 0.5px solid lighten($black, 3);
   z-index: -1;
 }
@@ -64,6 +64,6 @@ $purple-opacity: rgba(118, 71, 185, 0.5);
   height: 50%;
   bottom: -5px;
   left: -5px;
-  background: $purple-opacity;
+  background: $purple;
   z-index: -1;
 }

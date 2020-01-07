@@ -65,7 +65,7 @@ export default {
         },
         {
           title: 'Twitter',
-          link: 'https://twitter.com/Kodziakkk',
+          link: 'https://twitter.com/_kodziak',
           icon: 'twitter',
           background: 'icon-twitter',
         },

@@ -11,8 +11,8 @@
         <p>
           Software is my passion, in which I happily improving daily by reading articles, building software and learning new technologies.
           Also, I’m spending much time reading books about personal growth, productivity, finances, security, design and other similar things.
-          Currently, I’m an <span>IT student</span> based in <span>Warsaw, Poland</span> with over two years of experience.
-          <br>Currently I'm working as a <span>Automation Tester</span> and <span>Scrum Master</span>.
+          <br>I’m an <span>IT student</span> based in <span>Warsaw, Poland</span> with over two years of industry experience.
+          <br>Daily working as a <span>Automation Tester</span> and <span>Scrum Master</span>.
           <br><span>Technologies</span> I work with: JavaScript (ES6+), TypeScript, VueJS, Jest, Puppeteer, Cucumber, Sass, HTML5, CSS3, Git.
         </p>
         <div class="whoami__buttons">

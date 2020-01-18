@@ -272,13 +272,17 @@ header {
 
 .view {
   width: 70%;
-  height: calc(var(--vh, 1vh) * 85);
+  height: calc(var(--vh, 1vh) * 82);
   margin: 0 auto;
   max-width: 1350px;
+
+  @include mediaSmartfon {
+    width: 85%;
+  }
 }
 
 .view__header {
-  height: calc(var(--vh, 1vh) * 5);
+  height: calc(var(--vh, 1vh) * 8);
   padding-left: 140px;
   display: inline-block;
 
@@ -299,16 +303,16 @@ header {
 
   .polygons {
     position: absolute;
-    right: -220px;
+    right: -350px;
     bottom: -90px;
     overflow: hidden;
     z-index: -1;
 
     @include mediaSmartfon {
-      right: -65px;
-      bottom: -100px;
       width: 50%;
       height: 50%;
+      right: -70px;
+      bottom: -120px;
     }
   }
 </style>

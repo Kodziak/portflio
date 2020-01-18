@@ -234,7 +234,7 @@ header {
 }
 
 .socials {
-  height: calc(var(--vh, 1vh) * 5);
+  height: calc(var(--vh, 1vh) * 7);
   display: flex;
   justify-content: center;
 
@@ -272,7 +272,7 @@ header {
 
 .view {
   width: 70%;
-  height: calc(var(--vh, 1vh) * 82);
+  height: calc(var(--vh, 1vh) * 80);
   margin: 0 auto;
   max-width: 1350px;
 
@@ -280,6 +280,10 @@ header {
     width: 85%;
   }
 }
+
+.home.view {
+  height: calc(var(--vh, 1vh) * 88);
+  }
 
 .view__header {
   height: calc(var(--vh, 1vh) * 8);

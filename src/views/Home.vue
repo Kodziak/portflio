@@ -45,10 +45,6 @@ export default {
   justify-content: center;
   align-items: center;
 
-  &.view {
-  height: calc(var(--vh, 1vh) * 90);
-  }
-
   &__content {
     display: flex;
     flex-direction: column;

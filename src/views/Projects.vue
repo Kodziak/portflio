@@ -1,11 +1,11 @@
 <template>
-  <div class="project">
+  <div class="project view">
     <div class="view__header">
       <div class="header--bg">
         <h2 class="glitch" data-text="PROJECTS">PROJECTS</h2>
       </div>
     </div>
-    <div class="project__cards view">
+    <div class="project__cards">
       <ProjectCard v-for="(project, index) in projects" :key="index" :project="project" />
     </div>
   </div>
@@ -40,11 +40,11 @@ export default {
             },
           ],
         },
-        /*         {
-          title: 'HomePage',
+        {
+          title: 'Daily-news',
           description:
-            'An browser extension which replace default homepage. Build to cover my needs when starting browsering an internet.',
-          img: './work_in_progress.png',
+            'Information website where user/client can follow the newest stuff from QA world.',
+          img: './daily-news.png',
           tags: ['javascript', 'adobe Xd'],
           btns: [
             {
@@ -58,7 +58,7 @@ export default {
               link: '',
             },
           ],
-        }, */
+        },
       ],
     };
   },
@@ -74,6 +74,10 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    .project-card {
+      margin: 50px 0;
+    }
   }
 }
 </style>

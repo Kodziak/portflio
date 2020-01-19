@@ -272,7 +272,7 @@ header {
 
 .view {
   width: 70%;
-  height: calc(var(--vh, 1vh) * 80);
+  min-height: calc(var(--vh, 1vh) * 88);
   margin: 0 auto;
   max-width: 1350px;
 
@@ -281,18 +281,9 @@ header {
   }
 }
 
-.home.view {
-  height: calc(var(--vh, 1vh) * 88);
-  }
-
 .view__header {
-  height: calc(var(--vh, 1vh) * 8);
-  padding-left: 140px;
+  padding-left: 0;
   display: inline-block;
-
-  @include mediaSmartfon {
-    padding-left: 30px;
-  }
 }
 
 .header--bg {
@@ -304,6 +295,13 @@ header {
       margin: 30px 0;
     }
   }
+
+
+.project + .polygons {
+  @include mediaSmartfon {
+    bottom: -160px;
+  }
+}
 
   .polygons {
     position: absolute;

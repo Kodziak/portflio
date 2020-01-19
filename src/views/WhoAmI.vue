@@ -1,11 +1,12 @@
 <template>
-  <div class="whoami">
+  <div class="whoami view">
     <div class="view__header">
       <div class="header--bg">
         <h2 class="glitch" data-text="WHO AM I?">WHO AM I?</h2>
       </div>
     </div>
-    <div class="whoami__content view">
+    <div class="whoami__wrapper">
+    <div class="whoami__content">
       <div class="whoami__description">
         <h3>Meet me.</h3>
         <p>
@@ -25,6 +26,7 @@
       <div class="whoami__photo">
         <img src="../assets/photos/photo_dark.svg" alt="Guy you're looking for." />
       </div>
+    </div>
     </div>
   </div>
 </template>
@@ -68,9 +70,18 @@ export default {
 @import "../configs/_glitch";
 
 .whoami {
-  &__content {
+  .whoami__wrapper {
+    position: relative;
+    top: 20%;
+    transform: translateY(20%);
+
+    @include mediaSmartfon {
+      top: 5%;
+    transform: translateY(5%);
+    }
+
+  .whoami__content {
     display: flex;
-    flex-direction: row;
 
     @include mediaSmartfon {
       align-self: center;
@@ -150,6 +161,7 @@ export default {
         }
       }
     }
+  }
   }
 }
 </style>

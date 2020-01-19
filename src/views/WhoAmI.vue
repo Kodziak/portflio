@@ -5,7 +5,7 @@
         <h2 class="glitch" data-text="WHO AM I?">WHO AM I?</h2>
       </div>
     </div>
-    <div class="whoami__wrapper">
+    <div class="whoami__wrapper view__content">
     <div class="whoami__content">
       <div class="whoami__description">
         <h3>Meet me.</h3>
@@ -71,14 +71,8 @@ export default {
 
 .whoami {
   .whoami__wrapper {
-    position: relative;
-    top: 20%;
-    transform: translateY(20%);
-
-    @include mediaSmartfon {
-      top: 5%;
-    transform: translateY(5%);
-    }
+    display: flex;
+    justify-content: center;
 
   .whoami__content {
     display: flex;

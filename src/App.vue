@@ -282,8 +282,17 @@ header {
 }
 
 .view__header {
+  min-height: calc(var(--vh, 1vh) * 5);
   padding-left: 0;
   display: inline-block;
+}
+
+.view__content {
+  min-height: calc(var(--vh, 1vh) * 83);
+
+  @include mediaSmartfon {
+    min-height: calc(var(--vh, 1vh) * 75);
+  }
 }
 
 .header--bg {

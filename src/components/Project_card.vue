@@ -41,12 +41,12 @@ export default {
 
 .project-card {
   width: 100%;
-  background: $black;
+  background: darken($black, 5);
   display: flex;
   flex-direction: row;
   justify-content: center;
   position: relative;
-  box-shadow: 10px 5px 5px $black;
+  box-shadow: 5px 3px 3px darken($black, 5);
 
   .line-horizontal::before {
     content: "";
@@ -112,11 +112,13 @@ export default {
 
   &__description {
     margin: auto 0 auto 30px;
+    padding: 10px;
     z-index: 2;
 
     @include mediaSmartfon {
       width: 280px;
       margin: 10px 15px;
+      padding: 5px;
     }
 
     h3 {

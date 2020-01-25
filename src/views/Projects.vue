@@ -49,8 +49,8 @@ export default {
           btns: [
             {
               name: 'VIEW CODE',
-              type: 'btn--secondary btn--inactive',
-              link: '',
+              type: 'btn--secondary',
+              link: 'https://github.com/Kodziak/daily-news',
             },
             {
               name: 'VIEW DEMO',

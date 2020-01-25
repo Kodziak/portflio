@@ -160,21 +160,19 @@ export default {
     }
 
     .project-card__buttons {
-      .btn {
-        margin: 5px 20px 5px 0;
-      }
-
       @include mediaSmartfon {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+      }
 
-        .btn {
-          margin: 5px !important;
+      .btn {
+        margin: 5px 20px 5px 0;
 
-          &:first-child {
-            margin-bottom: 15px !important;
-          }
+        @include mediaSmartfon {
+          min-width: 0;
+          margin: 10px 5px;
+          padding: 6px 12px;
         }
       }
     }

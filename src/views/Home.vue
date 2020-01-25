@@ -45,6 +45,10 @@ export default {
   justify-content: center;
   align-items: center;
 
+  &__header {
+    margin: 20px 0!important;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -57,7 +61,7 @@ export default {
 
     @include mediaSmartfon {
       font-size: 18px;
-      margin: 20px 0;
+      margin: 0 0 30px 0;
     }
   }
 }

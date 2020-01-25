@@ -273,10 +273,7 @@ header {
     background: $purple-opacity;
     width: 105%;
     text-align: center;
-
-
-      margin: 30px 0;
-
+    margin: 30px 0;
   }
 
 

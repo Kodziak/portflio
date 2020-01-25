@@ -170,6 +170,10 @@ header {
   grid-column-gap: 1%;
   background: darken($black, 10);
 
+  @include mediaSmartfon {
+    height: calc(var(--vh, 1vh) * 7);
+  }
+
   .menu {
     grid-column: 3 / 13;
     justify-self: end;
@@ -239,32 +243,6 @@ header {
   }
 }
 
-.wrapper--background {
-  position: relative;
-
-  &:before {
-    position: absolute;
-    content: "";
-    width: 100vw;
-    height: 140%;
-    left: -10vw;
-    top: -20%;
-    background: $background-base;
-    z-index: -1;
-  }
-
-  &:after {
-    position: absolute;
-    content: "";
-    height: 10px;
-    width: 100vw;
-    left: -10vw;
-    top: 120%;
-    background: $shadow-color;
-    z-index: -1;
-  }
-}
-
 .view {
   width: 70%;
   min-height: calc(var(--vh, 1vh) * 87);
@@ -273,20 +251,21 @@ header {
 
   @include mediaSmartfon {
     width: 85%;
+    min-height: calc(var(--vh, 1vh) * 86);
   }
 }
 
 .view__header {
-  min-height: calc(var(--vh, 1vh) * 5);
+  min-height: calc(var(--vh, 1vh) * 10);
   padding-left: 0;
   display: inline-block;
 }
 
 .view__content {
-  min-height: calc(var(--vh, 1vh) * 81);
+  min-height: calc(var(--vh, 1vh) * 75);
 
   @include mediaSmartfon {
-    min-height: calc(var(--vh, 1vh) * 74);
+    min-height: calc(var(--vh, 1vh) * 69);
   }
 }
 
@@ -295,9 +274,9 @@ header {
     width: 105%;
     text-align: center;
 
-    @include mediaSmartfon {
+
       margin: 30px 0;
-    }
+
   }
 
 
@@ -307,7 +286,7 @@ header {
   }
 }
 
-  .polygons {
+.polygons {
     position: absolute;
     right: -350px;
     bottom: -90px;

@@ -47,6 +47,7 @@ export default {
   justify-content: center;
   position: relative;
   box-shadow: 10px 10px 20px darken($black, 3), -10px -10px 20px lighten($black, 3);
+  border-radius: 10px;
 
   // .line-horizontal::before {
   //   content: "";
@@ -91,6 +92,8 @@ export default {
   &__image {
     width: 100%;
     height: 100%;
+    border-radius: 10px 0 0 10px;
+
     @include mediaSmartfon {
       display: none;
     }
@@ -100,10 +103,13 @@ export default {
     &:nth-child(even) {
       flex-direction: row-reverse;
 
+      .project-card__image {
+        border-radius: 0 10px 10px 0;
+      }
+
       .project-card__description {
         text-align: end;
-        margin-left: 0;
-        margin-right: 30px;
+        margin: auto 30px auto 20px;
 
         p {
           margin-left: auto;
@@ -113,13 +119,13 @@ export default {
   }
 
   &__description {
-    margin: auto 0 auto 30px;
+    margin: auto 20px auto 30px;
     padding: 15px;
     z-index: 2;
 
     @include mediaSmartfon {
       width: 280px;
-      margin: 10px 15px;
+      margin: 20px;
       padding: 5px;
     }
 
@@ -136,18 +142,20 @@ export default {
       margin: 40px 0 0 0;
 
       @include mediaSmartfon {
+        margin-top: 20px;
         text-align: center;
       }
     }
 
     .project-card__tags {
       margin-top: 10px;
-      margin-bottom: 45px;
+      margin-bottom: 40px;
 
       @include mediaSmartfon {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        margin-bottom: 20px;
       }
     }
 

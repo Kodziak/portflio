@@ -164,10 +164,15 @@ body {
 }
 
 header {
-  height: calc(var(--vh, 1vh) * 5);
+  height: calc(var(--vh, 1vh) * 6);
   display: grid;
   grid-template-columns: 2% repeat(12, 7%) 2%;
   grid-column-gap: 1%;
+  background: darken($black, 10);
+
+  @include mediaSmartfon {
+    height: calc(var(--vh, 1vh) * 7);
+  }
 
   .menu {
     grid-column: 3 / 13;
@@ -209,22 +214,16 @@ header {
 
     &-btn {
       position: relative;
-      font-size: 24px;
       padding: 20px 5px 10px;
       cursor: pointer;
 
-      @include mediaSmartfon {
-        font-size: 18px;
-      }
-
       &:hover {
-        background: lighten($background-base, 10%);
-        border-radius: 4px;
+        color: darken($white, 25);
       }
     }
 
     &-btn:nth-child(2) {
-      margin: 0 80px;
+      margin: 0 40px;
 
       @include mediaSmartfon {
         margin: 0 10px;
@@ -244,54 +243,29 @@ header {
   }
 }
 
-.wrapper--background {
-  position: relative;
-
-  &:before {
-    position: absolute;
-    content: "";
-    width: 100vw;
-    height: 140%;
-    left: -10vw;
-    top: -20%;
-    background: $background-base;
-    z-index: -1;
-  }
-
-  &:after {
-    position: absolute;
-    content: "";
-    height: 10px;
-    width: 100vw;
-    left: -10vw;
-    top: 120%;
-    background: $shadow-color;
-    z-index: -1;
-  }
-}
-
 .view {
   width: 70%;
-  min-height: calc(var(--vh, 1vh) * 88);
+  min-height: calc(var(--vh, 1vh) * 87);
   margin: 0 auto;
   max-width: 1350px;
 
   @include mediaSmartfon {
     width: 85%;
+    min-height: calc(var(--vh, 1vh) * 86);
   }
 }
 
 .view__header {
-  min-height: calc(var(--vh, 1vh) * 5);
+  min-height: calc(var(--vh, 1vh) * 10);
   padding-left: 0;
   display: inline-block;
 }
 
 .view__content {
-  min-height: calc(var(--vh, 1vh) * 83);
+  min-height: calc(var(--vh, 1vh) * 75);
 
   @include mediaSmartfon {
-    min-height: calc(var(--vh, 1vh) * 75);
+    min-height: calc(var(--vh, 1vh) * 69);
   }
 }
 
@@ -300,9 +274,9 @@ header {
     width: 105%;
     text-align: center;
 
-    @include mediaSmartfon {
+
       margin: 30px 0;
-    }
+
   }
 
 
@@ -312,7 +286,7 @@ header {
   }
 }
 
-  .polygons {
+.polygons {
     position: absolute;
     right: -350px;
     bottom: -90px;

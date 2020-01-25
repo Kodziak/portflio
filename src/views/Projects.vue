@@ -76,7 +76,7 @@ export default {
     justify-content: center;
 
     .project-card {
-      margin: 50px 0;
+      margin: 30px 0;
     }
   }
 }

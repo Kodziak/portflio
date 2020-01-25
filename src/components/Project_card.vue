@@ -46,49 +46,51 @@ export default {
   flex-direction: row;
   justify-content: center;
   position: relative;
-  box-shadow: 5px 3px 3px darken($black, 5);
+  box-shadow: 10px 10px 20px darken($black, 3), -10px -10px 20px lighten($black, 3);
 
-  .line-horizontal::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -10px;
-    width: calc(100% + 10px);
-    height: 2px;
-    background: $white;
-  }
+  // .line-horizontal::before {
+  //   content: "";
+  //   position: absolute;
+  //   left: 0;
+  //   top: -10px;
+  //   width: calc(100% + 10px);
+  //   height: 2px;
+  //   background: $white;
+  // }
 
-  .line-horizontal::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -20px;
-    width: calc(100% + 20px);
-    height: 2px;
-    background: $white;
-  }
+  // .line-horizontal::after {
+  //   content: "";
+  //   position: absolute;
+  //   left: 0;
+  //   top: -20px;
+  //   width: calc(100% + 20px);
+  //   height: 2px;
+  //   background: $white;
+  // }
 
-  .line-vertical::before {
-    content: "";
-    position: absolute;
-    right: -10px;
-    top: -10px;
-    height: calc(60% + 10px);
-    width: 2px;
-    background: $white;
-  }
+  // .line-vertical::before {
+  //   content: "";
+  //   position: absolute;
+  //   right: -10px;
+  //   top: -10px;
+  //   height: calc(60% + 10px);
+  //   width: 2px;
+  //   background: $white;
+  // }
 
-  .line-vertical::after {
-    content: "";
-    position: absolute;
-    right: -20px;
-    top: -20px;
-    height: calc(80% + 20px);
-    width: 2px;
-    background: $white;
-  }
+  // .line-vertical::after {
+  //   content: "";
+  //   position: absolute;
+  //   right: -20px;
+  //   top: -20px;
+  //   height: calc(80% + 20px);
+  //   width: 2px;
+  //   background: $white;
+  // }
 
   &__image {
+    width: 100%;
+    height: 100%;
     @include mediaSmartfon {
       display: none;
     }
@@ -112,7 +114,7 @@ export default {
 
   &__description {
     margin: auto 0 auto 30px;
-    padding: 10px;
+    padding: 15px;
     z-index: 2;
 
     @include mediaSmartfon {

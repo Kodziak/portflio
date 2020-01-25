@@ -16,10 +16,10 @@ export default {
 @import "../configs/_config";
 
 .tag {
-  font-size: 12px;
+  font-size: 10px;
   display: inline-block;
-  background: lighten($background-color, 10);
-  color: $text-basic-color;
+  background: lighten($black, 2);
+  color: darken($white, 20);
   padding: 3px 5px;
   margin: 0 5px;
   border-radius: 2px;

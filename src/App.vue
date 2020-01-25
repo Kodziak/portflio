@@ -164,10 +164,11 @@ body {
 }
 
 header {
-  height: calc(var(--vh, 1vh) * 5);
+  height: calc(var(--vh, 1vh) * 6);
   display: grid;
   grid-template-columns: 2% repeat(12, 7%) 2%;
   grid-column-gap: 1%;
+  background: darken($black, 10);
 
   .menu {
     grid-column: 3 / 13;
@@ -209,22 +210,16 @@ header {
 
     &-btn {
       position: relative;
-      font-size: 24px;
       padding: 20px 5px 10px;
       cursor: pointer;
 
-      @include mediaSmartfon {
-        font-size: 18px;
-      }
-
       &:hover {
-        background: lighten($background-base, 10%);
-        border-radius: 4px;
+        color: darken($white, 25);
       }
     }
 
     &-btn:nth-child(2) {
-      margin: 0 80px;
+      margin: 0 40px;
 
       @include mediaSmartfon {
         margin: 0 10px;
@@ -272,7 +267,7 @@ header {
 
 .view {
   width: 70%;
-  min-height: calc(var(--vh, 1vh) * 88);
+  min-height: calc(var(--vh, 1vh) * 87);
   margin: 0 auto;
   max-width: 1350px;
 
@@ -288,10 +283,10 @@ header {
 }
 
 .view__content {
-  min-height: calc(var(--vh, 1vh) * 83);
+  min-height: calc(var(--vh, 1vh) * 81);
 
   @include mediaSmartfon {
-    min-height: calc(var(--vh, 1vh) * 75);
+    min-height: calc(var(--vh, 1vh) * 74);
   }
 }
 

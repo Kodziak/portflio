@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <div class="menu">
+      <div class="menu view view--menu">
         <button
           class="menu-btn"
           v-for="btn in btns"
@@ -16,7 +16,7 @@
       :is="selectedComponent"
       @componentFromChildren="handleComponent"
     ></component>
-    <div class="socials">
+    <div class="socials view--footer">
       <Social
         v-for="(social, index) in socials"
         :key="index"
@@ -164,52 +164,15 @@ body {
 }
 
 header {
-  height: calc(var(--vh, 1vh) * 6);
-  display: grid;
-  grid-template-columns: 2% repeat(12, 7%) 2%;
-  grid-column-gap: 1%;
   background: darken($black, 10);
 
-  @include mediaSmartfon {
-    height: calc(var(--vh, 1vh) * 7);
-  }
-
   .menu {
-    grid-column: 3 / 13;
-    justify-self: end;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 
     @include mediaSmartfon {
-      grid-column: 2 / 14;
-      justify-self: center;
-    }
-
-    &.active {
-      background: $black;
-      display: flex;
-      flex-direction: column;
       justify-content: center;
-      position: absolute;
-      z-index: 99;
-      margin-top: 0;
-      animation: fadeInOut 1s ease-in-out;
-
-      .menu-btn {
-        align-self: center;
-      }
-    }
-
-    &-btn--active:before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 4px;
-      top: 0;
-      right: 0;
-      background: $text-basic-color;
-    }
-
-    &-btn--active {
-      font-weight: bold;
     }
 
     &-btn {
@@ -229,11 +192,65 @@ header {
         margin: 0 10px;
       }
     }
+
+    &-btn--active:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      top: 0;
+      right: 0;
+      background: $white;
+    }
+
+    &-btn--active {
+      color: $white;
+      font-weight: bold;
+    }
+  }
+}
+
+.view {
+  width: $width-desktop;
+  margin: 0 auto;
+
+  @include mediaSmartfon {
+    width: $width-mobile
+  }
+
+  &--page {
+    min-height: calc(var(--vh, 1vh) * 88);
+
+    @include mediaSmartfon {
+      min-height: calc(var(--vh, 1vh) * 87);
+    }
+  }
+
+  &--menu {
+    min-height: calc(var(--vh, 1vh) * 5);
+  }
+
+  &--header {
+    min-height: calc(var(--vh, 1vh) * 8);
+    padding-left: 0;
+    display: inline-block;
+  }
+
+  &--content {
+    min-height: calc(var(--vh, 1vh) * 80);
+    max-width: $max-width;
+
+    @include mediaSmartfon {
+      min-height: calc(var(--vh, 1vh) * 79);
+    }
+  }
+
+  &--footer {
+    height: calc(var(--vh, 1vh) * 7);
   }
 }
 
 .socials {
-  height: calc(var(--vh, 1vh) * 7);
   display: flex;
   justify-content: center;
 
@@ -243,37 +260,11 @@ header {
   }
 }
 
-.view {
-  width: 70%;
-  min-height: calc(var(--vh, 1vh) * 87);
-  margin: 0 auto;
-  max-width: 1350px;
-
-  @include mediaSmartfon {
-    width: 85%;
-    min-height: calc(var(--vh, 1vh) * 86);
-  }
-}
-
-.view__header {
-  min-height: calc(var(--vh, 1vh) * 10);
-  padding-left: 0;
-  display: inline-block;
-}
-
-.view__content {
-  min-height: calc(var(--vh, 1vh) * 75);
-
-  @include mediaSmartfon {
-    min-height: calc(var(--vh, 1vh) * 69);
-  }
-}
-
 .header--bg {
     background: $purple-opacity;
     width: 105%;
     text-align: center;
-    margin: 30px 0;
+    margin: 30px 0 0 0;
   }
 
 

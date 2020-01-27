@@ -12,6 +12,10 @@ $black: #191919;
 $purple: #7647B9;
 $purple-opacity: rgba(118, 71, 185, 0.5);
 
+$width-desktop: 70%;
+$width-mobile: 85%;
+$max-width: 1350px;
+
 
 @mixin mediaDesktop {
   @media screen and (min-width: 1151px) {

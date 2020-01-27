@@ -7,23 +7,19 @@
   position: relative;
   border-radius: 4px;
 
+  &:hover {
+    box-shadow: -5px 5px $purple;
+  }
+
   @include mediaSmartfon {
     min-width: 190px;
     padding: 10px 20px;
-  }
-
-  &:after {
-    @include shadow;
   }
 
   &--primary {
     color: $black;
     background: $white;
     border: 0.5px solid darken($white, 3);
-
-    &:hover {
-      background: lighten($white, 10);
-    }
 
     &.btn--inactive {
       background-color: #cccccc;
@@ -32,12 +28,7 @@
 
   &--secondary {
     color: $white;
-    background: $black;
-    border: 0.5px solid lighten($black, 3);
-
-    &:hover {
-      background: darken($black, 10);
-    }
+    background: darken($black, 10);
 
     &.btn--inactive {
       background-color: none;

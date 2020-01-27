@@ -1,11 +1,11 @@
 <template>
-  <div class="whoami view">
-    <div class="view__header">
+  <div class="whoami view view--page">
+    <div class="view--header">
       <div class="header--bg">
         <h2 class="glitch" data-text="WHO AM I?">WHO AM I?</h2>
       </div>
     </div>
-    <div class="whoami__wrapper view__content">
+    <div class="whoami__wrapper view--content">
     <div class="whoami__content">
       <div class="whoami__description">
         <h3>Meet me.</h3>

@@ -1,11 +1,11 @@
 <template>
-  <div class="project view">
-    <div class="view__header">
+  <div class="project view view--page">
+    <div class="view--header">
       <div class="header--bg">
         <h2 class="glitch" data-text="PROJECTS">PROJECTS</h2>
       </div>
     </div>
-    <div class="project__cards view__content">
+    <div class="project__cards view--content">
       <ProjectCard v-for="(project, index) in projects" :key="index" :project="project" />
     </div>
   </div>

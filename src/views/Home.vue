@@ -1,5 +1,5 @@
 <template>
-  <div class="home view">
+  <div class="home view--page">
     <div class="home__content">
       <div class="home__header header--bg">
         <h1 class="glitch" data-text="Przemysław Paczoski">Przemysław Paczoski</h1>
@@ -47,6 +47,10 @@ export default {
 
   &__header {
     margin: 20px 0!important;
+
+    @include mediaSmartfon {
+      margin: 10px 0!important;
+    }
   }
 
   &__content {
@@ -56,12 +60,12 @@ export default {
   }
 
   &__description {
+    margin-bottom: 30px;
     font-weight: 400;
-    margin: 50px 0;
 
     @include mediaSmartfon {
       font-size: 18px;
-      margin: 0 0 30px 0;
+      margin-bottom: 20px;
     }
   }
 }

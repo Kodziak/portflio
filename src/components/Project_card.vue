@@ -1,7 +1,5 @@
 <template>
   <div class="project-card">
-    <div class="line-horizontal"></div>
-    <div class="line-vertical"></div>
     <img class="project-card__image" v-bind:src="project.img" />
     <div class="project-card__description">
       <h3>{{ project.title }}</h3>
@@ -40,81 +38,27 @@ export default {
 @import "../configs/_config";
 
 .project-card {
-  width: 100%;
+  width: 600px;
+  height: 100%;
   background: darken($black, 5);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   position: relative;
-  box-shadow: 10px 10px 20px darken($black, 3), -10px -10px 20px lighten($black, 3);
-  border-radius: 10px;
+  box-shadow: 10px 10px 20px darken($black, 2), -10px -10px 20px lighten($black, 2);
+  margin: 0 10px;
 
-  // .line-horizontal::before {
-  //   content: "";
-  //   position: absolute;
-  //   left: 0;
-  //   top: -10px;
-  //   width: calc(100% + 10px);
-  //   height: 2px;
-  //   background: $white;
-  // }
-
-  // .line-horizontal::after {
-  //   content: "";
-  //   position: absolute;
-  //   left: 0;
-  //   top: -20px;
-  //   width: calc(100% + 20px);
-  //   height: 2px;
-  //   background: $white;
-  // }
-
-  // .line-vertical::before {
-  //   content: "";
-  //   position: absolute;
-  //   right: -10px;
-  //   top: -10px;
-  //   height: calc(60% + 10px);
-  //   width: 2px;
-  //   background: $white;
-  // }
-
-  // .line-vertical::after {
-  //   content: "";
-  //   position: absolute;
-  //   right: -20px;
-  //   top: -20px;
-  //   height: calc(80% + 20px);
-  //   width: 2px;
-  //   background: $white;
-  // }
+  @include mediaSmartfon {
+    width: 100%;
+    margin: 0;
+  }
 
   &__image {
     width: 100%;
     height: 100%;
-    border-radius: 10px 0 0 10px;
 
     @include mediaSmartfon {
       display: none;
-    }
-  }
-
-  @include mediaDesktop {
-    &:nth-child(even) {
-      flex-direction: row-reverse;
-
-      .project-card__image {
-        border-radius: 0 10px 10px 0;
-      }
-
-      .project-card__description {
-        text-align: end;
-        margin: auto 30px auto 20px;
-
-        p {
-          margin-left: auto;
-        }
-      }
     }
   }
 
@@ -124,7 +68,6 @@ export default {
     z-index: 2;
 
     @include mediaSmartfon {
-      width: 280px;
       margin: 20px;
       padding: 5px;
     }
@@ -139,7 +82,7 @@ export default {
     }
 
     p {
-      margin: 40px 0 0 0;
+      margin: 30px 0 0 0;
 
       @include mediaSmartfon {
         margin-top: 20px;
@@ -149,7 +92,7 @@ export default {
 
     .project-card__tags {
       margin-top: 10px;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
 
       @include mediaSmartfon {
         display: flex;
@@ -160,21 +103,28 @@ export default {
     }
 
     .project-card__buttons {
-      @include mediaSmartfon {
         display: flex;
         flex-direction: row;
-        justify-content: center;
-      }
-
-      .btn {
-        margin: 5px 20px 5px 0;
+        justify-content: flex-start;
+        margin-bottom: 10px;
 
         @include mediaSmartfon {
-          min-width: 0;
-          margin: 10px 5px;
-          padding: 6px 12px;
+          justify-content: center;
+          margin-bottom: 0;
+
+          .btn {
+            margin: 0 5px;
+            min-width: 0;
+          }
         }
-      }
+
+        .btn {
+          padding: 7px 30px;
+        }
+
+        .btn:last-child {
+          margin: 0 10px;
+        }
     }
   }
 }

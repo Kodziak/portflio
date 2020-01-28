@@ -59,7 +59,7 @@ a {
 }
 
 a:hover {
-  transition: background 0.3s ease-in-out;
+  transition: background 0.5s ease-in-out;
 
   @include mediaDesktop {
     span {

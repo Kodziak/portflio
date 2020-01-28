@@ -5,14 +5,17 @@
         <h2 class="glitch" data-text="PROJECTS">PROJECTS</h2>
       </div>
     </div>
-    <div class="project__cards view--content">
-      <ProjectCard v-for="(project, index) in projects" :key="index" :project="project" />
+    <div class="project__card--wrapper view--content">
+      <div class  ="project__cards ">
+        <ProjectCard v-for="(project, index) in projects" :key="index" :project="project" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import ProjectCard from '../components/Project_card.vue';
+import utils from '../utils';
 
 export default {
   name: 'Projects',
@@ -29,12 +32,12 @@ export default {
           tags: ['javascript', 'vue', 'scss', 'adobe Xd'],
           btns: [
             {
-              name: 'VIEW CODE',
+              name: 'CODE',
               type: 'btn--secondary',
               link: 'https://www.github.com/kodziak/portfolio',
             },
             {
-              name: 'VIEW DEMO',
+              name: 'LIVE',
               type: 'btn--primary',
               link: 'https://www.ppaczoski.pl',
             },
@@ -48,12 +51,12 @@ export default {
           tags: ['javascript', 'adobe Xd'],
           btns: [
             {
-              name: 'VIEW CODE',
+              name: 'CODE',
               type: 'btn--secondary',
               link: 'https://github.com/Kodziak/daily-news',
             },
             {
-              name: 'VIEW DEMO',
+              name: 'LIVE',
               type: 'btn--primary btn--inactive',
               link: '',
             },
@@ -62,6 +65,9 @@ export default {
       ],
     };
   },
+  mounted() {
+    utils.setMenuState('Projects');
+  },
 };
 </script>
 
@@ -69,14 +75,25 @@ export default {
 @import "../configs/_config";
 @import "../configs/_glitch";
 
+.project__card--wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .project {
   &__cards {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
 
-    .project-card {
-      margin: 30px 0;
+    @include mediaSmartfon {
+      flex-direction: column;
+      align-content: space-between;
+
+      .project-card {
+        margin: 15px 0;
+      }
     }
   }
 }

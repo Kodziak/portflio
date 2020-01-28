@@ -2,20 +2,18 @@
   <div id="app">
     <header>
       <div class="menu view view--menu">
-        <button
+        <router-link
           class="menu-btn"
           v-for="btn in btns"
           :key="btn.id"
-          v-on:click="selectComponent(btn.component)"
+          v-on:click.native="changeMenuState(btn.component)"
+          :to="btn.target"
         >
           {{ btn.name }}
-        </button>
+        </router-link>
       </div>
     </header>
-    <component
-      :is="selectedComponent"
-      @componentFromChildren="handleComponent"
-    ></component>
+    <router-view ></router-view>
     <div class="socials view--footer">
       <Social
         v-for="(social, index) in socials"
@@ -29,26 +27,26 @@
 </template>
 
 <script>
-import Home from './views/Home.vue';
-import WhoAmI from './views/WhoAmI.vue';
-import Projects from './views/Projects.vue';
 import Social from './components/Social.vue';
+import utils from './utils';
 
 export default {
   name: 'app',
   components: {
-    Home,
-    WhoAmI,
-    Projects,
     Social,
   },
   data() {
     return {
-      selectedComponent: 'Home',
       btns: [
-        { id: 1, name: 'HOME', component: 'Home' },
-        { id: 2, name: 'WHO AM I', component: 'WhoAmI' },
-        { id: 3, name: 'PROJECTS', component: 'Projects' },
+        {
+          id: 1, name: 'HOME', target: '/', component: 'Home',
+        },
+        {
+          id: 2, name: 'WHO AM I', target: '/who-am-i', component: 'WhoAmI',
+        },
+        {
+          id: 3, name: 'PROJECTS', target: '/projects', component: 'Projects',
+        },
       ],
       socials: [
         {
@@ -86,39 +84,9 @@ export default {
       document.documentElement.style.setProperty('--vh', `${vh}px`);
     });
   },
-  mounted() {
-    this.setMenuState('Home');
-  },
   methods: {
-    setComponent(component) {
-      this.selectedComponent = component;
-    },
-    setMenuState(component) {
-      const menuButtons = document.querySelectorAll('.menu-btn');
-
-      menuButtons.forEach((el) => {
-        const clicked = el.textContent.replace(/\s/g, '').toLowerCase();
-        const comp = component.replace(/\s/g, '').toLowerCase();
-        el.classList.remove('menu-btn--active');
-        if (clicked === comp) {
-          el.classList.add('menu-btn--active');
-        }
-      });
-    },
-
-    handleComponent(component) {
-      this.setMenuState(component);
-      this.setComponent(component);
-    },
-    selectComponent(component) {
-      const menu = document.querySelector('.menu');
-      const menuButtons = document.querySelectorAll('.menu-btn');
-      menuButtons.forEach(() => {
-        menu.classList.remove('active');
-      });
-
-      this.setMenuState(component);
-      this.setComponent(component);
+    changeMenuState(component) {
+      utils.setMenuState(component);
     },
   },
 };
@@ -238,7 +206,7 @@ header {
 
   &--content {
     min-height: calc(var(--vh, 1vh) * 80);
-    max-width: $max-width;
+    // max-width: $max-width;
 
     @include mediaSmartfon {
       min-height: calc(var(--vh, 1vh) * 79);

@@ -5,7 +5,6 @@
   cursor: pointer;
   transition: all 0.4s ease;
   position: relative;
-  border-radius: 4px;
 
   &:hover {
     box-shadow: -5px 5px $purple;
@@ -19,7 +18,6 @@
   &--primary {
     color: $black;
     background: $white;
-    border: 0.5px solid darken($white, 3);
 
     &.btn--inactive {
       background-color: #cccccc;
@@ -28,7 +26,6 @@
 
   &--secondary {
     color: $white;
-    background: darken($black, 10);
 
     &.btn--inactive {
       background-color: none;
@@ -36,7 +33,6 @@
   }
 
   &--inactive {
-    border: 0.5px solid #535353;
     color: #666666;
     cursor: not-allowed;
   }

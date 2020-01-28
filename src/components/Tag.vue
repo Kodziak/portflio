@@ -16,14 +16,20 @@ export default {
 @import "../configs/_config";
 
 .tag {
-  font-size: 10px;
+  font-size: 11px;
   display: inline-block;
-  background: lighten($black, 2);
-  color: darken($white, 20);
+  background: lighten($black, 1);
+  color: darken($white, 15);
   padding: 3px 5px;
   margin: 0 5px;
-  border-radius: 2px;
-  text-transform: uppercase;
+
+  &:first-child {
+    margin: 0 5px 0 0;
+  }
+
+  &:last-child {
+    margin: 0 0 0 5px;
+  }
 
   @include mediaSmartfon {
     font-size: 9px;

@@ -5,31 +5,28 @@
         <h1 class="glitch" data-text="Przemysław Paczoski">Przemysław Paczoski</h1>
       </div>
         <h2 class="home__description">Test Developer | Scrum Master</h2>
-        <Button :btn="btn" :class="btn.type" @componentFromChildren="handleComponent">{{ btn.name }}</Button>
+        <router-link :btn="btn" :class="btn.type" :to="btn.target" v-on:click.native="changeMenuState('WhoAmI')">{{ btn.name }}</router-link>
       </div>
   </div>
 </template>
 
 <script>
-import Button from '../components/Button.vue';
+import utils from '../utils';
 
 export default {
   name: 'Home',
-  components: {
-    Button,
-  },
   data() {
     return {
       btn: {
         name: 'GET TO KNOW ME',
-        type: 'btn--primary',
-        component: 'WhoAmI',
+        type: 'btn btn--primary',
+        target: '/who-am-i',
       },
     };
   },
   methods: {
-    handleComponent(component) {
-      this.$emit('componentFromChildren', component);
+    changeMenuState(component) {
+      utils.setMenuState(component);
     },
   },
 };
@@ -37,6 +34,7 @@ export default {
 
 <style lang="scss">
 @import "../configs/_config";
+@import "../configs/_buttons";
 @import "../configs/_glitch";
 
 .home {

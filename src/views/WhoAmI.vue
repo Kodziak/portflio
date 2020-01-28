@@ -19,7 +19,7 @@
         <div class="whoami__buttons">
           <div v-for="(btn, index) in btns" :key="index">
             <LinkedButton v-if="btn.link" :btn="btn" :class="btn.type">{{ btn.name }}</LinkedButton>
-            <Button v-else :btn="btn" :class="btn.type" @componentFromChildren="handleComponent">{{ btn.name }}</Button>
+            <router-link v-else :btn="btn" :class="btn.type" :to="btn.target" v-on:click.native="changeMenuState('Projects')">{{ btn.name }}</router-link>
           </div>
         </div>
       </div>
@@ -32,13 +32,12 @@
 </template>
 
 <script>
-import Button from '../components/Button.vue';
 import LinkedButton from '../components/LinkedButton.vue';
+import utils from '../utils';
 
 export default {
   name: 'WhoAmI',
   components: {
-    Button,
     LinkedButton,
   },
   data() {
@@ -51,15 +50,15 @@ export default {
         },
         {
           name: 'CHECK MY WORK',
-          type: 'btn--primary',
-          component: 'Projects',
+          type: 'btn btn--primary',
+          target: '/projects',
         },
       ],
     };
   },
   methods: {
-    handleComponent(component) {
-      this.$emit('componentFromChildren', component);
+    changeMenuState(component) {
+      utils.setMenuState(component);
     },
   },
 };
@@ -67,6 +66,7 @@ export default {
 
 <style lang="scss">
 @import "../configs/_config";
+@import "../configs/_buttons";
 @import "../configs/_glitch";
 
 .whoami {

@@ -38,14 +38,14 @@ export default {
 @import "../configs/_config";
 
 .project-card {
-  width: 650px;
+  width: 600px;
   height: 100%;
   background: darken($black, 5);
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  box-shadow: 10px 10px 20px darken($black, 3), -10px -10px 20px lighten($black, 3);
+  box-shadow: 10px 10px 20px darken($black, 2), -10px -10px 20px lighten($black, 2);
   margin: 0 10px;
 
   @include mediaSmartfon {
@@ -56,7 +56,6 @@ export default {
   &__image {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
 
     @include mediaSmartfon {
       display: none;
@@ -83,7 +82,7 @@ export default {
     }
 
     p {
-      margin: 40px 0 0 0;
+      margin: 30px 0 0 0;
 
       @include mediaSmartfon {
         margin-top: 20px;
@@ -110,7 +109,7 @@ export default {
         margin-bottom: 10px;
 
         @include mediaSmartfon {
-          align-items: center;
+          justify-content: center;
           margin-bottom: 0;
 
           .btn {
@@ -121,15 +120,10 @@ export default {
 
         .btn {
           padding: 7px 30px;
-          border-radius: 0;
         }
 
         .btn:last-child {
           margin: 0 10px;
-        }
-
-        .btn--secondary {
-          background: none;
         }
     }
   }

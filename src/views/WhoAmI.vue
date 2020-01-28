@@ -56,6 +56,9 @@ export default {
       ],
     };
   },
+  mounted() {
+    utils.setMenuState('WhoAmI');
+  },
   methods: {
     changeMenuState(component) {
       utils.setMenuState(component);

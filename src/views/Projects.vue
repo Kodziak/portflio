@@ -65,6 +65,9 @@ export default {
       ],
     };
   },
+  mounted() {
+    utils.setMenuState('Projects');
+  },
 };
 </script>
 
@@ -86,6 +89,11 @@ export default {
 
     @include mediaSmartfon {
       flex-direction: column;
+      align-content: space-between;
+
+      .project-card {
+        margin: 15px 0;
+      }
     }
   }
 }

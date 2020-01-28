@@ -24,6 +24,9 @@ export default {
       },
     };
   },
+  mounted() {
+    utils.setMenuState('Home');
+  },
   methods: {
     changeMenuState(component) {
       utils.setMenuState(component);

@@ -84,9 +84,6 @@ export default {
       document.documentElement.style.setProperty('--vh', `${vh}px`);
     });
   },
-  mounted() {
-    utils.setMenuState('Home');
-  },
   methods: {
     changeMenuState(component) {
       utils.setMenuState(component);

@@ -1,5 +1,5 @@
 <template>
-  <div class="tag bor-rad-3">{{ tag }}</div>
+  <label class="tag bor-rad-3">{{ tag }}</label>
 </template>
 
 <script>
@@ -22,6 +22,7 @@ export default {
   color: darken($white, 15);
   padding: 3px 5px;
   margin: 0 5px;
+  white-space: nowrap;
 
   &:first-child {
     margin: 0 5px 0 0;

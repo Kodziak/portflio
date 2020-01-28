@@ -29,7 +29,7 @@ export default {
           title: 'Portfolio',
           description: 'Personal website to introduce myself. My look over the design and developing.',
           img: './portfolio.png',
-          tags: ['javascript', 'vue', 'scss', 'adobe Xd'],
+          tags: ['javascript', 'vue', 'vue-router', 'scss', 'adobe Xd'],
           btns: [
             {
               name: 'CODE',
@@ -48,7 +48,7 @@ export default {
           description:
             'Information website where user/client can follow the newest stuff from QA world.',
           img: './daily-news.png',
-          tags: ['javascript', 'adobe Xd'],
+          tags: ['javascript', 'nodeJS', 'axios', 'cheerio', 'adobe Xd'],
           btns: [
             {
               name: 'CODE',

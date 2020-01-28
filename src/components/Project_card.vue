@@ -91,12 +91,13 @@ export default {
     }
 
     .project-card__tags {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
       margin-top: 10px;
       margin-bottom: 30px;
 
       @include mediaSmartfon {
-        display: flex;
-        flex-direction: row;
         justify-content: center;
         margin-bottom: 20px;
       }

@@ -71,19 +71,19 @@ a:hover {
 
 .icon {
   &-mail:hover {
-    background: #D44638;
+    background: $red-gmail;
   }
 
   &-linkedin:hover {
-    background: #2867B2;
+    background: $blue-linekdin;
   }
 
   &-twitter:hover {
-    background: rgba(102, 153, 255);
+    background: $blue-twitter;
   }
 
   &-github:hover {
-    background: #333;
+    background: $grey-github;
   }
 }
 </style>

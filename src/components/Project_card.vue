@@ -40,12 +40,12 @@ export default {
 .project-card {
   width: 600px;
   height: 100%;
-  background: darken($black, 5);
+  background: $black-darken;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  box-shadow: 10px 10px 20px darken($black, 2), -10px -10px 20px lighten($black, 2);
+  box-shadow: 10px 10px 20px $black-darken, -10px -10px 20px $black-lighten;
   margin: 0 10px;
 
   @include mediaSmartfon {

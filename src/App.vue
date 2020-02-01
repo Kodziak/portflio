@@ -122,7 +122,7 @@ body {
   margin: 0;
 
   font-family: "Montserrat", sans-serif;
-  color: $text-basic-color;
+  color: $white;
 
   a,
   button {
@@ -141,7 +141,7 @@ body {
 }
 
 header {
-  background: darken($black, 10);
+  background: $black-darken;
 
   .menu {
     display: flex;
@@ -158,7 +158,7 @@ header {
       cursor: pointer;
 
       &:hover {
-        color: darken($white, 25);
+        color: $white-darken;
       }
     }
 

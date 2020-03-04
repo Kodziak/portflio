@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { projects } from '../data/index';
 import ProjectCard from '../components/Project_card.vue';
 import utils from '../utils';
 
@@ -24,45 +25,7 @@ export default {
   },
   data() {
     return {
-      projects: [
-        {
-          title: 'Portfolio',
-          description: 'Personal website to introduce myself. My look over the design and developing.',
-          img: './portfolio.png',
-          tags: ['javascript', 'vue', 'vue-router', 'scss', 'adobe Xd'],
-          btns: [
-            {
-              name: 'CODE',
-              type: 'btn--secondary',
-              link: 'https://www.github.com/kodziak/portfolio',
-            },
-            {
-              name: 'LIVE',
-              type: 'btn--primary',
-              link: 'https://www.ppaczoski.pl',
-            },
-          ],
-        },
-        {
-          title: 'Daily-news',
-          description:
-            'Information website where user/client can follow the newest stuff from QA world.',
-          img: './daily-news.png',
-          tags: ['javascript', 'nodeJS', 'axios', 'cheerio', 'adobe Xd'],
-          btns: [
-            {
-              name: 'CODE',
-              type: 'btn--secondary',
-              link: 'https://github.com/Kodziak/daily-news',
-            },
-            {
-              name: 'LIVE',
-              type: 'btn--primary btn--inactive',
-              link: '',
-            },
-          ],
-        },
-      ],
+      projects,
     };
   },
   mounted() {

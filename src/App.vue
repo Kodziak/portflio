@@ -29,8 +29,10 @@
 </template>
 
 <script>
+import { menuButtons as btns, socials } from './data/index';
 import Social from './components/Social.vue';
 import utils from './utils';
+
 
 export default {
   name: 'app',
@@ -39,45 +41,11 @@ export default {
   },
   data() {
     return {
-      btns: [
-        {
-          id: 1, name: 'HOME', target: '/', component: 'Home',
-        },
-        {
-          id: 2, name: 'WHO AM I', target: '/who-am-i', component: 'WhoAmI',
-        },
-        {
-          id: 3, name: 'PROJECTS', target: '/projects', component: 'Projects',
-        },
-      ],
-      socials: [
-        {
-          title: 'Mail',
-          link: 'mailto:kodziak1416@gmail.com',
-          icon: 'mail',
-          background: 'icon-mail',
-        },
-        {
-          title: 'Linkedin',
-          link: 'https://linkedin.com/in/ppaczoski/',
-          icon: 'linkedin',
-          background: 'icon-linkedin',
-        },
-        {
-          title: 'Twitter',
-          link: 'https://twitter.com/_kodziak',
-          icon: 'twitter',
-          background: 'icon-twitter',
-        },
-        {
-          title: 'Github',
-          link: 'https://github.com/Kodziak/',
-          icon: 'github',
-          background: 'icon-github',
-        },
-      ],
+      btns,
+      socials,
     };
   },
+
   created() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -86,6 +54,7 @@ export default {
       document.documentElement.style.setProperty('--vh', `${vh}px`);
     });
   },
+
   methods: {
     changeMenuState(component) {
       utils.setMenuState(component);

@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="whoami__photo">
-        <img src="../assets/photos/photo_dark.svg" alt="Guy you're looking for." />
+        <img src="../assets/photos/photo_dark_img-min.png" alt="Guy you're looking for." />
       </div>
     </div>
     </div>
@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import { whoamiButtons as btns } from '../data/index';
 import LinkedButton from '../components/LinkedButton.vue';
 import utils from '../utils';
 
@@ -42,23 +43,14 @@ export default {
   },
   data() {
     return {
-      btns: [
-        {
-          name: 'VIEW RESUME',
-          type: 'btn--secondary',
-          link: './CV_Przemyslaw_Paczoski.pdf',
-        },
-        {
-          name: 'CHECK MY WORK',
-          type: 'btn btn--primary',
-          target: '/projects',
-        },
-      ],
+      btns,
     };
   },
+
   mounted() {
     utils.setMenuState('WhoAmI');
   },
+
   methods: {
     changeMenuState(component) {
       utils.setMenuState(component);
@@ -88,6 +80,7 @@ export default {
     .whoami__photo {
       margin: auto 0;
       img {
+        width: 330px;
         z-index: 2;
 
         @include mediaSmartfon {

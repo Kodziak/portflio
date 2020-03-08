@@ -56,7 +56,7 @@ export default {
   &__cards {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
 
     @include mediaSmartfon {
       flex-direction: column;
@@ -72,6 +72,8 @@ export default {
     }
 
     .project-card:last-child {
+      box-shadow: -25px -25px 0px #4780A3;
+
         .project-card__header:after {
           background: #4780A3;
         }

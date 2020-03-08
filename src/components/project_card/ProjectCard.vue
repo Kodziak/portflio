@@ -62,10 +62,11 @@ export default {
   position: relative;
   margin: 0 10px;
   transition: box-shadow ease-in-out 0.5s;
+  box-shadow: -25px -25px 0px $purple;
 
   &:hover {
     transition: box-shadow ease-in-out 0.5s;
-    box-shadow: 5px 5px 5px $black-darken;
+
   }
 
   @include mediaSmartfon {

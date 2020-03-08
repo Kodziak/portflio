@@ -40,12 +40,13 @@ export const socials = [
 export const whoamiButtons = [
   {
     name: 'VIEW RESUME',
-    type: 'btn--secondary',
+    class: 'btn--secondary',
     link: './CV_Przemyslaw_Paczoski.pdf',
   },
   {
     name: 'CHECK MY WORK',
-    type: 'btn btn--primary',
+    router: true,
+    class: 'btn btn--primary',
     target: '/projects',
   },
 ];
@@ -53,8 +54,8 @@ export const whoamiButtons = [
 export const projects = [
   {
     title: 'Portfolio',
-    description: 'Personal website to introduce myself. My look over the design and developing.',
-    img: './portfolio.png',
+    description: 'Personal website developed to introduce me.',
+    img: './portfolio_shape@2x.png',
     tags: ['javascript', 'vue', 'vue-router', 'scss', 'adobe Xd'],
     btns: [
       {
@@ -72,8 +73,8 @@ export const projects = [
   {
     title: 'Daily-news',
     description:
-      'Information website where user/client can follow the newest stuff from QA world.',
-    img: './daily-news.png',
+      'News website to follow the newest stuff from QA world.',
+    img: './daily-news_shape@2x.png',
     tags: ['javascript', 'nodeJS', 'axios', 'cheerio', 'adobe Xd'],
     btns: [
       {

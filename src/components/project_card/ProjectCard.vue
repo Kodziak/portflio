@@ -1,28 +1,44 @@
 <template>
   <div class="project-card">
-    <img class="project-card__image" v-bind:src="project.img" />
+    <img
+      class="project-card__image"
+      :src="project.img"
+    >
     <div class="project-card__description">
-      <h3>{{ project.title }}</h3>
+      <vue-header-small class="project-card__header">
+        {{ project.title }}
+      </vue-header-small>
       <p>{{ project.description }}</p>
       <div class="project-card__tags">
-        <Tag v-for="(tag, index) in project.tags" :key="index" :tag="tag" />
+        <vue-tag
+          v-for="(tag, index) in project.tags"
+          :key="index"
+          :tag="tag"
+        />
       </div>
       <div class="project-card__buttons">
-        <LinkedButton v-for="(btn, index) in project.btns" :key="index" :btn="btn" :class="btn.type">
+        <linked-button
+          v-for="(btn, index) in project.btns"
+          :key="index"
+          :btn="btn"
+          :class="btn.type"
+        >
           {{ btn.name }}
-        </LinkedButton>
+        </linked-button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Tag from './Tag.vue';
-import LinkedButton from './LinkedButton.vue';
+import VueHeaderSmall from '../header/HeaderSmall.vue';
+import VueTag from './Tag.vue';
+import LinkedButton from '../button/Button.vue';
 
 export default {
   components: {
-    Tag,
+    VueHeaderSmall,
+    VueTag,
     LinkedButton,
   },
   props: {
@@ -34,19 +50,23 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "../configs/_config";
+<style lang="scss" scoped>
+@import "../../configs/_config";
 
 .project-card {
-  width: 600px;
-  height: 100%;
+  width: 450px;
   background: $black-darken;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  box-shadow: 10px 10px 20px $black-darken, -10px -10px 20px $black-lighten;
   margin: 0 10px;
+  transition: box-shadow ease-in-out 0.5s;
+
+  &:hover {
+    transition: box-shadow ease-in-out 0.5s;
+    box-shadow: 5px 5px 5px $black-darken;
+  }
 
   @include mediaSmartfon {
     width: 100%;
@@ -54,31 +74,22 @@ export default {
   }
 
   &__image {
-    width: 100%;
-    height: 100%;
+    width: 450px;
+    height: auto;
 
     @include mediaSmartfon {
-      display: none;
+      width: 100%;
     }
   }
 
   &__description {
     margin: auto 20px auto 30px;
-    padding: 15px;
+    padding: 20px 15px;
     z-index: 2;
 
     @include mediaSmartfon {
       margin: 20px;
       padding: 5px;
-    }
-
-    h3 {
-      position: relative;
-      display: inline-block;
-
-      &:after {
-        @include halfShadow;
-      }
     }
 
     p {

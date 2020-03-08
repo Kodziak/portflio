@@ -1,3 +1,45 @@
+<template>
+  <a
+    v-if="btn.link"
+    target="_blank"
+    :href="btn.link"
+    rel="noopener noreferrer"
+    class="btn"
+    :class="btn.class"
+  >
+    <slot />
+  </a>
+  <router-link
+    v-else-if="btn.router"
+    :class="btn.class"
+    :to="btn.target"
+    :click="btn.click"
+  >
+    <slot />
+  </router-link>
+  <button
+    v-else
+    class="btn"
+    :class="btn.class"
+  >
+    <slot />
+  </button>
+</template>
+
+<script>
+export default {
+  props: {
+    btn: {
+      type: Object,
+      required: true,
+    },
+  },
+};
+</script>
+
+<style lang="scss">
+@import "../../configs/_config";
+
 .btn {
   display: inline-block;
   padding: 12px 35px;
@@ -38,3 +80,5 @@
     cursor: not-allowed;
   }
 }
+
+</style>

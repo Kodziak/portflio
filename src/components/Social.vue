@@ -5,8 +5,11 @@
     rel="noopener noreferrer"
     :title="social.title"
   >
-    <img :src="getImage(social.icon)" :alt="social.icon" />
-    <span>{{social.title}}</span>
+    <img
+      :src="getImage(social.icon)"
+      :alt="social.icon"
+    >
+    <span>{{ social.title }}</span>
   </a>
 </template>
 

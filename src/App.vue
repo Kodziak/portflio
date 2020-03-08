@@ -3,18 +3,21 @@
     <header>
       <div class="menu view view--menu">
         <router-link
-          class="menu-btn"
           v-for="btn in btns"
           :key="btn.id"
-          v-on:click.native="changeMenuState(btn.component)"
+          class="menu-btn"
           :to="btn.target"
+          @click.native="changeMenuState(btn.component)"
         >
           {{ btn.name }}
         </router-link>
       </div>
     </header>
-    <transition name="component-fade" mode="out-in">
-      <router-view ></router-view>
+    <transition
+      name="component-fade"
+      mode="out-in"
+    >
+      <router-view />
     </transition>
     <div class="socials view--footer">
       <Social
@@ -22,20 +25,25 @@
         :key="index"
         :social="social"
         :class="social.background"
-      ></Social>
+      />
     </div>
-    <img class="polygons" src="../src/assets/polygons_dark.svg" alt="Darkness...">
+    <img
+      class="polygons"
+      src="../src/assets/polygons_dark.svg"
+      alt="Darkness..."
+    >
   </div>
 </template>
 
 <script>
+/* eslint-disable max-len */
 import { menuButtons as btns, socials } from './data/index';
 import Social from './components/Social.vue';
 import utils from './utils';
 
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     Social,
   },
@@ -93,9 +101,8 @@ body {
   font-family: "Montserrat", sans-serif;
   color: $white;
 
-  a,
-  button {
-    all: unset;
+  a, button {
+    all: unset,
   }
 }
 
@@ -158,6 +165,7 @@ header {
 
 .view {
   width: $width-desktop;
+  max-width: $max-width;
   margin: 0 auto;
 
   @include mediaSmartfon {
@@ -213,13 +221,6 @@ header {
     margin: 30px 0 0 0;
   }
 
-
-.project + .polygons {
-  @include mediaSmartfon {
-    bottom: -160px;
-  }
-}
-
 .polygons {
     position: absolute;
     right: -350px;
@@ -234,4 +235,12 @@ header {
       bottom: -120px;
     }
   }
+
+.project + .polygons {
+  @include mediaSmartfon {
+    bottom: -160px;
+  }
+}
+
+
 </style>

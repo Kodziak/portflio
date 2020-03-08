@@ -6,6 +6,7 @@
 export default {
   props: {
     tag: {
+      type: String,
       required: true,
     },
   },
@@ -13,7 +14,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../configs/_config";
+@import "../../configs/_config";
 
 .tag {
   font-size: 11px;

@@ -64,13 +64,8 @@ export default {
   transition: box-shadow ease-in-out 0.5s;
   box-shadow: -25px -25px 0px $purple;
 
-  &:hover {
-    transition: box-shadow ease-in-out 0.5s;
-
-  }
-
   @include mediaSmartfon {
-    width: 100%;
+    width: 80%;
     margin: 0;
   }
 

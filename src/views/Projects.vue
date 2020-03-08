@@ -60,28 +60,15 @@ export default {
 
     @include mediaSmartfon {
       flex-direction: column;
-      align-content: space-between;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
 
       .project-card {
         margin: 15px 0;
-
-        &__header:after {
-          background: #4780A3;
-        }
+        margin-right: -20px;
       }
     }
-
-    .project-card:last-child {
-      box-shadow: -25px -25px 0px #4780A3;
-
-        .project-card__header:after {
-          background: #4780A3;
-        }
-
-        .btn:hover {
-          box-shadow: -5px 5px #4780A3;
-        }
-      }
   }
 }
 </style>

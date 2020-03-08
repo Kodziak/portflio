@@ -236,9 +236,9 @@ header {
     }
   }
 
-.project + .polygons {
+.project ~ .polygons {
   @include mediaSmartfon {
-    bottom: -160px;
+    display: none;
   }
 }
 

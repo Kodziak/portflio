@@ -37,6 +37,7 @@ a {
   width: 60px;
   margin: 0 10px;
   border-radius: 15%;
+  transition: background 0.5s ease-in-out, display 0.5s ease-in-out;
 
   @include mediaSmartfon {
     height: 35px;
@@ -62,7 +63,7 @@ a {
 }
 
 a:hover {
-  transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out, display 0.5s ease-in-out;
 
   @include mediaDesktop {
     span {

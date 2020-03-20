@@ -42,7 +42,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../configs/_config";
 @import "../configs/_glitch";
 
@@ -63,11 +63,6 @@ export default {
       align-items: center;
       justify-content: center;
       margin-top: 20px;
-
-      .project-card {
-        margin: 15px 0;
-        margin-right: -20px;
-      }
     }
   }
 }

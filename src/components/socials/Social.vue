@@ -15,6 +15,7 @@
 
 <script>
 export default {
+  name: 'Social',
   props: {
     social: {
       type: Object,
@@ -31,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../configs/_config";
+@import "../../configs/_config";
 a {
   height: 60px;
   width: 60px;

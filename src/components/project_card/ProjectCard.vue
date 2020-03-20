@@ -36,6 +36,7 @@ import VueTag from './Tag.vue';
 import LinkedButton from '../button/Button.vue';
 
 export default {
+  name: 'ProjectCard',
   components: {
     VueHeaderSmall,
     VueTag,
@@ -66,7 +67,7 @@ export default {
 
   @include mediaSmartfon {
     width: 80%;
-    margin: 0;
+    margin: 15px 0 -20px;
   }
 
   &__image {

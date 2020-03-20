@@ -8,6 +8,9 @@ export const menuButtons = [
   {
     id: 3, name: 'PROJECTS', target: '/projects', component: 'Projects',
   },
+  {
+    id: 4, name: 'PUBLICATIONS', target: '/publications', component: 'Publications',
+  },
 ];
 
 export const socials = [

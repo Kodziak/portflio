@@ -11,12 +11,12 @@ export default {
 <style lang="scss" scoped>
 @import "../../configs/_config";
 
-h3 {
-  position: relative;
-  display: inline-block;
+// h3 {
+  // position: relative;
+  // display: inline-block;
 
-  &:after {
-    @include halfShadow;
-  }
-}
+  // &:after {
+  //   @include halfShadow;
+  // }
+// }
 </style>

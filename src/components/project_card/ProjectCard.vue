@@ -1,31 +1,34 @@
 <template>
   <div class="project-card">
+    <vue-header-small>
+      {{ project.title }}
+    </vue-header-small>
+
     <img
       class="project-card__image"
       :src="project.img"
     >
-    <div class="project-card__description">
-      <vue-header-small class="project-card__header">
-        {{ project.title }}
-      </vue-header-small>
-      <p>{{ project.description }}</p>
-      <div class="project-card__tags">
-        <vue-tag
-          v-for="(tag, index) in project.tags"
-          :key="index"
-          :tag="tag"
-        />
-      </div>
-      <div class="project-card__buttons">
-        <linked-button
-          v-for="(btn, index) in project.btns"
-          :key="index"
-          :btn="btn"
-          :class="btn.type"
-        >
-          {{ btn.name }}
-        </linked-button>
-      </div>
+
+    <p>{{ project.description }}</p>
+
+    <div class="project-card__tags">
+      <vue-tag
+        v-for="(tag, index) in project.tags"
+        :key="index"
+        :tag="tag"
+      />
+    </div>
+
+    <div class="project-card__buttons">
+      <vue-button
+        v-for="(btn, index) in project.btns"
+        :key="index"
+        :btn="btn"
+        :class="btn.type"
+        class="project-btn"
+      >
+        {{ btn.name }}
+      </vue-button>
     </div>
   </div>
 </template>
@@ -33,14 +36,14 @@
 <script>
 import VueHeaderSmall from '../header/HeaderSmall.vue';
 import VueTag from './Tag.vue';
-import LinkedButton from '../button/Button.vue';
+import VueButton from '../button/Button.vue';
 
 export default {
   name: 'ProjectCard',
   components: {
     VueHeaderSmall,
     VueTag,
-    LinkedButton,
+    VueButton,
   },
   props: {
     project: {
@@ -55,60 +58,29 @@ export default {
 @import "../../configs/_config";
 
 .project-card {
-  width: 450px;
-  background: $black-darken;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  margin: 0 10px;
-  transition: box-shadow ease-in-out 0.5s;
-  box-shadow: -25px -25px 0px $purple;
+  // background: $black-darken;
+  width: 430px;
 
   @include mediaSmartfon {
-    width: 80%;
-    margin: 15px 0 -20px;
+    width: 85%;
+    margin: 20px 0;
   }
 
   &__image {
-    width: 450px;
+    width: 430px;
     height: auto;
+    margin: 5px 0 10px;
 
     @include mediaSmartfon {
-      width: 100%;
-    }
+    width: 100%;
   }
-
-  &__description {
-    margin: auto 20px auto 30px;
-    padding: 20px 15px;
-    z-index: 2;
-
-    @include mediaSmartfon {
-      margin: 20px;
-      padding: 5px;
-    }
-
-    p {
-      margin: 30px 0 0 0;
-
-      @include mediaSmartfon {
-        margin-top: 20px;
-        text-align: center;
-      }
-    }
+  }
 
     .project-card__tags {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      margin-top: 10px;
-      margin-bottom: 30px;
-
-      @include mediaSmartfon {
-        justify-content: center;
-        margin-bottom: 20px;
-      }
+      margin: 5px 0 10px;
     }
 
     .project-card__buttons {
@@ -121,20 +93,20 @@ export default {
           justify-content: center;
           margin-bottom: 0;
 
-          .btn {
+          .project-btn {
             margin: 0 5px;
             min-width: 0;
           }
         }
 
-        .btn {
-          padding: 7px 30px;
+        .project-btn {
+          padding: 4px 20px;
         }
 
-        .btn:last-child {
+        .project-btn:last-child {
           margin: 0 10px;
         }
     }
-  }
+
 }
 </style>

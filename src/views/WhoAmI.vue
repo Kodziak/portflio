@@ -6,7 +6,7 @@
         <div class="whoami__description">
           <vue-header-small>Meet me.</vue-header-small>
           <p>
-            Software is my passion, in which I happily improving daily by reading articles, building software and learning new technologies.
+            Software is my passion, in which I happily improving daily by building software, reading articles and learning new technologies.
             Also, I’m spending much time reading books about personal growth, productivity, finances, security, design and other similar things.
             <br>I’m an <span>IT student</span> based in <span>Warsaw, Poland</span> with over two years of industry experience.
             <br>Daily working as a <span>Automation Tester</span> and <span>Scrum Master</span>.

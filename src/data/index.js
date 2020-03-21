@@ -58,7 +58,7 @@ export const projects = [
   {
     title: 'Portfolio',
     description: 'Personal website developed to introduce me.',
-    img: './portfolio_shape@2x.png',
+    img: './portfolio@2x.png',
     tags: ['javascript', 'vue', 'vue-router', 'scss', 'adobe Xd'],
     btns: [
       {
@@ -77,7 +77,7 @@ export const projects = [
     title: 'Daily-news',
     description:
       'News website to follow the newest stuff from QA world.',
-    img: './daily-news_shape@2x.png',
+    img: './daily-news@2x.png',
     tags: ['javascript', 'nodeJS', 'axios', 'cheerio', 'adobe Xd'],
     btns: [
       {

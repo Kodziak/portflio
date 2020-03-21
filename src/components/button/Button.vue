@@ -51,7 +51,7 @@ export default {
   border: 0.5px solid $white-darken;
 
   &:hover {
-    box-shadow: -5px 5px $purple;
+    box-shadow: -3px 3px $purple;
   }
 
   @include mediaSmartfon {

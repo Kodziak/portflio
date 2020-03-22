@@ -19,7 +19,7 @@ export default {
   },
   props: {
     socials: {
-      type: Object,
+      type: Array,
       required: true,
     },
   },

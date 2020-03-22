@@ -21,7 +21,7 @@ export default {
   name: 'NavBar',
   props: {
     btns: {
-      type: Object,
+      type: Array,
       required: true,
     },
   },

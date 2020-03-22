@@ -12,13 +12,17 @@
   box-sizing: border-box;
 }
 
+html, body {
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
 html {
   background-image:
     linear-gradient(307deg, transparent 0%, transparent 10%,rgba(190, 190, 190,0.04) 10%, rgba(190, 190, 190,0.04) 64%,transparent 64%, transparent 100%),
     linear-gradient(118deg, transparent 0%, transparent 11%,rgba(190, 190, 190,0.04) 11%, rgba(190, 190, 190,0.04) 31%,transparent 31%, transparent 100%),
     linear-gradient(73deg, transparent 0%, transparent 22%,rgba(190, 190, 190,0.04) 22%, rgba(190, 190, 190,0.04) 90%,transparent 90%, transparent 100%),
     linear-gradient(156deg, transparent 0%, transparent 51%,rgba(190, 190, 190,0.04) 51%, rgba(190, 190, 190,0.04) 97%,transparent 97%, transparent 100%),
-    linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0))
+    linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
 }
 
 body {
@@ -44,12 +48,12 @@ body {
 
 .header--bg {
   background: $purple-opacity;
-  width: 105%;
   text-align: center;
-  margin: 30px 0 0 0;
+  width: 105%;
 }
 
 .view {
+  display: block;
   width: $width-desktop;
   max-width: $max-width;
   margin: 0 auto;
@@ -58,35 +62,32 @@ body {
     width: $width-mobile
   }
 
-  &--page {
-    min-height: calc(var(--vh, 1vh) * 88);
-
+  &--menu {
     @include mediaSmartfon {
-      min-height: calc(var(--vh, 1vh) * 87);
+      width: 100%;
     }
   }
 
-  &--menu {
-    min-height: calc(var(--vh, 1vh) * 5);
+  &--page {
+    min-height: calc((var(--vh, 1vh) * 100) - 115px);
+
+    @include mediaSmartfon {
+      min-height: calc((var(--vh, 1vh) * 100) - 90px);
+    }
   }
 
   &--header {
-    min-height: calc(var(--vh, 1vh) * 8);
-    padding-left: 0;
     display: inline-block;
+    padding-left: 0;
+    margin-top: 30px;
   }
 
   &--content {
-    min-height: calc(var(--vh, 1vh) * 80);
-    // max-width: $max-width;
+    min-height: calc((var(--vh, 1vh) * 100) - 189px);
 
     @include mediaSmartfon {
-      min-height: calc(var(--vh, 1vh) * 79);
+      min-height: calc((var(--vh, 1vh) * 100) - 149px);
     }
-  }
-
-  &--footer {
-    height: calc(var(--vh, 1vh) * 7);
   }
 }
 
